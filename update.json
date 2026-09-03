@@ -1,10 +1,10 @@
 {
-  "version": "1.0.3",
+  "version": "1.0.4",
   "url": "https://sidsmail.com/novidades/",
-  "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.3/Sidsmail-Setup-1.0.3.exe",
+  "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.4/Sidsmail-Setup-1.0.4.exe",
   "date": "2026-09-03",
   "notes": {
-    "pt": "• O ícone no ambiente de trabalho passa a ser sempre criado ao instalar (antes dependia de uma opção escondida no assistente)\n• A app abre maximizada na primeira vez que é aberta",
-    "en": "• The desktop icon is now always created on install (it used to depend on a hidden option in the wizard)\n• The app now opens maximised the first time it's launched"
+    "pt": "• \"Ver novidades\" agora abre o histórico de versões dentro da app, não no browser\n• Downloads e visitas em Definições › Acerca redesenhados: um selo pequeno e arrumado, como no site",
+    "en": "• \"See what's new\" now opens the version history inside the app, not the browser\n• Downloads and visits in Settings › About redesigned: a small tidy badge, matching the site"
   }
 }

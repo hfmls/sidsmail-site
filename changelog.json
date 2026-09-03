@@ -1,6 +1,15 @@
 {
   "releases": [
     {
+      "version": "1.0.4",
+      "date": "2026-09-03",
+      "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.4/Sidsmail-Setup-1.0.4.exe",
+      "notes": {
+        "pt": "• \"Ver novidades\" agora abre o histórico de versões dentro da app, não no browser\n• Downloads e visitas em Definições › Acerca redesenhados: um selo pequeno e arrumado, como no site",
+        "en": "• \"See what's new\" now opens the version history inside the app, not the browser\n• Downloads and visits in Settings › About redesigned: a small tidy badge, matching the site"
+      }
+    },
+    {
       "version": "1.0.3",
       "date": "2026-09-03",
       "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.3/Sidsmail-Setup-1.0.3.exe",
