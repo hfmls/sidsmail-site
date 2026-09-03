@@ -262,6 +262,138 @@
 
   .stripe-embed { margin: 6px 0 18px; min-height: 48px; }
   .donate-links { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.gal[data-theme="light"]{--g-win:#EEF1F5;--g-side:#F4F6F9;--g-list:#FAFBFD;--g-reader:#FFFFFF;--g-card:#FFFFFF;--g-hover:#E9EDF3;--g-sel:#C8E5DC;--g-input:#FFFFFF;--g-chip:#EDF0F5;--g-fg:#121620;--g-fg2:#454E5D;--g-muted:#515A6A;--g-border:#D5DAE3;--g-ctrl:#72798A;--g-shadow:rgba(122,135,155,.28)}
+.gal[data-theme="dark"]{--g-win:#0F1218;--g-side:#151920;--g-list:#1A1E26;--g-reader:#20242D;--g-card:#262B35;--g-hover:#232833;--g-sel:#254439;--g-input:#151920;--g-chip:#262B35;--g-fg:#EDF0F5;--g-fg2:#B9C1CF;--g-muted:#A5AEBF;--g-border:#333A47;--g-ctrl:#8B919C;--g-shadow:rgba(0,0,0,.5)}
+.gal[data-theme="light"][data-accent="default"]{--g-acc:#076354;--g-acch:#055446;--g-accs:#C6EAE1;--g-onacc:#FFFFFF}
+.gal[data-theme="dark"][data-accent="default"]{--g-acc:#5FD3BA;--g-acch:#82E2CD;--g-accs:#1E413A;--g-onacc:#08121A}
+.gal[data-theme="light"] .dot[data-accent="default"]{background:#076354} .gal[data-theme="dark"] .dot[data-accent="default"]{background:#5FD3BA}
+.gal[data-theme="light"][data-accent="blue"]{--g-acc:#2161BA;--g-acch:#1C53A0;--g-accs:#D6E3F5;--g-onacc:#FFFFFF}
+.gal[data-theme="dark"][data-accent="blue"]{--g-acc:#7FABE8;--g-acch:#99BCED;--g-accs:#152E51;--g-onacc:#08121A}
+.gal[data-theme="light"] .dot[data-accent="blue"]{background:#2161BA} .gal[data-theme="dark"] .dot[data-accent="blue"]{background:#7FABE8}
+.gal[data-theme="light"][data-accent="purple"]{--g-acc:#6834B2;--g-acch:#5A2D9A;--g-accs:#E4DAF1;--g-onacc:#FFFFFF}
+.gal[data-theme="dark"][data-accent="purple"]{--g-acc:#B99BE2;--g-acch:#CAB3E9;--g-accs:#2F1B4B;--g-onacc:#08121A}
+.gal[data-theme="light"] .dot[data-accent="purple"]{background:#6834B2} .gal[data-theme="dark"] .dot[data-accent="purple"]{background:#B99BE2}
+.gal[data-theme="light"][data-accent="pink"]{--g-acc:#B72763;--g-acch:#9E2255;--g-accs:#F4D8E3;--g-onacc:#FFFFFF}
+.gal[data-theme="dark"][data-accent="pink"]{--g-acc:#E78DB2;--g-acch:#ECA6C3;--g-accs:#4F172E;--g-onacc:#08121A}
+.gal[data-theme="light"] .dot[data-accent="pink"]{background:#B72763} .gal[data-theme="dark"] .dot[data-accent="pink"]{background:#E78DB2}
+.gal[data-theme="light"][data-accent="orange"]{--g-acc:#975011;--g-acch:#7B410E;--g-accs:#F7E4D4;--g-onacc:#FFFFFF}
+.gal[data-theme="dark"][data-accent="orange"]{--g-acc:#EB9447;--g-acch:#EEA463;--g-accs:#563110;--g-onacc:#08121A}
+.gal[data-theme="light"] .dot[data-accent="orange"]{background:#975011} .gal[data-theme="dark"] .dot[data-accent="orange"]{background:#EB9447}
+.gal[data-theme="light"][data-accent="graphite"]{--g-acc:#5B6374;--g-acch:#4E5463;--g-accs:#E3E4E8;--g-onacc:#FFFFFF}
+.gal[data-theme="dark"][data-accent="graphite"]{--g-acc:#A3A9B7;--g-acch:#B4B9C4;--g-accs:#2E3138;--g-onacc:#08121A}
+.gal[data-theme="light"] .dot[data-accent="graphite"]{background:#5B6374} .gal[data-theme="dark"] .dot[data-accent="graphite"]{background:#A3A9B7}
+
+.gal-ctl{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:center;margin:0 0 26px}
+.gal-seg{display:flex;border:1px solid var(--border);border-radius:9px;overflow:hidden;font-size:13.5px}
+.gal-seg button{border:0;background:var(--card);color:var(--fg-2);padding:8px 16px;cursor:pointer;font:inherit;font-weight:600}
+.gal-seg button.on{background:var(--accent);color:var(--on-accent)}
+.gal-dots{display:flex;gap:10px;align-items:center}
+.gal .dot{width:24px;height:24px;border-radius:50%;border:0;cursor:pointer;box-shadow:inset 0 0 0 2px rgba(255,255,255,.35);position:relative}
+.gal .dot.on{outline:2px solid var(--fg);outline-offset:3px}
+.gal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+@media(max-width:760px){.gal-grid{grid-template-columns:1fr}}
+.gal-item{cursor:zoom-in;background:none;border:0;padding:0;text-align:left;font:inherit;color:inherit}
+.gal-item figure{margin:0}
+.gal-item figcaption{margin-top:10px;font-size:14px;color:var(--fg-2);display:flex;gap:8px;align-items:center}
+.gal-item figcaption b{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:7px;background:var(--accent);color:var(--on-accent);font-size:12px}
+.shot{position:relative;width:100%;aspect-ratio:1280/800;overflow:hidden;border-radius:12px;border:1px solid var(--border);box-shadow:var(--shadow);background:var(--g-win)}
+.shot .scr{position:absolute;left:0;top:0;width:1280px;height:800px;transform-origin:0 0;transform:scale(var(--s,.4))}
+dialog.gal-box{border:0;padding:0;background:transparent;max-width:min(96vw,1400px);width:100%}
+dialog.gal-box::backdrop{background:rgba(6,9,14,.82);backdrop-filter:blur(6px)}
+dialog.gal-box .shot{border-radius:14px;box-shadow:0 40px 100px rgba(0,0,0,.5)}
+dialog.gal-box .cap{color:#fff;text-align:center;margin:14px 0 0;font-size:15px;opacity:.9}
+dialog.gal-box .x{position:absolute;right:-6px;top:-44px;background:rgba(255,255,255,.14);color:#fff;border:0;border-radius:999px;width:36px;height:36px;font-size:18px;cursor:pointer}
+/* ---- the app itself ---- */
+.scr{font:13px/1.35 Inter,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--g-fg);background:var(--g-win);display:flex;flex-direction:column;box-sizing:border-box}
+.scr *{box-sizing:border-box}
+.scr .tb{height:40px;display:flex;align-items:center;gap:10px;padding:0 14px;background:var(--g-side);border-bottom:1px solid var(--g-border);font-size:13px;color:var(--g-fg2);flex:none}
+.scr .tb .brand{width:20px;height:20px;border-radius:6px;background:var(--g-acc);position:relative}
+.scr .tb .brand:after{content:"";position:absolute;left:4px;top:6px;width:12px;height:8px;border-radius:2px;background:#F1EFE8}
+.scr .tb .wb{margin-left:auto;display:flex;gap:18px;color:var(--g-muted);font-size:12px}
+.scr .body{flex:1;display:flex;min-height:0}
+.scr .side{width:232px;background:var(--g-side);border-right:1px solid var(--g-border);padding:12px;display:flex;flex-direction:column}
+.scr .btn{background:var(--g-acc);color:var(--g-onacc);border-radius:8px;padding:9px 12px;font-weight:600;text-align:center}
+.scr .ghost{border:1px solid var(--g-border);color:var(--g-fg2);border-radius:8px;padding:8px 12px;font-weight:600;background:var(--g-card)}
+.scr .side .it{padding:7px 10px;border-radius:7px;color:var(--g-fg2);display:flex;align-items:center;gap:9px;margin-top:1px}
+.scr .side .it.on{background:var(--g-accs);color:var(--g-fg);font-weight:600}
+.scr .side .it .n{margin-left:auto;font-size:11.5px;color:var(--g-muted)}
+.scr .side .it.on .n{color:var(--g-fg)}
+.scr .side .grp{display:flex;align-items:center;gap:7px;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--g-muted);margin:16px 10px 5px}
+.scr .side .grp i{width:8px;height:8px;border-radius:50%;display:inline-block}
+.scr .side .foot{margin-top:auto;border-top:1px solid var(--g-border);padding-top:8px;display:flex;gap:6px;color:var(--g-muted)}
+.scr .side .foot span{width:28px;height:28px;border-radius:7px;display:grid;place-items:center;font-size:14px}
+.scr .ico{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.scr .list{width:380px;background:var(--g-list);border-right:1px solid var(--g-border);display:flex;flex-direction:column}
+.scr .search{margin:12px 12px 8px;height:34px;border:1px solid var(--g-border);border-radius:8px;background:var(--g-input);display:flex;align-items:center;gap:8px;padding:0 10px;color:var(--g-muted)}
+.scr .search .chip{background:var(--g-accs);color:var(--g-fg);border-radius:6px;padding:2px 7px;font-size:11.5px;font-weight:600}
+.scr .lhead{display:flex;justify-content:space-between;padding:4px 14px 8px;font-size:12px;color:var(--g-muted)}
+.scr .row{display:flex;gap:10px;padding:10px 14px;border-bottom:1px solid var(--g-border);align-items:flex-start}
+.scr .row.on{background:var(--g-accs)}
+.scr .row .av{width:32px;height:32px;border-radius:50%;color:#fff;font-size:11px;font-weight:700;display:grid;place-items:center;flex:none}
+.scr .row .m{flex:1;min-width:0}
+.scr .row .m b{display:flex;align-items:center;gap:6px;font-size:13px}
+.scr .row .m b em{margin-left:auto;font-style:normal;font-weight:400;color:var(--g-muted);font-size:11.5px}
+.scr .row .m span{display:block;color:var(--g-fg2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:12.5px}
+.scr .row .m small{display:block;color:var(--g-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:11.5px;margin-top:2px}
+.scr .row.u .m b{font-weight:700}.scr .row.u .m b:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--g-acc);display:inline-block;flex:none}
+.scr .row .st{color:#E0A61C;font-size:13px}
+.scr .reader{flex:1;background:var(--g-reader);display:flex;flex-direction:column;min-width:0}
+.scr .rh{padding:22px 28px 14px;border-bottom:1px solid var(--g-border)}
+.scr .rh h2{margin:0 0 12px;font-size:20px;letter-spacing:-.01em}
+.scr .rh .who{display:flex;align-items:center;gap:12px}
+.scr .rh .who .av{width:38px;height:38px;border-radius:50%;color:#fff;font-weight:700;display:grid;place-items:center}
+.scr .rh .who small{display:block;color:var(--g-muted);font-size:12px}
+.scr .rh .who em{margin-left:auto;font-style:normal;color:var(--g-muted);font-size:12px}
+.scr .acts{display:flex;gap:6px;margin-top:14px;flex-wrap:wrap}
+.scr .acts span{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--g-border);border-radius:7px;padding:6px 10px;font-size:12px;color:var(--g-fg2);background:var(--g-card)}
+.scr .rb{padding:22px 28px;color:var(--g-fg);font-size:14px;line-height:1.6;max-width:640px}
+.scr .rb p{margin:0 0 14px}
+.scr .att{display:flex;gap:10px;padding:0 28px 20px}
+.scr .att span{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--g-border);border-radius:9px;padding:8px 12px;font-size:12.5px;background:var(--g-card)}
+.scr .att span i{width:26px;height:26px;border-radius:6px;background:var(--g-accs);display:grid;place-items:center;font-style:normal;font-size:10px;font-weight:700;color:var(--g-acc)}
+.scr .status{height:26px;border-top:1px solid var(--g-border);background:var(--g-side);font-size:11.5px;color:var(--g-muted);display:flex;align-items:center;padding:0 12px;gap:16px;flex:none}
+/* windows (compose, settings, contacts, wizard) */
+.scr.win{align-items:center;justify-content:center;background:var(--g-win)}
+.scr .w{background:var(--g-reader);border:1px solid var(--g-border);border-radius:12px;box-shadow:0 24px 70px var(--g-shadow);overflow:hidden;display:flex;flex-direction:column}
+.scr .w .tb{background:var(--g-side)}
+.scr .field{display:flex;align-items:center;gap:10px;padding:10px 18px;border-bottom:1px solid var(--g-border)}
+.scr .field label{width:64px;color:var(--g-muted);font-size:12.5px}
+.scr .field .pill{background:var(--g-chip);border-radius:999px;padding:3px 10px;font-size:12.5px;display:inline-flex;align-items:center;gap:6px}
+.scr .field .pill i{width:16px;height:16px;border-radius:50%;display:inline-block}
+.scr .ctool{display:flex;gap:4px;padding:8px 14px;border-bottom:1px solid var(--g-border);color:var(--g-muted)}
+.scr .ctool span{padding:5px 8px;border-radius:6px;font-size:12px}
+.scr .cbody{padding:18px;font-size:14px;line-height:1.6;flex:1;color:var(--g-fg)}
+.scr .cbody p{margin:0 0 12px}
+.scr .cfoot{display:flex;align-items:center;gap:10px;padding:12px 18px;border-top:1px solid var(--g-border);background:var(--g-side)}
+.scr .cfoot .muted{margin-left:auto;color:var(--g-muted);font-size:12px}
+.scr .snav{width:220px;background:var(--g-side);border-right:1px solid var(--g-border);padding:12px}
+.scr .snav .it{padding:8px 12px;border-radius:7px;color:var(--g-fg2);display:flex;gap:9px;align-items:center}
+.scr .snav .it.on{background:var(--g-accs);color:var(--g-fg);font-weight:600}
+.scr .pane{flex:1;padding:24px 28px;overflow:hidden}
+.scr .pane h3{margin:0 0 14px;font-size:16px}
+.scr .opt{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--g-border);font-size:13.5px}
+.scr .opt small{display:block;color:var(--g-muted);font-size:12px;margin-top:2px}
+.scr .opt .r{margin-left:auto;display:flex;align-items:center;gap:8px}
+.scr .tg{width:38px;height:22px;border-radius:11px;background:var(--g-acc);position:relative;flex:none}
+.scr .tg:after{content:"";position:absolute;right:2px;top:2px;width:18px;height:18px;border-radius:50%;background:#fff}
+.scr .tg.off{background:var(--g-ctrl)}.scr .tg.off:after{right:auto;left:2px}
+.scr .sel{border:1px solid var(--g-border);background:var(--g-input);border-radius:7px;padding:6px 10px;font-size:12.5px;min-width:150px;display:flex;justify-content:space-between}
+.scr .seg{display:flex;border:1px solid var(--g-border);border-radius:8px;overflow:hidden;font-size:12px}
+.scr .seg span{padding:6px 12px;color:var(--g-fg2)}.scr .seg span.on{background:var(--g-acc);color:var(--g-onacc);font-weight:600}
+.scr .dots{display:flex;gap:8px}.scr .dots i{width:20px;height:20px;border-radius:50%;display:block}.scr .dots i.on{outline:2px solid var(--g-fg);outline-offset:2px}
+.scr .chips span{display:inline-block;border:1px solid var(--g-border);border-radius:999px;padding:3px 10px;font-size:12px;margin:6px 6px 0 0;background:var(--g-card)}
+.scr .hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding:48px 60px 40px}
+.scr .hero .tile{width:96px;height:96px;border-radius:28px;background:var(--g-acc);display:grid;place-items:center;box-shadow:0 18px 40px var(--g-shadow);margin-bottom:24px}
+.scr .hero .tile:after{content:"";width:52px;height:36px;border-radius:6px;background:#F1EFE8}
+.scr .hero h1{font-size:30px;margin:0 0 10px;letter-spacing:-.02em}
+.scr .hero p{color:var(--g-fg2);font-size:15px;max-width:460px;margin:0 0 28px;line-height:1.55}
+.scr .hero .pdots{display:flex;gap:8px;margin-top:26px}.scr .hero .pdots i{width:7px;height:7px;border-radius:50%;background:var(--g-border)}.scr .hero .pdots i.on{background:var(--g-acc);width:18px;border-radius:4px}
+.scr .ctable{flex:1;display:flex;flex-direction:column}
+.scr .crow{display:flex;align-items:center;gap:12px;padding:10px 18px;border-bottom:1px solid var(--g-border);font-size:13px}
+.scr .crow .av{width:30px;height:30px;border-radius:50%;color:#fff;font-size:10.5px;font-weight:700;display:grid;place-items:center}
+.scr .crow small{color:var(--g-muted);margin-left:auto;font-size:12px}
+.scr .crow em{font-style:normal;color:var(--g-muted);font-size:12px}
 </style>
 <script>
 (function(){try{
@@ -340,6 +472,75 @@
     <div class="grid"><div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 13h5l1.5 2.5h5L16 13h5M3 13l2.5-8h13l2.5 8v5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg></div><h3>所有账户，一个收件箱</h3><p>Gmail、Outlook、iCloud、Yahoo 或任何 IMAP 服务器，并排显示。“所有收件箱”视图把一切汇集在一起；每个账户保留自己的颜色。</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3.5a4.5 4.5 0 0 0-4.5 4.5c0 5-2 6.5-2 8.5h13c0-2-2-3.5-2-8.5a4.5 4.5 0 0 0-4.5-4.5zM9.8 19a2.3 2.3 0 0 0 4.4 0"/></svg></div><h3>实时收信</h3><p>IMAP IDLE：邮件发出的那一秒就送达，无需轮询。常驻系统托盘，带角标和提示音 — 只在你需要的时候。</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 20.5a8.5 8.5 0 1 1 .01 0zM12 7.5V12l3 2"/></svg></div><h3>免打扰时段与稍后处理</h3><p>设定不想被打扰的时间，并为重要的发件人设置例外。把一封邮件推迟到稍后、明天或下周再处理。</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h7"/></svg></div><h3>键盘整理</h3><p>归档、删除、星标、移动、下一封未读 — 都只需一个按键。用运算符搜索：<em>from:</em>、<em>subject:</em>、<em>has:</em>、<em>before:</em>。</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 4a8 8 0 1 1-.01 0zM4 12h16M12 4c3.5 3.5 3.5 12.5 0 16M12 4c-3.5 3.5-3.5 12.5 0 16"/></svg></div><h3>用 Google 或 Microsoft 登录</h3><p>在浏览器中登录，本该如此 — 如果你愿意，也可以用应用专用密码。Sidsmail 会自动找到服务器。</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 4a8 8 0 1 1-.01 0zM4 12h16M12 4c3.5 3.5 3.5 12.5 0 16M12 4c-3.5 3.5-3.5 12.5 0 16M8 8.5c2.5 1 5.5 1 8 0M8 15.5c2.5-1 5.5-1 8 0"/></svg></div><h3>说你的语言</h3><p>二十多种语言，根据 Windows 设置自动选择。浅色和深色主题、六种主题色、回复模板、字数统计，以及会自动清空的“已删除邮件”。</p></div></div>
   </div>
 </section>
+
+
+<section id="gallery">
+  <div class="wrap">
+    <p class="kicker">图库</p>
+    <h2>看看应用里面的样子。</h2>
+    <p class="sub">浅色或深色主题、六种主题色 — 在这里选一选，看看效果。点击图片可放大。</p>
+    <div class="gal" data-theme="light" data-accent="default">
+      <div class="gal-ctl">
+        <div class="gal-seg" role="group"><button class="on" data-theme="light">浅色</button><button data-theme="dark">深色</button></div>
+        <div class="gal-dots"><button class="dot on" data-accent="default" title="绿色" aria-label="绿色"></button><button class="dot" data-accent="blue" title="蓝色" aria-label="蓝色"></button><button class="dot" data-accent="purple" title="紫色" aria-label="紫色"></button><button class="dot" data-accent="pink" title="粉色" aria-label="粉色"></button><button class="dot" data-accent="orange" title="橙色" aria-label="橙色"></button><button class="dot" data-accent="graphite" title="石墨色" aria-label="石墨色"></button></div>
+      </div>
+      <div class="gal-grid"><button class="gal-item" data-i="1"><figure><div class="shot"><div class="scr"><div class="tb"><span class="brand"></span>Sidsmail<span class="wb"><span>—</span><span>▢</span><span>✕</span></span></div><div class="body"><div class="side"><div class="btn">✎ 新邮件</div>
+    <div style="margin-top:10px"><div class="it on"><svg class="ico" viewBox="0 0 24 24"><path d="M3 13h5l1.5 2.5h5L16 13h5M3 13l2.5-8h13l2.5 8v5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>所有收件箱<span class="n">12</span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M4 6h16v12H4zM4 7l8 6 8-6"/></svg>未读<span class="n">4</span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3.6l2.6 5.5 5.9.8-4.3 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.5 9.9l5.9-.8z"/></svg>已加星标<span class="n"></span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M12 20.5a8.5 8.5 0 1 1 .01 0zM12 7.5V12l3 2"/></svg>稍后处理<span class="n">2</span></div></div>
+    <div class="grp"><i style="background:#3B82F6"></i>个人</div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M3 13h5l1.5 2.5h5L16 13h5M3 13l2.5-8h13l2.5 8v5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>收件箱<span class="n">7</span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M3 12l18-8-6 18-3-8z"/></svg>已发送<span class="n"></span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M4 8h16v12H4zM3 4h18v4H3zM10 12h4"/></svg>归档<span class="n"></span></div>
+    <div class="grp"><i style="background:#8B5CF6"></i>工作</div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M3 13h5l1.5 2.5h5L16 13h5M3 13l2.5-8h13l2.5 8v5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>收件箱<span class="n">5</span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M3 12l18-8-6 18-3-8z"/></svg>已发送<span class="n"></span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M5 7h14M9 7V4h6v3M7 7l1 13h8l1-13"/></svg>已删除邮件<span class="n"></span></div>
+    <div class="foot"><span><svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span><span><svg class="ico" viewBox="0 0 24 24"><path d="M12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8zM4 12h2M18 12h2M12 4v2M12 18v2"/></svg></span><span><svg class="ico" viewBox="0 0 24 24"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM2 20a6 6 0 0 1 12 0M16 11a3 3 0 1 0 0-6M22 20a6 6 0 0 0-6-6"/></svg></span><span><svg class="ico" viewBox="0 0 24 24"><path d="M12 20.5a8.5 8.5 0 1 1 .01 0zM9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 1-1 1.7M12 17h.01"/></svg></span><span style="color:#E0245E"><svg class="ico" viewBox="0 0 24 24"><path d="M12 20.2S4.2 15.4 3.3 10.6C2.7 7.5 4.7 4.9 7.4 4.9c1.8 0 3.5 1 4.6 2.7 1.1-1.7 2.8-2.7 4.6-2.7 2.7 0 4.7 2.6 4.1 5.7-.9 4.8-8.7 9.6-8.7 9.6z"/></svg></span></div></div><div class="list"><div class="search"><svg class="ico" viewBox="0 0 24 24"><path d="M11 4a7 7 0 1 1 0 14 7 7 0 0 1 0-14zM20 20l-4-4"/></svg>搜索</div><div class="lhead"><span>所有收件箱</span><span>最新在前</span></div><div class="row on u"><span class="av" style="background:#3B82F6">王</span><div class="m"><b>王晓琳<em>10:42</em></b><span>周末的照片</span><small>你好！这是周六的照片，如约奉上…</small></div></div><div class="row  u"><span class="av" style="background:#8B5CF6">中</span><div class="m"><b>中央银行<em>09:15</em></b><span>你的 8 月对账单</span><small>你的 8 月对账单已可在你的…</small></div></div><div class="row "><span class="av" style="background:#F59E0B">李</span><div class="m"><b>李志远<em>昨天</em></b><span>回复：周四的会议</span><small>周四 10 点方便吗？我会带上…</small></div></div><div class="row  u"><span class="av" style="background:#EC4899">公</span><div class="m"><b>公园商店<em>昨天</em></b><span>你的订单已发货</span><small>你的订单 #48213 已于今天发货，2 天后送达…</small></div></div><div class="row "><span class="av" style="background:#0B8A72">张</span><div class="m"><b>张思雨<em>周一</em></b><span>申请所需的材料</span><small>附件是简历和信函。如有需要请…</small></div><span class="st">★</span></div><div class="row "><span class="av" style="background:#64748B">新</span><div class="m"><b>新闻简报<em>周一</em></b><span>9 月的 5 个灵感</span><small>充分利用 9 月的五个灵感…</small></div></div><div class="row  u"><span class="av" style="background:#0EA5E9">陈</span><div class="m"><b>陈志明<em>周日</em></b><span>周六晚餐</span><small>订了晚上 8:30，六个人。能确认一下吗？</small></div></div><div class="row "><span class="av" style="background:#D97706">S团</span><div class="m"><b>Sidstuga 团队<em>周六</em></b><span>欢迎加入团队</span><small>附件是欢迎指南和你的访问…</small></div></div></div><div class="reader"><div class="rh"><h2>周末的照片</h2><div class="who"><span class="av" style="background:#3B82F6">王</span><div><b>王晓琳</b><small>发给我</small></div><em>10:42</em></div><div class="acts"><span><svg class="ico" viewBox="0 0 24 24"><path d="M9 17l-5-5 5-5M4 12h11a5 5 0 0 1 5 5v2"/></svg>回复</span><span><svg class="ico" viewBox="0 0 24 24"><path d="M7 17l-5-5 5-5M12 17l-5-5 5-5M7 12h8a5 5 0 0 1 5 5v2"/></svg>全部回复</span><span><svg class="ico" viewBox="0 0 24 24"><path d="M15 7l5 5-5 5M20 12H9a5 5 0 0 0-5 5v2"/></svg>转发</span><span><svg class="ico" viewBox="0 0 24 24"><path d="M4 8h16v12H4zM3 4h18v4H3zM10 12h4"/></svg>归档</span><span><svg class="ico" viewBox="0 0 24 24"><path d="M5 7h14M9 7V4h6v3M7 7l1 13h8l1-13"/></svg>删除</span><span><svg class="ico" viewBox="0 0 24 24"><path d="M12 3.6l2.6 5.5 5.9.8-4.3 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.5 9.9l5.9-.8z"/></svg>星标</span></div></div>
+    <div class="rb"><p>你好！这是周六的照片，如约奉上。</p><p>如果你愿意，我可以把它们放进共享相册。告诉我你喜欢哪些，其余的交给我。</p><p>— 晓琳</p></div></div></div><div class="status"><span>已连接 2 个账户 · IMAP IDLE 已开启</span><span>刚刚更新</span></div></div></div><figcaption><b>1</b>所有账户，一个收件箱</figcaption></figure></button><button class="gal-item" data-i="2"><figure><div class="shot"><div class="scr"><div class="tb"><span class="brand"></span>Sidsmail<span class="wb"><span>—</span><span>▢</span><span>✕</span></span></div><div class="body"><div class="side"><div class="btn">✎ 新邮件</div>
+    <div style="margin-top:10px"><div class="it on"><svg class="ico" viewBox="0 0 24 24"><path d="M3 13h5l1.5 2.5h5L16 13h5M3 13l2.5-8h13l2.5 8v5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>所有收件箱<span class="n">12</span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M4 6h16v12H4zM4 7l8 6 8-6"/></svg>未读<span class="n">4</span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3.6l2.6 5.5 5.9.8-4.3 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.5 9.9l5.9-.8z"/></svg>已加星标<span class="n"></span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M12 20.5a8.5 8.5 0 1 1 .01 0zM12 7.5V12l3 2"/></svg>稍后处理<span class="n">2</span></div></div>
+    <div class="grp"><i style="background:#3B82F6"></i>个人</div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M3 13h5l1.5 2.5h5L16 13h5M3 13l2.5-8h13l2.5 8v5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>收件箱<span class="n">7</span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M3 12l18-8-6 18-3-8z"/></svg>已发送<span class="n"></span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M4 8h16v12H4zM3 4h18v4H3zM10 12h4"/></svg>归档<span class="n"></span></div>
+    <div class="grp"><i style="background:#8B5CF6"></i>工作</div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M3 13h5l1.5 2.5h5L16 13h5M3 13l2.5-8h13l2.5 8v5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>收件箱<span class="n">5</span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M3 12l18-8-6 18-3-8z"/></svg>已发送<span class="n"></span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M5 7h14M9 7V4h6v3M7 7l1 13h8l1-13"/></svg>已删除邮件<span class="n"></span></div>
+    <div class="foot"><span><svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span><span><svg class="ico" viewBox="0 0 24 24"><path d="M12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8zM4 12h2M18 12h2M12 4v2M12 18v2"/></svg></span><span><svg class="ico" viewBox="0 0 24 24"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM2 20a6 6 0 0 1 12 0M16 11a3 3 0 1 0 0-6M22 20a6 6 0 0 0-6-6"/></svg></span><span><svg class="ico" viewBox="0 0 24 24"><path d="M12 20.5a8.5 8.5 0 1 1 .01 0zM9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 1-1 1.7M12 17h.01"/></svg></span><span style="color:#E0245E"><svg class="ico" viewBox="0 0 24 24"><path d="M12 20.2S4.2 15.4 3.3 10.6C2.7 7.5 4.7 4.9 7.4 4.9c1.8 0 3.5 1 4.6 2.7 1.1-1.7 2.8-2.7 4.6-2.7 2.7 0 4.7 2.6 4.1 5.7-.9 4.8-8.7 9.6-8.7 9.6z"/></svg></span></div></div><div class="list"><div class="search"><svg class="ico" viewBox="0 0 24 24"><path d="M11 4a7 7 0 1 1 0 14 7 7 0 0 1 0-14zM20 20l-4-4"/></svg>搜索</div><div class="lhead"><span>所有收件箱</span><span>最新在前</span></div><div class="row  u"><span class="av" style="background:#3B82F6">王</span><div class="m"><b>王晓琳<em>10:42</em></b><span>周末的照片</span><small>你好！这是周六的照片，如约奉上…</small></div></div><div class="row  u"><span class="av" style="background:#8B5CF6">中</span><div class="m"><b>中央银行<em>09:15</em></b><span>你的 8 月对账单</span><small>你的 8 月对账单已可在你的…</small></div></div><div class="row "><span class="av" style="background:#F59E0B">李</span><div class="m"><b>李志远<em>昨天</em></b><span>回复：周四的会议</span><small>周四 10 点方便吗？我会带上…</small></div></div><div class="row  u"><span class="av" style="background:#EC4899">公</span><div class="m"><b>公园商店<em>昨天</em></b><span>你的订单已发货</span><small>你的订单 #48213 已于今天发货，2 天后送达…</small></div></div><div class="row on"><span class="av" style="background:#0B8A72">张</span><div class="m"><b>张思雨<em>周一</em></b><span>申请所需的材料</span><small>附件是简历和信函。如有需要请…</small></div><span class="st">★</span></div><div class="row "><span class="av" style="background:#64748B">新</span><div class="m"><b>新闻简报<em>周一</em></b><span>9 月的 5 个灵感</span><small>充分利用 9 月的五个灵感…</small></div></div><div class="row  u"><span class="av" style="background:#0EA5E9">陈</span><div class="m"><b>陈志明<em>周日</em></b><span>周六晚餐</span><small>订了晚上 8:30，六个人。能确认一下吗？</small></div></div><div class="row "><span class="av" style="background:#D97706">S团</span><div class="m"><b>Sidstuga 团队<em>周六</em></b><span>欢迎加入团队</span><small>附件是欢迎指南和你的访问…</small></div></div></div><div class="reader"><div class="rh"><h2>申请所需的材料</h2><div class="who"><span class="av" style="background:#3B82F6">张</span><div><b>张思雨</b><small>发给我</small></div><em>周一</em></div><div class="acts"><span><svg class="ico" viewBox="0 0 24 24"><path d="M9 17l-5-5 5-5M4 12h11a5 5 0 0 1 5 5v2"/></svg>回复</span><span><svg class="ico" viewBox="0 0 24 24"><path d="M7 17l-5-5 5-5M12 17l-5-5 5-5M7 12h8a5 5 0 0 1 5 5v2"/></svg>全部回复</span><span><svg class="ico" viewBox="0 0 24 24"><path d="M15 7l5 5-5 5M20 12H9a5 5 0 0 0-5 5v2"/></svg>转发</span><span><svg class="ico" viewBox="0 0 24 24"><path d="M4 8h16v12H4zM3 4h18v4H3zM10 12h4"/></svg>归档</span><span><svg class="ico" viewBox="0 0 24 24"><path d="M5 7h14M9 7V4h6v3M7 7l1 13h8l1-13"/></svg>删除</span><span><svg class="ico" viewBox="0 0 24 24"><path d="M12 3.6l2.6 5.5 5.9.8-4.3 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.5 9.9l5.9-.8z"/></svg>星标</span></div></div>
+    <div class="rb"><p>他们要的都在附件里：更新后的简历和求职信。照片是我们商量好的那张。</p><p>如果缺了什么，请在周四前告诉我 — 截止时间是周五中午。</p><p>谢谢，
+思雨</p></div><div class="att"><span><i>PDF</i>申请.pdf · 240 KB</span><span><i>JPG</i>照片.jpg · 1.2 MB</span></div></div></div><div class="status"><span>已连接 2 个账户 · IMAP IDLE 已开启</span><span>2 个附件 · 保存在本地</span></div></div></div><figcaption><b>2</b>阅读邮件，附件和一键操作</figcaption></figure></button><button class="gal-item" data-i="3"><figure><div class="shot"><div class="scr win"><div class="w" style="width:860px;height:600px"><div class="tb"><span class="brand"></span>新邮件<span class="wb"><span>—</span><span>▢</span><span>✕</span></span></div>
+    <div class="field"><label>收件人</label><span class="pill"><i style="background:#F59E0B"></i>李志远</span></div>
+    <div class="field"><label>抄送</label><span class="pill"><i style="background:#0B8A72"></i>张思雨</span></div>
+    <div class="field"><label>主题</label><b>回复：周四的会议</b></div>
+    <div class="ctool"><span>B</span><span>I</span><span>U</span><span>•</span><span>1.</span><span>“</span><span>🔗</span><span>📎</span><span>😊</span></div>
+    <div class="cbody"><p>志远你好，周四 10 点对我来说很合适。我会带上申请材料和修改后的方案。到时见！</p><p>— 晓琳</p></div>
+    <div class="cfoot"><span class="btn">发送 ⌘↵</span><span class="ghost">定时发送</span><span class="ghost">添加附件</span><span class="muted">38 字 · 草稿已保存</span></div></div></div></div><figcaption><b>3</b>新邮件</figcaption></figure></button><button class="gal-item" data-i="4"><figure><div class="shot"><div class="scr"><div class="tb"><span class="brand"></span>Sidsmail<span class="wb"><span>—</span><span>▢</span><span>✕</span></span></div><div class="body"><div class="side"><div class="btn">✎ 新邮件</div>
+    <div style="margin-top:10px"><div class="it on"><svg class="ico" viewBox="0 0 24 24"><path d="M3 13h5l1.5 2.5h5L16 13h5M3 13l2.5-8h13l2.5 8v5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>所有收件箱<span class="n">12</span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M4 6h16v12H4zM4 7l8 6 8-6"/></svg>未读<span class="n">4</span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3.6l2.6 5.5 5.9.8-4.3 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.5 9.9l5.9-.8z"/></svg>已加星标<span class="n"></span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M12 20.5a8.5 8.5 0 1 1 .01 0zM12 7.5V12l3 2"/></svg>稍后处理<span class="n">2</span></div></div>
+    <div class="grp"><i style="background:#3B82F6"></i>个人</div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M3 13h5l1.5 2.5h5L16 13h5M3 13l2.5-8h13l2.5 8v5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>收件箱<span class="n">7</span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M3 12l18-8-6 18-3-8z"/></svg>已发送<span class="n"></span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M4 8h16v12H4zM3 4h18v4H3zM10 12h4"/></svg>归档<span class="n"></span></div>
+    <div class="grp"><i style="background:#8B5CF6"></i>工作</div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M3 13h5l1.5 2.5h5L16 13h5M3 13l2.5-8h13l2.5 8v5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>收件箱<span class="n">5</span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M3 12l18-8-6 18-3-8z"/></svg>已发送<span class="n"></span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M5 7h14M9 7V4h6v3M7 7l1 13h8l1-13"/></svg>已删除邮件<span class="n"></span></div>
+    <div class="foot"><span><svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span><span><svg class="ico" viewBox="0 0 24 24"><path d="M12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8zM4 12h2M18 12h2M12 4v2M12 18v2"/></svg></span><span><svg class="ico" viewBox="0 0 24 24"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM2 20a6 6 0 0 1 12 0M16 11a3 3 0 1 0 0-6M22 20a6 6 0 0 0-6-6"/></svg></span><span><svg class="ico" viewBox="0 0 24 24"><path d="M12 20.5a8.5 8.5 0 1 1 .01 0zM9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 1-1 1.7M12 17h.01"/></svg></span><span style="color:#E0245E"><svg class="ico" viewBox="0 0 24 24"><path d="M12 20.2S4.2 15.4 3.3 10.6C2.7 7.5 4.7 4.9 7.4 4.9c1.8 0 3.5 1 4.6 2.7 1.1-1.7 2.8-2.7 4.6-2.7 2.7 0 4.7 2.6 4.1 5.7-.9 4.8-8.7 9.6-8.7 9.6z"/></svg></span></div></div><div class="list"><div class="search"><svg class="ico" viewBox="0 0 24 24"><path d="M11 4a7 7 0 1 1 0 14 7 7 0 0 1 0-14zM20 20l-4-4"/></svg><span class="chip">from:ana</span><span class="chip">has:attachment</span></div><div class="lhead"><span>3 条结果</span><span>最新在前</span></div><div class="row on"><span class="av" style="background:#3B82F6">王</span><div class="m"><b>王晓琳<em>10:42</em></b><span>周末的照片</span><small>你好！这是周六的照片，如约奉上…</small></div></div><div class="row "><span class="av" style="background:#8B5CF6">张</span><div class="m"><b>张思雨<em>周一</em></b><span>申请所需的材料</span><small>附件是简历和信函。如有需要请…</small></div></div><div class="row "><span class="av" style="background:#F59E0B">S团</span><div class="m"><b>Sidstuga 团队<em>周六</em></b><span>欢迎加入团队</span><small>附件是欢迎指南和你的访问…</small></div></div></div><div class="reader"><div class="rh"><h2>周末的照片</h2><div class="who"><span class="av" style="background:#3B82F6">王</span><div><b>王晓琳</b><small>发给我</small></div><em>10:42</em></div><div class="acts"><span><svg class="ico" viewBox="0 0 24 24"><path d="M9 17l-5-5 5-5M4 12h11a5 5 0 0 1 5 5v2"/></svg>回复</span><span><svg class="ico" viewBox="0 0 24 24"><path d="M7 17l-5-5 5-5M12 17l-5-5 5-5M7 12h8a5 5 0 0 1 5 5v2"/></svg>全部回复</span><span><svg class="ico" viewBox="0 0 24 24"><path d="M15 7l5 5-5 5M20 12H9a5 5 0 0 0-5 5v2"/></svg>转发</span><span><svg class="ico" viewBox="0 0 24 24"><path d="M4 8h16v12H4zM3 4h18v4H3zM10 12h4"/></svg>归档</span><span><svg class="ico" viewBox="0 0 24 24"><path d="M5 7h14M9 7V4h6v3M7 7l1 13h8l1-13"/></svg>删除</span><span><svg class="ico" viewBox="0 0 24 24"><path d="M12 3.6l2.6 5.5 5.9.8-4.3 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.5 9.9l5.9-.8z"/></svg>星标</span></div></div>
+    <div class="rb"><p>你好！这是周六的照片，如约奉上。</p><p>如果你愿意，我可以把它们放进共享相册。告诉我你喜欢哪些，其余的交给我。</p><p>— 晓琳</p></div><div class="att"><span><i>PDF</i>申请.pdf · 240 KB</span><span><i>JPG</i>照片.jpg · 1.2 MB</span></div></div></div><div class="status"><span>搜索：from: subject: has: before:</span></div></div></div><figcaption><b>4</b>用运算符搜索</figcaption></figure></button><button class="gal-item" data-i="5"><figure><div class="shot"><div class="scr win"><div class="w" style="width:900px;height:640px"><div class="tb"><span class="brand"></span>设置 · 外观<span class="wb"><span>—</span><span>▢</span><span>✕</span></span></div><div class="body"><div class="snav"><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8zM4 12h2M18 12h2M12 4v2M12 18v2"/></svg>常规</div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM2 20a6 6 0 0 1 12 0M16 11a3 3 0 1 0 0-6M22 20a6 6 0 0 0-6-6"/></svg>账户</div><div class="it on"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0 0 18c1 0 1.5-.7 1.5-1.5 0-.5-.2-.8-.5-1.2-.3-.4-.5-.7-.5-1.3 0-1 .8-1.5 1.7-1.5H16a5 5 0 0 0 5-5c0-4-4-7.5-9-7.5z"/></svg>外观</div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3.5a4.5 4.5 0 0 0-4.5 4.5c0 5-2 6.5-2 8.5h13c0-2-2-3.5-2-8.5a4.5 4.5 0 0 0-4.5-4.5zM9.8 19a2.3 2.3 0 0 0 4.4 0"/></svg>通知</div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg>安全与数据</div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M12 20.5a8.5 8.5 0 1 1 .01 0zM12 11v5M12 8h.01"/></svg>关于</div></div><div class="pane"><h3>外观</h3>
+    <div class="opt"><div>主题</div><div class="r"><div class="seg"><span class="on">浅色</span><span>深色</span><span>跟随系统</span></div></div></div>
+    <div class="opt"><div>主题色<small>按钮、选中项和高亮</small></div><div class="r"><div class="dots"><i style="background:#076354" class=on></i><i style="background:#2161BA"></i><i style="background:#6834B2"></i><i style="background:#B72763"></i><i style="background:#975011"></i><i style="background:#5B6374"></i></div></div></div>
+    <div class="opt"><div>文字大小</div><div class="r"><div class="seg"><span>A−</span><span class="on">A</span><span>A+</span></div></div></div>
+    <div class="opt"><div>语言</div><div class="r"><span class="sel">跟随系统<span>▾</span></span></div></div>
+    <div class="opt"><div>列表密度</div><div class="r"><div class="seg"><span class="on">宽松</span><span>紧凑</span></div></div></div></div></div></div></div></div><figcaption><b>5</b>设置 › 外观</figcaption></figure></button><button class="gal-item" data-i="6"><figure><div class="shot"><div class="scr win"><div class="w" style="width:900px;height:640px"><div class="tb"><span class="brand"></span>设置 · 通知<span class="wb"><span>—</span><span>▢</span><span>✕</span></span></div><div class="body"><div class="snav"><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8zM4 12h2M18 12h2M12 4v2M12 18v2"/></svg>常规</div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM2 20a6 6 0 0 1 12 0M16 11a3 3 0 1 0 0-6M22 20a6 6 0 0 0-6-6"/></svg>账户</div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0 0 18c1 0 1.5-.7 1.5-1.5 0-.5-.2-.8-.5-1.2-.3-.4-.5-.7-.5-1.3 0-1 .8-1.5 1.7-1.5H16a5 5 0 0 0 5-5c0-4-4-7.5-9-7.5z"/></svg>外观</div><div class="it on"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3.5a4.5 4.5 0 0 0-4.5 4.5c0 5-2 6.5-2 8.5h13c0-2-2-3.5-2-8.5a4.5 4.5 0 0 0-4.5-4.5zM9.8 19a2.3 2.3 0 0 0 4.4 0"/></svg>通知</div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg>安全与数据</div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M12 20.5a8.5 8.5 0 1 1 .01 0zM12 11v5M12 8h.01"/></svg>关于</div></div><div class="pane"><h3>通知</h3>
+    <div class="opt"><div>新邮件提示音</div><div class="r"><span class="tg"></span></div></div>
+    <div class="opt"><div>时钟旁的图标<small>显示未读数</small></div><div class="r"><span class="tg"></span></div></div>
+    <div class="opt"><div>免打扰时段<small>🌙 23:00 → 08:00</small></div><div class="r"><span class="tg"></span></div></div>
+    <div class="opt"><div>例外<small>这些发件人始终可以通知你</small><div class="chips"><span>王晓琳</span><span>中央银行</span><span>张思雨</span></div></div></div>
+    <div class="opt"><div>每天 18:00 的摘要</div><div class="r"><span class="tg off"></span></div></div></div></div></div></div></div><figcaption><b>6</b>通知与免打扰时段</figcaption></figure></button><button class="gal-item" data-i="7"><figure><div class="shot"><div class="scr win"><div class="w" style="width:720px;height:560px"><div class="tb"><span class="brand"></span>Sidsmail<span class="wb"><span>—</span><span>▢</span><span>✕</span></span></div>
+    <div class="hero"><div class="tile"></div><h1>欢迎使用 Sidsmail</h1><p>所有账户汇集在一个收件箱里，数据保存在你自己的电脑上。先添加第一个账户吧。</p>
+    <span class="btn" style="padding:12px 26px;font-size:14px">添加你的第一个账户</span><span style="margin-top:14px;color:var(--g-muted);font-size:13px">暂不</span>
+    <div class="pdots"><i class="on"></i><i></i><i></i></div></div></div></div></div><figcaption><b>7</b>首次启动向导</figcaption></figure></button><button class="gal-item" data-i="8"><figure><div class="shot"><div class="scr win"><div class="w" style="width:760px;height:600px"><div class="tb"><span class="brand"></span>联系人<span class="wb"><span>—</span><span>▢</span><span>✕</span></span></div>
+    <div class="search" style="margin:12px 18px 6px"><svg class="ico" viewBox="0 0 24 24"><path d="M11 4a7 7 0 1 1 0 14 7 7 0 0 1 0-14zM20 20l-4-4"/></svg>搜索</div>
+    <div class="lhead" style="padding:4px 18px 6px"><span>128 位联系人 · 按往来频率</span><span>导入 vCard</span></div>
+    <div class="ctable"><div class="crow"><span class="av" style="background:#3B82F6">王</span><div><b>王晓琳</b><br><em>ana@exemplo.pt</em></div><small>42 封邮件</small></div><div class="crow"><span class="av" style="background:#8B5CF6">李</span><div><b>李志远</b><br><em>rui.lopes@exemplo.pt</em></div><small>31 封邮件</small></div><div class="crow"><span class="av" style="background:#F59E0B">张</span><div><b>张思雨</b><br><em>teresa.silva@exemplo.pt</em></div><small>17 封邮件</small></div><div class="crow"><span class="av" style="background:#EC4899">中</span><div><b>中央银行</b><br><em>noreply@banco.exemplo</em></div><small>9 封邮件</small></div><div class="crow"><span class="av" style="background:#0B8A72">公</span><div><b>公园商店</b><br><em>loja@parque.exemplo</em></div><small>6 封邮件</small></div><div class="crow"><span class="av" style="background:#64748B">陈</span><div><b>陈志明</b><br><em>m.costa@exemplo.pt</em></div><small>5 封邮件</small></div><div class="crow"><span class="av" style="background:#0EA5E9">S团</span><div><b>Sidstuga 团队</b><br><em>equipa@exemplo.pt</em></div><small>3 封邮件</small></div></div></div></div></div><figcaption><b>8</b>联系人</figcaption></figure></button></div>
+      <dialog class="gal-box"><button class="x" aria-label="关闭">✕</button><div class="shot big"></div><p class="cap"></p></dialog>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var g=document.querySelector('.gal');if(!g)return;
+  var fit=function(){g.querySelectorAll('.shot').forEach(function(s){s.style.setProperty('--s',(s.clientWidth/1280).toFixed(4));});};
+  fit();window.addEventListener('resize',fit);
+  try{if(window.matchMedia('(prefers-color-scheme: dark)').matches||document.documentElement.getAttribute('data-theme')==='dark'){g.dataset.theme='dark';g.querySelectorAll('.gal-seg button').forEach(function(b){b.classList.toggle('on',b.dataset.theme==='dark');});}}catch(e){}
+  g.querySelectorAll('.gal-seg button').forEach(function(b){b.addEventListener('click',function(){g.dataset.theme=b.dataset.theme;g.querySelectorAll('.gal-seg button').forEach(function(x){x.classList.toggle('on',x===b);});});});
+  g.querySelectorAll('.dot').forEach(function(d){d.addEventListener('click',function(){g.dataset.accent=d.dataset.accent;g.querySelectorAll('.dot').forEach(function(x){x.classList.toggle('on',x===d);});});});
+  var box=g.querySelector('dialog.gal-box'),big=box.querySelector('.shot'),cap=box.querySelector('.cap');
+  g.querySelectorAll('.gal-item').forEach(function(it){it.addEventListener('click',function(){big.innerHTML=it.querySelector('.shot').innerHTML;cap.textContent=it.querySelector('figcaption').lastChild.textContent;if(box.showModal){box.showModal();fit();}});});
+  box.querySelector('.x').addEventListener('click',function(){box.close();});
+  box.addEventListener('click',function(e){if(e.target===box)box.close();});
+})();
+</script>
 
 <section id="privacy">
   <div class="wrap split">
