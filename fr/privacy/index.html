@@ -468,9 +468,14 @@ dialog.gal-box .x{position:absolute;right:-6px;top:-44px;background:rgba(255,255
 <footer>
   <div class="wrap">
     <span>© <span id="ano"></span> Sidsmail. Fait au Portugal par une seule personne. · Un autre projet de l'auteur : <a href="https://sidstuga.app">sidstuga.app</a></span>
-    <span><a href="/fr/privacy/">Politique de confidentialité</a> · <a href="/fr/guide/">Guide</a> · <a href="/fr/changelog/">Nouveautés</a> · <a href="/fr/donate/">Soutenir</a> · <a href="/fr/#download">Télécharger</a></span>
+    <span><a href="#" id="ct-link" rel="nofollow">Contact</a> · <a href="/fr/privacy/">Politique de confidentialité</a> · <a href="/fr/guide/">Guide</a> · <a href="/fr/changelog/">Nouveautés</a> · <a href="/fr/donate/">Soutenir</a> · <a href="/fr/#download">Télécharger</a></span>
   </div>
 </footer>
-<script>document.getElementById('ano').textContent=new Date().getFullYear();</script>
+<script>document.getElementById('ano').textContent=new Date().getFullYear();
+// Contacto: o endereço nunca aparece como texto nem como "mailto:" no HTML gerado — é
+// montado aqui em runtime, para não ser apanhado por scrapers de spam que só leem a fonte.
+(function(){var u='hfml85',d='gmail.com',a=document.getElementById('ct-link');
+if(a){a.href='mailto:'+u+'@'+d;}})();
+</script>
 </body>
 </html>

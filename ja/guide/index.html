@@ -489,9 +489,14 @@ dialog.gal-box .x{position:absolute;right:-6px;top:-44px;background:rgba(255,255
 <footer>
   <div class="wrap">
     <span>© <span id="ano"></span> Sidsmail. ポルトガルで、一人で作っています。 · 作者のもうひとつのプロジェクト： <a href="https://sidstuga.app">sidstuga.app</a></span>
-    <span><a href="/ja/privacy/">プライバシーポリシー</a> · <a href="/ja/guide/">ガイド</a> · <a href="/ja/changelog/">新機能</a> · <a href="/ja/donate/">支援</a> · <a href="/ja/#download">ダウンロード</a></span>
+    <span><a href="#" id="ct-link" rel="nofollow">お問い合わせ</a> · <a href="/ja/privacy/">プライバシーポリシー</a> · <a href="/ja/guide/">ガイド</a> · <a href="/ja/changelog/">新機能</a> · <a href="/ja/donate/">支援</a> · <a href="/ja/#download">ダウンロード</a></span>
   </div>
 </footer>
-<script>document.getElementById('ano').textContent=new Date().getFullYear();</script>
+<script>document.getElementById('ano').textContent=new Date().getFullYear();
+// Contacto: o endereço nunca aparece como texto nem como "mailto:" no HTML gerado — é
+// montado aqui em runtime, para não ser apanhado por scrapers de spam que só leem a fonte.
+(function(){var u='hfml85',d='gmail.com',a=document.getElementById('ct-link');
+if(a){a.href='mailto:'+u+'@'+d;}})();
+</script>
 </body>
 </html>

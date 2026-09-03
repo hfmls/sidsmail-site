@@ -639,9 +639,14 @@ Teresa</p></div><div class="att"><span><i>PDF</i>Başvuru.pdf · 240 KB</span><s
 <footer>
   <div class="wrap">
     <span>© <span id="ano"></span> Sidsmail. Portekiz'de tek bir kişi tarafından yapıldı. · Yazarın başka bir projesi: <a href="https://sidstuga.app">sidstuga.app</a></span>
-    <span><a href="/tr/privacy/">Gizlilik politikası</a> · <a href="/tr/guide/">Rehber</a> · <a href="/tr/changelog/">Yenilikler</a> · <a href="/tr/donate/">Destekle</a> · <a href="/tr/#download">İndir</a></span>
+    <span><a href="#" id="ct-link" rel="nofollow">İletişim</a> · <a href="/tr/privacy/">Gizlilik politikası</a> · <a href="/tr/guide/">Rehber</a> · <a href="/tr/changelog/">Yenilikler</a> · <a href="/tr/donate/">Destekle</a> · <a href="/tr/#download">İndir</a></span>
   </div>
 </footer>
-<script>document.getElementById('ano').textContent=new Date().getFullYear();</script>
+<script>document.getElementById('ano').textContent=new Date().getFullYear();
+// Contacto: o endereço nunca aparece como texto nem como "mailto:" no HTML gerado — é
+// montado aqui em runtime, para não ser apanhado por scrapers de spam que só leem a fonte.
+(function(){var u='hfml85',d='gmail.com',a=document.getElementById('ct-link');
+if(a){a.href='mailto:'+u+'@'+d;}})();
+</script>
 </body>
 </html>

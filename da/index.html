@@ -639,9 +639,14 @@ Trine</p></div><div class="att"><span><i>PDF</i>Ansøgning.pdf · 240 KB</span><
 <footer>
   <div class="wrap">
     <span>© <span id="ano"></span> Sidsmail. Lavet i Portugal af én person. · Et andet projekt af samme udvikler: <a href="https://sidstuga.app">sidstuga.app</a></span>
-    <span><a href="/da/privacy/">Privatlivspolitik</a> · <a href="/da/guide/">Guide</a> · <a href="/da/changelog/">Nyheder</a> · <a href="/da/donate/">Støt</a> · <a href="/da/#download">Download</a></span>
+    <span><a href="#" id="ct-link" rel="nofollow">Kontakt</a> · <a href="/da/privacy/">Privatlivspolitik</a> · <a href="/da/guide/">Guide</a> · <a href="/da/changelog/">Nyheder</a> · <a href="/da/donate/">Støt</a> · <a href="/da/#download">Download</a></span>
   </div>
 </footer>
-<script>document.getElementById('ano').textContent=new Date().getFullYear();</script>
+<script>document.getElementById('ano').textContent=new Date().getFullYear();
+// Contacto: o endereço nunca aparece como texto nem como "mailto:" no HTML gerado — é
+// montado aqui em runtime, para não ser apanhado por scrapers de spam que só leem a fonte.
+(function(){var u='hfml85',d='gmail.com',a=document.getElementById('ct-link');
+if(a){a.href='mailto:'+u+'@'+d;}})();
+</script>
 </body>
 </html>

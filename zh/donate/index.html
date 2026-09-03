@@ -442,9 +442,14 @@ dialog.gal-box .x{position:absolute;right:-6px;top:-44px;background:rgba(255,255
 <footer>
   <div class="wrap">
     <span>© <span id="ano"></span> Sidsmail. 由一个人在葡萄牙独立打造。 · 作者的另一个项目： <a href="https://sidstuga.app">sidstuga.app</a></span>
-    <span><a href="/zh/privacy/">隐私政策</a> · <a href="/zh/guide/">指南</a> · <a href="/zh/changelog/">更新日志</a> · <a href="/zh/donate/">支持</a> · <a href="/zh/#download">下载</a></span>
+    <span><a href="#" id="ct-link" rel="nofollow">联系方式</a> · <a href="/zh/privacy/">隐私政策</a> · <a href="/zh/guide/">指南</a> · <a href="/zh/changelog/">更新日志</a> · <a href="/zh/donate/">支持</a> · <a href="/zh/#download">下载</a></span>
   </div>
 </footer>
-<script>document.getElementById('ano').textContent=new Date().getFullYear();</script>
+<script>document.getElementById('ano').textContent=new Date().getFullYear();
+// Contacto: o endereço nunca aparece como texto nem como "mailto:" no HTML gerado — é
+// montado aqui em runtime, para não ser apanhado por scrapers de spam que só leem a fonte.
+(function(){var u='hfml85',d='gmail.com',a=document.getElementById('ct-link');
+if(a){a.href='mailto:'+u+'@'+d;}})();
+</script>
 </body>
 </html>
