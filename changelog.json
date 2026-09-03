@@ -1,6 +1,15 @@
 {
   "releases": [
     {
+      "version": "1.0.1",
+      "date": "2026-09-03",
+      "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.1/Sidsmail-Setup-1.0.1.exe",
+      "notes": {
+        "pt": "• Contador de downloads em Definições › Acerca\n• Contacto e outro projeto do autor (sidstuga.app) em Acerca e no site\n• Correções de instalação (ficheiro em uso ao atualizar, compilação do instalador)",
+        "en": "• Download counter in Settings › About\n• Contact and another project by the author (sidstuga.app) in About and on the site\n• Install fixes (file-in-use when updating, installer build)"
+      }
+    },
+    {
       "version": "1.0.0",
       "date": "2026-09-03",
       "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.0/Sidsmail-Setup-1.0.0.exe",
