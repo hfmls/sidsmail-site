@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de privacidade — Sidsmail</title>
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#0F1218; --fg:#EDF0F5; --fg-2:#B9C1CF; --muted:#A5AEBF; --border:#333A47; --accent:#5FD3BA; }
+  @media (prefers-color-scheme: light) { :root { --bg:#FFFFFF; --fg:#16191F; --fg-2:#3F4754; --muted:#5D6675; --border:#DFE3EA; --accent:#076354; } }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 Inter,"Segoe UI",system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+  a { color:var(--accent); }
+  .wrap { max-width:720px; margin:0 auto; padding:48px 24px 80px; }
+  .brand { display:flex; align-items:center; gap:10px; color:var(--fg); text-decoration:none; font-weight:600; margin-bottom:40px; }
+  .brand img { width:26px; height:26px; border-radius:7px; }
+  h1 { font-size:34px; letter-spacing:-.02em; margin:0 0 8px; }
+  .date { color:var(--muted); margin-bottom:32px; }
+  h2 { font-size:20px; margin:32px 0 8px; }
+  p, li { color:var(--fg-2); }
+  hr { border:0; border-top:1px solid var(--border); margin:40px 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="brand" href="index.html"><img src="icon.png" alt=""> Sidsmail</a>
+  <h1>Política de privacidade</h1>
+  <p class="date">Última atualização: setembro de 2026 · <a href="en/privacy.html" lang="en">English</a></p>
+
+  <p>O Sidsmail é um programa que corre no teu computador. Esta política é curta porque a resposta a quase todas as perguntas é a mesma: <b>não recolhemos nada</b>.</p>
+
+  <h2>O que o Sidsmail faz com os teus dados</h2>
+  <p>O Sidsmail liga-se diretamente aos servidores das contas de e-mail que configuras (IMAP para receber, SMTP para enviar), usando as credenciais que lhe dás. As mensagens, os contactos e as definições ficam guardados apenas no teu computador, na pasta <code>%APPDATA%\Sidsmail</code>. Não existe nenhum servidor do Sidsmail pelo meio, nenhuma conta Sidsmail, e nenhuma cópia dos teus dados fora do teu computador.</p>
+
+  <h2>O que não fazemos</h2>
+  <ul>
+    <li>Não enviamos telemetria, estatísticas de utilização nem relatórios de erro automáticos.</li>
+    <li>Não lemos, indexamos nem transmitimos o conteúdo das tuas mensagens para ninguém.</li>
+    <li>Não mostramos anúncios nem partilhamos nada com terceiros.</li>
+  </ul>
+
+  <h2>Ligações à Internet que o Sidsmail faz</h2>
+  <ul>
+    <li><b>Os teus servidores de e-mail</b> — as ligações que pediste ao configurar cada conta.</li>
+    <li><b>Google e Microsoft</b>, apenas se escolheres "entrar com a Google/Microsoft": a autorização é feita no teu browser, diretamente com eles, e o Sidsmail guarda apenas o token que eles devolvem, cifrado no teu computador.</li>
+    <li><b>Imagens remotas em mensagens</b> — bloqueadas por defeito; só carregam quando clicas em "Mostrar imagens".</li>
+    <li><b>Fotos de contactos (Gravatar)</b> — opcional, desligável nas Definições.</li>
+    <li><b>Verificação de atualizações</b> — se estiver configurada, o Sidsmail descarrega um pequeno ficheiro de texto de <code>sidsmail.com</code> com o número da versão mais recente. Esse pedido não inclui nenhum dado teu além do que qualquer pedido web inclui (o teu endereço IP, visto pelo alojamento do site).</li>
+  </ul>
+
+  <h2>Este site</h2>
+  <p>O site <code>sidsmail.com</code> é estático, alojado no GitHub Pages, sem cookies e sem ferramentas de análise. O GitHub pode registar dados técnicos de acesso (como o endereço IP) nos termos da <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">política de privacidade do GitHub</a>.</p>
+
+  <h2>Os teus direitos</h2>
+  <p>Como não guardamos dados teus, não há nada que possamos entregar-te ou apagar do nosso lado. No teu computador, "Exportar dados locais" e "Apagar dados locais", em Definições → Segurança e dados, fazem exatamente o que dizem.</p>
+
+  <hr>
+  <p>Perguntas? Escreve para <a href="mailto:suporte@sidsmail.com">suporte@sidsmail.com</a>.</p>
+</div>
+</body>
+</html>

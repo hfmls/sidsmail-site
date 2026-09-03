@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sidsmail — your mail, light and free of distractions</title>
+<meta name="description" content="Sidsmail is a lightweight email client for Windows: every account in one inbox, private by default, notifications with quiet hours. Free.">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0F1218" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<link rel="alternate" hreflang="pt-PT" href="https://sidsmail.com/">
+<link rel="alternate" hreflang="en" href="https://sidsmail.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://sidsmail.com/">
+<link rel="icon" href="../favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta property="og:title" content="Sidsmail — your mail, light and free of distractions">
+<meta property="og:description" content="Lightweight email client for Windows. Every account in one inbox, private by default. Free.">
+<meta property="og:image" content="https://sidsmail.com/icon.png">
+<meta property="og:url" content="https://sidsmail.com/en/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Same palette as the app's Palette.Dark.xaml / Palette.Light.xaml, so the site and the
+     window it downloads look like the same object. Dark first — it is the theme the app was
+     tuned in — with the light palette on prefers-color-scheme. */
+  :root {
+    --bg: #0F1218; --bg-2: #151920; --card: #1A1E26; --card-2: #20242D;
+    --fg: #EDF0F5; --fg-2: #B9C1CF; --muted: #A5AEBF;
+    --border: #333A47; --accent: #5FD3BA; --accent-hover: #82E2CD; --accent-soft: #1E413A; --on-accent: #08121A;
+    --shadow: 0 30px 80px rgba(0,0,0,.45);
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #FFFFFF; --bg-2: #F5F7FA; --card: #FFFFFF; --card-2: #F5F7FA;
+      --fg: #16191F; --fg-2: #3F4754; --muted: #5D6675;
+      --border: #DFE3EA; --accent: #076354; --accent-hover: #055446; --accent-soft: #C6EAE1; --on-accent: #FFFFFF;
+      --shadow: 0 30px 80px rgba(20,30,40,.14);
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 16px/1.55 Inter, "Segoe UI", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { color: var(--accent-hover); }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+  /* nav */
+  nav { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(14px); background: color-mix(in srgb, var(--bg) 82%, transparent); border-bottom: 1px solid var(--border); }
+  nav .wrap { display: flex; align-items: center; height: 60px; gap: 28px; }
+  .brand { display: flex; align-items: center; gap: 10px; color: var(--fg); font-weight: 600; font-size: 17px; }
+  .brand img { width: 26px; height: 26px; border-radius: 7px; }
+  nav .links { margin-left: auto; display: flex; gap: 24px; font-size: 14px; }
+  nav .links a { color: var(--fg-2); }
+  nav .links a:hover { color: var(--fg); }
+  nav .links a.btn-accent { color: var(--on-accent); }
+  .btn { display: inline-flex; align-items: center; gap: 10px; border-radius: 10px; padding: 12px 22px; font-weight: 600; font-size: 15px; transition: background .12s ease, color .12s ease, transform .12s ease; white-space: nowrap; }
+  .btn-accent { background: var(--accent); color: var(--on-accent); }
+  .btn-accent:hover { background: var(--accent-hover); color: var(--on-accent); transform: translateY(-1px); }
+  .btn-ghost { border: 1px solid var(--border); color: var(--fg); }
+  .btn-ghost:hover { background: var(--card-2); color: var(--fg); }
+  nav .btn { padding: 8px 16px; font-size: 14px; border-radius: 8px; }
+  nav .links a.lang { font-weight: 600; letter-spacing: .04em; border: 1px solid var(--border); border-radius: 7px; padding: 5px 9px; font-size: 12px; align-self: center; }
+  nav .links a.lang:hover { background: var(--card-2); }
+  @media (max-width: 720px) { nav .links a:not(.btn):not(.lang) { display: none; } }
+
+  /* hero */
+  .hero { padding: 96px 0 72px; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content: ""; position: absolute; inset: -40% -20% auto; height: 120%; background: radial-gradient(60% 55% at 50% 30%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 70%); pointer-events: none; }
+  .hero > * { position: relative; }
+  .hero img { width: 112px; height: 112px; border-radius: 28px; box-shadow: var(--shadow); }
+  h1 { font-size: clamp(36px, 6vw, 58px); line-height: 1.05; letter-spacing: -.02em; font-weight: 700; margin: 32px 0 18px; }
+  .lede { font-size: clamp(17px, 2.2vw, 21px); color: var(--muted); max-width: 620px; margin: 0 auto 36px; }
+  .cta { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+  .cta .btn-accent { padding: 15px 30px; font-size: 16px; }
+  .fine { margin-top: 16px; font-size: 13px; color: var(--muted); }
+  .fine a { color: var(--fg-2); text-decoration: underline; text-decoration-color: var(--border); }
+
+  /* app window mock — the same three-pane layout, drawn in CSS so no real inbox is ever
+     screenshotted for the site */
+  .mock { margin: 64px auto 0; max-width: 900px; border: 1px solid var(--border); border-radius: 14px; background: var(--card); box-shadow: var(--shadow); overflow: hidden; text-align: left; font-size: 12px; }
+  .mock .bar { height: 36px; background: var(--bg-2); border-bottom: 1px solid var(--border); display: flex; align-items: center; padding: 0 14px; gap: 8px; color: var(--muted); }
+  .mock .bar .dot { width: 18px; height: 18px; border-radius: 5px; background: var(--accent); }
+  .mock .body { display: grid; grid-template-columns: 180px 260px 1fr; min-height: 320px; }
+  .mock .side { background: var(--bg-2); border-right: 1px solid var(--border); padding: 14px 10px; }
+  .mock .side .new { background: var(--accent); color: var(--on-accent); border-radius: 8px; padding: 8px 10px; font-weight: 600; margin-bottom: 14px; text-align: center; }
+  .mock .side .row { padding: 6px 10px; border-radius: 7px; color: var(--fg-2); display: flex; gap: 8px; align-items: center; }
+  .mock .side .row.on { background: var(--accent-soft); color: var(--fg); }
+  .mock .side .row i { width: 12px; height: 9px; border: 1.5px solid currentColor; border-radius: 2px; opacity: .8; }
+  .mock .side .acct { margin: 14px 10px 6px; font-size: 10px; color: var(--muted); font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+  .mock .list { background: var(--card); border-right: 1px solid var(--border); }
+  .mock .list .msg { padding: 10px 14px; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 26px 1fr auto; gap: 10px; align-items: center; }
+  .mock .list .msg.on { background: var(--accent-soft); }
+  .mock .av { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-weight: 600; color: #fff; font-size: 10px; }
+  .mock .msg b { display: block; color: var(--fg); font-weight: 600; }
+  .mock .msg span { color: var(--muted); }
+  .mock .msg small { color: var(--muted); font-size: 10px; }
+  .mock .read { padding: 18px 22px; background: var(--card-2); }
+  .mock .read h4 { margin: 0 0 6px; font-size: 15px; }
+  .mock .read .from { color: var(--muted); margin-bottom: 16px; }
+  .mock .read p { color: var(--fg-2); margin: 0 0 10px; }
+  .mock .line { height: 8px; border-radius: 4px; background: var(--border); margin: 8px 0; }
+  @media (max-width: 720px) { .mock .body { grid-template-columns: 1fr; } .mock .side, .mock .read { display: none; } }
+
+  /* features */
+  section { padding: 84px 0; }
+  .kicker { color: var(--accent); font-weight: 600; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; margin: 0 0 10px; }
+  h2 { font-size: clamp(28px, 4vw, 38px); letter-spacing: -.02em; line-height: 1.12; margin: 0 0 14px; }
+  .sub { color: var(--muted); font-size: 17px; max-width: 620px; margin: 0 0 44px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 860px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
+  .card .ic { width: 42px; height: 42px; border-radius: 12px; background: var(--accent-soft); display: grid; place-items: center; margin-bottom: 18px; }
+  .card .ic svg { width: 21px; height: 21px; stroke: var(--accent); fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  .card h3 { margin: 0 0 6px; font-size: 16.5px; }
+  .card p { margin: 0; color: var(--muted); font-size: 14.5px; }
+
+  /* privacy */
+  .split { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
+  @media (max-width: 800px) { .split { grid-template-columns: 1fr; gap: 32px; } }
+  .checks { list-style: none; padding: 0; margin: 0; }
+  .checks li { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); color: var(--fg-2); }
+  .checks li:last-child { border-bottom: 0; }
+  .checks svg { flex: none; width: 20px; height: 20px; stroke: var(--accent); fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; margin-top: 2px; }
+  .checks b { color: var(--fg); font-weight: 600; }
+
+  /* download */
+  .dl { background: var(--bg-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); text-align: center; }
+  .dl h2 { margin-bottom: 8px; }
+  .dl .req { color: var(--muted); font-size: 14px; margin: 18px 0 0; }
+  details { max-width: 640px; margin: 28px auto 0; text-align: left; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 4px 18px; }
+  details summary { cursor: pointer; font-weight: 600; padding: 12px 0; color: var(--fg); }
+  details p { color: var(--muted); font-size: 14.5px; margin: 0 0 14px; }
+
+  /* faq */
+  .faq details { margin: 0 0 10px; max-width: 760px; }
+
+  footer { padding: 40px 0 56px; color: var(--muted); font-size: 13.5px; }
+  footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: center; }
+  footer a { color: var(--fg-2); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#"><img src="../icon.png" alt=""> Sidsmail</a>
+    <div class="links">
+      <a href="#features">Features</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#faq">FAQ</a>
+      <a class="lang" href="../" lang="pt-PT" title="Português">PT</a>
+      <a class="btn btn-accent" href="#download">Download</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <img src="../icon.png" alt="Sidsmail icon" width="112" height="112">
+    <h1>Your mail,<br>light and free of distractions.</h1>
+    <p class="lede">Sidsmail is an email client for Windows that brings all your accounts into one inbox, keeps everything on your own computer, and never interrupts you unless you ask it to.</p>
+    <div class="cta">
+      <a class="btn btn-accent" href="#download">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12M6 11l6 6 6-6M4 20h16"/></svg>
+        Download for Windows
+      </a>
+      <a class="btn btn-ghost" href="#features">See what it does</a>
+    </div>
+    <p class="fine">Free · Windows 10 and 11 · no account, no cloud, no ads</p>
+
+    <div class="mock" aria-hidden="true">
+      <div class="bar"><span class="dot"></span> Sidsmail <span style="margin-left:auto">Updated just now</span></div>
+      <div class="body">
+        <div class="side">
+          <div class="new">✎ New message</div>
+          <div class="row on"><i></i> All inboxes</div>
+          <div class="row"><i></i> Unread</div>
+          <div class="row"><i></i> Starred</div>
+          <div class="acct">Personal</div>
+          <div class="row"><i></i> Inbox</div>
+          <div class="row"><i></i> Sent</div>
+          <div class="acct">Work</div>
+          <div class="row"><i></i> Inbox</div>
+          <div class="row"><i></i> Archive</div>
+        </div>
+        <div class="list">
+          <div class="msg on"><span class="av" style="background:#3B82F6">AM</span><div><b>Anna Martin</b><span>Weekend photos</span></div><small>10:42</small></div>
+          <div class="msg"><span class="av" style="background:#8B5CF6">BC</span><div><b>Central Bank</b><span>Your August statement</span></div><small>09:15</small></div>
+          <div class="msg"><span class="av" style="background:#F59E0B">RL</span><div><b>Rob Lewis</b><span>Re: Thursday meeting</span></div><small>yesterday</small></div>
+          <div class="msg"><span class="av" style="background:#EC4899">LP</span><div><b>Park Store</b><span>Your order has shipped</span></div><small>yesterday</small></div>
+          <div class="msg"><span class="av" style="background:#0B8A72">TS</span><div><b>Tess Silva</b><span>Documents for the application</span></div><small>Mon</small></div>
+          <div class="msg"><span class="av" style="background:#64748B">NL</span><div><b>Newsletter</b><span>5 ideas for September</span></div><small>Mon</small></div>
+        </div>
+        <div class="read">
+          <h4>Weekend photos</h4>
+          <div class="from">Anna Martin · to me</div>
+          <p>Hi! Here are Saturday's photos, as promised.</p>
+          <div class="line" style="width:92%"></div>
+          <div class="line" style="width:78%"></div>
+          <div class="line" style="width:85%"></div>
+          <div class="line" style="width:40%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="features">
+  <div class="wrap">
+    <p class="kicker">Features</p>
+    <h2>Everything an email client should do.<br>And nothing it shouldn't.</h2>
+    <p class="sub">Built for people who read a lot of mail and want to get through it fast — from the keyboard, with no waiting and no noise.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 13h5l1.5 2.5h5L16 13h5M3 13l2.5-8h13l2.5 8v5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg></div>
+        <h3>Every account, one inbox</h3>
+        <p>Gmail, Outlook, iCloud, Yahoo or any IMAP server, side by side. An "All inboxes" view brings it together; each account keeps its own colour.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3.5a4.5 4.5 0 0 0-4.5 4.5c0 5-2 6.5-2 8.5h13c0-2-2-3.5-2-8.5a4.5 4.5 0 0 0-4.5-4.5zM9.8 19a2.3 2.3 0 0 0 4.4 0"/></svg></div>
+        <h3>Mail in real time</h3>
+        <p>IMAP IDLE: a message arrives the second it is sent, with no polling. Lives in the system tray, with a badge and a sound — when you want them.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 20.5a8.5 8.5 0 1 1 .01 0zM12 7.5V12l3 2"/></svg></div>
+        <h3>Quiet hours and snooze</h3>
+        <p>Decide when you don't want to be interrupted, with an exception for the senders who matter. Snooze a message until later, tomorrow or next week.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h7"/></svg></div>
+        <h3>Triage from the keyboard</h3>
+        <p>Archive, delete, star, move, next unread — all one key away. Search with operators: <em>from:</em>, <em>subject:</em>, <em>has:attachment</em>, <em>before:</em>.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 4a8 8 0 1 1-.01 0zM4 12h16M12 4c3.5 3.5 3.5 12.5 0 16M12 4c-3.5 3.5-3.5 12.5 0 16"/></svg></div>
+        <h3>Sign in with Google or Microsoft</h3>
+        <p>Sign in through your browser, the way it should be — or use an app password if you prefer. Sidsmail finds the servers on its own.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M5 12.5l5 5 9-10.5"/></svg></div>
+        <h3>Small things that count</h3>
+        <p>Reply templates, per-account signatures, word count, a Trash that empties itself, light and dark themes, an accent colour of your choosing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="privacy">
+  <div class="wrap split">
+    <div>
+      <p class="kicker">Privacy</p>
+      <h2>Your mail stays on your computer.</h2>
+      <p class="sub" style="margin-bottom:0">Sidsmail talks directly to your account's server. There is no server of ours in between, no Sidsmail account, no telemetry. What you keep, you keep.</p>
+    </div>
+    <ul class="checks">
+      <li><svg viewBox="0 0 24 24"><path d="M5 12.5l5 5 9-10.5"/></svg><div><b>Remote images blocked</b> by default — newsletter tracking pixels never load unless you say so.</div></li>
+      <li><svg viewBox="0 0 24 24"><path d="M5 12.5l5 5 9-10.5"/></svg><div><b>Passwords encrypted</b> with Windows' own data protection, tied to your user profile.</div></li>
+      <li><svg viewBox="0 0 24 24"><path d="M5 12.5l5 5 9-10.5"/></svg><div><b>Optional PIN lock</b> at startup and when returning from the tray.</div></li>
+      <li><svg viewBox="0 0 24 24"><path d="M5 12.5l5 5 9-10.5"/></svg><div><b>Export or erase everything</b> in one click — the data is yours, including the right to take it with you.</div></li>
+    </ul>
+  </div>
+</section>
+
+<section id="download" class="dl">
+  <div class="wrap">
+    <p class="kicker">Download</p>
+    <h2>Free. No account. No fine print.</h2>
+    <p class="sub" style="margin:0 auto 28px">An installer of a few megabytes, no administrator rights needed.</p>
+    <a class="btn btn-accent" style="padding:15px 30px;font-size:16px" href="https://github.com/hfmls/sidsmail-site/releases/latest">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12M6 11l6 6 6-6M4 20h16"/></svg>
+      Download Sidsmail for Windows
+    </a>
+    <p class="req">Windows 10 (1809) or Windows 11 · 64-bit · needs the <a href="https://dotnet.microsoft.com/download/dotnet/8.0/runtime">.NET 8 Desktop Runtime</a> (the installer tells you if it is missing)</p>
+    <details>
+      <summary>Did Windows show a blue "SmartScreen" warning?</summary>
+      <p>That is normal for a new program without a paid code-signing certificate. Click <b>More info</b>, then <b>Run anyway</b>. The installer is the same file published on this page; you can check its size and version on the downloads page.</p>
+    </details>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap faq">
+    <p class="kicker">FAQ</p>
+    <h2>Before you ask.</h2>
+    <details><summary>Does it work with Gmail?</summary><p>Yes. Either sign in with Google (one click in your browser) or use an <a href="https://myaccount.google.com/apppasswords">app password</a> — Gmail refuses your normal password in every email client, not just Sidsmail.</p></details>
+    <details><summary>And Outlook and Hotmail?</summary><p>Yes, by signing in with Microsoft. Microsoft no longer accepts app passwords on personal accounts, so signing in through the browser is the only way — Sidsmail handles the rest.</p></details>
+    <details><summary>Where is my data kept?</summary><p>In <code>%APPDATA%\Sidsmail</code>, on your computer: accounts, settings and a local copy of your messages for reading offline. Uninstalling never touches that folder; "Erase local data", in Settings, removes it entirely.</p></details>
+    <details><summary>How much does it cost?</summary><p>Nothing. Sidsmail is free and has no "Pro" edition. If there is ever a way to support the project, it will appear here — never inside the app, interrupting you.</p></details>
+    <details><summary>HTML messages only show as plain text?</summary><p>Sidsmail uses Windows' WebView2 to render HTML. It ships with Windows 11 and most up-to-date Windows 10 installs; if it is missing, <a href="https://developer.microsoft.com/microsoft-edge/webview2/">install it here</a> — meanwhile the app shows everything as plain text, nothing is lost.</p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="ano"></span> Sidsmail. Made in Portugal.</span>
+    <span><a href="privacy.html">Privacy policy</a> · <a href="#download">Download</a></span>
+  </div>
+</footer>
+
+<script>document.getElementById('ano').textContent = new Date().getFullYear();</script>
+</body>
+</html>

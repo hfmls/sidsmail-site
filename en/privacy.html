@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy — Sidsmail</title>
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="../favicon.png" type="image/png">
+<link rel="alternate" hreflang="pt-PT" href="https://sidsmail.com/privacidade.html">
+<link rel="alternate" hreflang="en" href="https://sidsmail.com/en/privacy.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#0F1218; --fg:#EDF0F5; --fg-2:#B9C1CF; --muted:#A5AEBF; --border:#333A47; --accent:#5FD3BA; }
+  @media (prefers-color-scheme: light) { :root { --bg:#FFFFFF; --fg:#16191F; --fg-2:#3F4754; --muted:#5D6675; --border:#DFE3EA; --accent:#076354; } }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 Inter,"Segoe UI",system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+  a { color:var(--accent); }
+  .wrap { max-width:720px; margin:0 auto; padding:48px 24px 80px; }
+  .brand { display:flex; align-items:center; gap:10px; color:var(--fg); text-decoration:none; font-weight:600; margin-bottom:40px; }
+  .brand img { width:26px; height:26px; border-radius:7px; }
+  h1 { font-size:34px; letter-spacing:-.02em; margin:0 0 8px; }
+  .date { color:var(--muted); margin-bottom:32px; }
+  h2 { font-size:20px; margin:32px 0 8px; }
+  p, li { color:var(--fg-2); }
+  hr { border:0; border-top:1px solid var(--border); margin:40px 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="brand" href="index.html"><img src="../icon.png" alt=""> Sidsmail</a>
+  <h1>Privacy policy</h1>
+  <p class="date">Last updated: September 2026 · <a href="../privacidade.html" lang="pt-PT">Português</a></p>
+
+  <p>Sidsmail is a program that runs on your computer. This policy is short because the answer to almost every question is the same: <b>we collect nothing</b>.</p>
+
+  <h2>What Sidsmail does with your data</h2>
+  <p>Sidsmail connects directly to the servers of the email accounts you set up (IMAP to receive, SMTP to send), using the credentials you give it. Messages, contacts and settings are stored only on your computer, in the <code>%APPDATA%\Sidsmail</code> folder. There is no Sidsmail server in between, no Sidsmail account, and no copy of your data anywhere outside your computer.</p>
+
+  <h2>What we don't do</h2>
+  <ul>
+    <li>We send no telemetry, no usage statistics and no automatic crash reports.</li>
+    <li>We never read, index or transmit the contents of your messages to anyone.</li>
+    <li>We show no ads and share nothing with third parties.</li>
+  </ul>
+
+  <h2>Internet connections Sidsmail makes</h2>
+  <ul>
+    <li><b>Your mail servers</b> — the connections you asked for when setting up each account.</li>
+    <li><b>Google and Microsoft</b>, only if you choose "sign in with Google/Microsoft": authorisation happens in your browser, directly with them, and Sidsmail keeps only the token they return, encrypted on your computer.</li>
+    <li><b>Remote images in messages</b> — blocked by default; they load only when you click "Show images".</li>
+    <li><b>Contact photos (Gravatar)</b> — optional, can be turned off in Settings.</li>
+    <li><b>Update check</b> — if configured, Sidsmail downloads a small text file from <code>sidsmail.com</code> with the latest version number. That request carries no data of yours beyond what any web request does (your IP address, as seen by the site's host).</li>
+  </ul>
+
+  <h2>This website</h2>
+  <p><code>sidsmail.com</code> is a static site hosted on GitHub Pages, with no cookies and no analytics. GitHub may log technical access data (such as IP addresses) under the <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub privacy statement</a>.</p>
+
+  <h2>Your rights</h2>
+  <p>Since we keep no data of yours, there is nothing we could hand over or delete on our side. On your computer, "Export local data" and "Erase local data", in Settings → Security & data, do exactly what they say.</p>
+
+  <hr>
+  <p>Questions? Write to <a href="mailto:suporte@sidsmail.com">suporte@sidsmail.com</a>.</p>
+</div>
+</body>
+</html>
