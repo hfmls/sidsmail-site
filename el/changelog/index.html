@@ -101,6 +101,11 @@
   .cta .btn-accent { padding: 15px 30px; font-size: 16px; }
   .fine { margin-top: 16px; font-size: 13px; color: var(--muted); }
   .fine a { color: var(--fg-2); text-decoration: underline; text-decoration-color: var(--border); }
+  /* Small social-proof line under the hero CTA — same numbers as the full counters section
+     further down, just quieter: smaller, more muted, no card/border. Stays hidden (see the
+     inline `hidden` attribute) until JS has real numbers for both halves. */
+  .hero-stats { margin-top: 6px; font-size: 12px; opacity: .75; }
+  .hero-stats b { color: var(--fg-2); font-weight: 600; }
 
   /* app window mock — the same three-pane layout, drawn in CSS so no real inbox is ever
      screenshotted for the site */
@@ -432,7 +437,11 @@ dialog.gal-box .x{position:absolute;right:-6px;top:-44px;background:rgba(255,255
     <h1 class="h2">Τι άλλαξε σε κάθε έκδοση.</h1>
     <p class="lede-left">Η ίδια λίστα που δείχνει η εφαρμογή πριν εγκαταστήσει μια ενημέρωση.</p>
     <article class="release">
-  <div class="rel-head"><h2 class="h3">Έκδοση 1.0.1 <span class="badge">πιο πρόσφατη</span></h2><time datetime="2026-09-03">2026-09-03</time></div>
+  <div class="rel-head"><h2 class="h3">Έκδοση 1.0.2 <span class="badge">πιο πρόσφατη</span></h2><time datetime="2026-09-03">2026-09-03</time></div>
+  <ul><li>&quot;See what&#x27;s new&quot; button in Settings › About, to check the version history any time</li><li>Custom installer artwork (icon with a glow, no more generic 3-D box)</li><li>The update and support URLs are no longer user-configurable — they were leftover clutter</li></ul>
+  <a class="btn btn-ghost small" href="https://github.com/hfmls/sidsmail-site/releases/download/v1.0.2/Sidsmail-Setup-1.0.2.exe"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12M6 11l6 6 6-6M4 20h16"/></svg> Λήψη αυτής της έκδοσης</a>
+</article><article class="release">
+  <div class="rel-head"><h2 class="h3">Έκδοση 1.0.1 </h2><time datetime="2026-09-03">2026-09-03</time></div>
   <ul><li>Download counter in Settings › About</li><li>Contact and another project by the author (sidstuga.app) in About and on the site</li><li>Install fixes (file-in-use when updating, installer build)</li></ul>
   <a class="btn btn-ghost small" href="https://github.com/hfmls/sidsmail-site/releases/download/v1.0.1/Sidsmail-Setup-1.0.1.exe"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12M6 11l6 6 6-6M4 20h16"/></svg> Λήψη αυτής της έκδοσης</a>
 </article><article class="release">

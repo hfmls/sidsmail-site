@@ -1,6 +1,15 @@
 {
   "releases": [
     {
+      "version": "1.0.2",
+      "date": "2026-09-03",
+      "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.2/Sidsmail-Setup-1.0.2.exe",
+      "notes": {
+        "pt": "• Botão \"Ver novidades\" em Definições › Acerca, para veres o histórico de versões a qualquer momento\n• Instalador com visual próprio (ícone com brilho, sem a caixa 3D genérica)\n• URLs de atualização e de apoio deixaram de ser configuráveis — estavam a mais",
+        "en": "• \"See what's new\" button in Settings › About, to check the version history any time\n• Custom installer artwork (icon with a glow, no more generic 3-D box)\n• The update and support URLs are no longer user-configurable — they were leftover clutter"
+      }
+    },
+    {
       "version": "1.0.1",
       "date": "2026-09-03",
       "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.1/Sidsmail-Setup-1.0.1.exe",

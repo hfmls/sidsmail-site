@@ -101,6 +101,11 @@
   .cta .btn-accent { padding: 15px 30px; font-size: 16px; }
   .fine { margin-top: 16px; font-size: 13px; color: var(--muted); }
   .fine a { color: var(--fg-2); text-decoration: underline; text-decoration-color: var(--border); }
+  /* Small social-proof line under the hero CTA — same numbers as the full counters section
+     further down, just quieter: smaller, more muted, no card/border. Stays hidden (see the
+     inline `hidden` attribute) until JS has real numbers for both halves. */
+  .hero-stats { margin-top: 6px; font-size: 12px; opacity: .75; }
+  .hero-stats b { color: var(--fg-2); font-weight: 600; }
 
   /* app window mock — the same three-pane layout, drawn in CSS so no real inbox is ever
      screenshotted for the site */
