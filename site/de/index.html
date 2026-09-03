@@ -1,0 +1,672 @@
+<!doctype html>
+<html lang="de" data-lang="de" data-page="index">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sidsmail — deine Mails, leicht und ohne Ablenkung</title>
+<meta name="description" content="Sidsmail ist ein leichter E-Mail-Client für Windows: alle Konten in einem Posteingang, privat von Haus aus, Benachrichtigungen mit Ruhezeiten. Kostenlos.">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0F1218" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<link rel="canonical" href="https://sidsmail.com/de/">
+<link rel="alternate" hreflang="pt-PT" href="https://sidsmail.com/">
+<link rel="alternate" hreflang="pt-BR" href="https://sidsmail.com/pt-br/">
+<link rel="alternate" hreflang="en" href="https://sidsmail.com/en/">
+<link rel="alternate" hreflang="es" href="https://sidsmail.com/es/">
+<link rel="alternate" hreflang="fr" href="https://sidsmail.com/fr/">
+<link rel="alternate" hreflang="de" href="https://sidsmail.com/de/">
+<link rel="alternate" hreflang="it" href="https://sidsmail.com/it/">
+<link rel="alternate" hreflang="nl" href="https://sidsmail.com/nl/">
+<link rel="alternate" hreflang="pl" href="https://sidsmail.com/pl/">
+<link rel="alternate" hreflang="ru" href="https://sidsmail.com/ru/">
+<link rel="alternate" hreflang="uk" href="https://sidsmail.com/uk/">
+<link rel="alternate" hreflang="tr" href="https://sidsmail.com/tr/">
+<link rel="alternate" hreflang="ro" href="https://sidsmail.com/ro/">
+<link rel="alternate" hreflang="sv" href="https://sidsmail.com/sv/">
+<link rel="alternate" hreflang="da" href="https://sidsmail.com/da/">
+<link rel="alternate" hreflang="nb" href="https://sidsmail.com/nb/">
+<link rel="alternate" hreflang="fi" href="https://sidsmail.com/fi/">
+<link rel="alternate" hreflang="cs" href="https://sidsmail.com/cs/">
+<link rel="alternate" hreflang="hu" href="https://sidsmail.com/hu/">
+<link rel="alternate" hreflang="el" href="https://sidsmail.com/el/">
+<link rel="alternate" hreflang="ja" href="https://sidsmail.com/ja/">
+<link rel="alternate" hreflang="zh-Hans" href="https://sidsmail.com/zh/">
+<link rel="alternate" hreflang="ko" href="https://sidsmail.com/ko/">
+<link rel="alternate" hreflang="ar" href="https://sidsmail.com/ar/">
+<link rel="alternate" hreflang="x-default" href="https://sidsmail.com/en/">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:title" content="Sidsmail — deine Mails, leicht und ohne Ablenkung">
+<meta property="og:description" content="Sidsmail ist ein leichter E-Mail-Client für Windows: alle Konten in einem Posteingang, privat von Haus aus, Benachrichtigungen mit Ruhezeiten. Kostenlos.">
+<meta property="og:image" content="https://sidsmail.com/icon.png">
+<meta property="og:url" content="https://sidsmail.com/de/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Same palette as the app's Palette.Dark.xaml / Palette.Light.xaml, so the site and the
+     window it downloads look like the same object. Dark first — it is the theme the app was
+     tuned in — with the light palette on prefers-color-scheme. */
+  :root {
+    --bg: #0F1218; --bg-2: #151920; --card: #1A1E26; --card-2: #20242D;
+    --fg: #EDF0F5; --fg-2: #B9C1CF; --muted: #A5AEBF;
+    --border: #333A47; --accent: #5FD3BA; --accent-hover: #82E2CD; --accent-soft: #1E413A; --on-accent: #08121A;
+    --shadow: 0 30px 80px rgba(0,0,0,.45);
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #FFFFFF; --bg-2: #F5F7FA; --card: #FFFFFF; --card-2: #F5F7FA;
+      --fg: #16191F; --fg-2: #3F4754; --muted: #5D6675;
+      --border: #DFE3EA; --accent: #076354; --accent-hover: #055446; --accent-soft: #C6EAE1; --on-accent: #FFFFFF;
+      --shadow: 0 30px 80px rgba(20,30,40,.14);
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 16px/1.55 Inter, "Segoe UI", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { color: var(--accent-hover); }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+  /* nav */
+  nav { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(14px); background: color-mix(in srgb, var(--bg) 82%, transparent); border-bottom: 1px solid var(--border); }
+  nav .wrap { display: flex; align-items: center; height: 60px; gap: 28px; }
+  .brand { display: flex; align-items: center; gap: 10px; color: var(--fg); font-weight: 600; font-size: 17px; }
+  .brand img { width: 26px; height: 26px; border-radius: 7px; }
+  nav .links { margin-left: auto; display: flex; align-items: center; gap: 24px; font-size: 14px; }
+  nav .links a { color: var(--fg-2); }
+  nav .links a:hover { color: var(--fg); }
+  nav .links a.btn-accent { color: var(--on-accent); }
+  .btn { display: inline-flex; align-items: center; gap: 10px; border-radius: 10px; padding: 12px 22px; font-weight: 600; font-size: 15px; transition: background .12s ease, color .12s ease, transform .12s ease; white-space: nowrap; }
+  .btn-accent { background: var(--accent); color: var(--on-accent); }
+  .btn-accent:hover { background: var(--accent-hover); color: var(--on-accent); transform: translateY(-1px); }
+  .btn-ghost { border: 1px solid var(--border); color: var(--fg); }
+  .btn-ghost:hover { background: var(--card-2); color: var(--fg); }
+  nav .btn { padding: 8px 16px; font-size: 14px; border-radius: 8px; }
+  @media (max-width: 720px) { nav .links > a:not(.btn) { display: none; } }
+
+  /* hero */
+  .hero { padding: 96px 0 72px; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content: ""; position: absolute; inset: -40% -20% auto; height: 120%; background: radial-gradient(60% 55% at 50% 30%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 70%); pointer-events: none; }
+  .hero > * { position: relative; }
+  .hero img { width: 112px; height: 112px; border-radius: 28px; box-shadow: var(--shadow); }
+  h1 { font-size: clamp(36px, 6vw, 58px); line-height: 1.05; letter-spacing: -.02em; font-weight: 700; margin: 32px 0 18px; }
+  .lede { font-size: clamp(17px, 2.2vw, 21px); color: var(--muted); max-width: 620px; margin: 0 auto 36px; }
+  .cta { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+  .cta .btn-accent { padding: 15px 30px; font-size: 16px; }
+  .fine { margin-top: 16px; font-size: 13px; color: var(--muted); }
+  .fine a { color: var(--fg-2); text-decoration: underline; text-decoration-color: var(--border); }
+  /* Small social-proof badge under the hero CTA — same numbers as the full counters section
+     further down (#stats), shrunk into a tidy pill so it reads as a little "proof" chip rather
+     than a stats dashboard: one soft rounded strip, two values, a hairline divider between
+     them. Stays hidden (see the inline `hidden` attribute) until JS has real numbers for both
+     halves, so it never flashes a "…" or a "0" at anyone. */
+  .hero-stats { display: inline-flex; align-items: stretch; margin: 18px auto 0; background: var(--card); border: 1px solid var(--border); border-radius: 999px; box-shadow: var(--shadow); }
+  .hero-stats[hidden] { display: none; } /* setting `display` above overrides the UA's own [hidden] rule — restore it explicitly */
+  .hero-stats .chip { display: flex; align-items: baseline; gap: 5px; padding: 7px 16px; font-size: 12.5px; color: var(--muted); white-space: nowrap; }
+  .hero-stats .chip + .chip { border-left: 1px solid var(--border); }
+  .hero-stats b { color: var(--fg); font-weight: 700; font-size: 13.5px; font-variant-numeric: tabular-nums; }
+
+  /* app window mock — the same three-pane layout, drawn in CSS so no real inbox is ever
+     screenshotted for the site */
+  .mock { margin: 64px auto 0; max-width: 900px; border: 1px solid var(--border); border-radius: 14px; background: var(--card); box-shadow: var(--shadow); overflow: hidden; text-align: left; font-size: 12px; }
+  .mock .bar { height: 36px; background: var(--bg-2); border-bottom: 1px solid var(--border); display: flex; align-items: center; padding: 0 14px; gap: 8px; color: var(--muted); }
+  .mock .bar .dot { width: 18px; height: 18px; border-radius: 5px; background: var(--accent); }
+  .mock .body { display: grid; grid-template-columns: 180px 260px 1fr; min-height: 320px; }
+  .mock .side { background: var(--bg-2); border-right: 1px solid var(--border); padding: 14px 10px; }
+  .mock .side .new { background: var(--accent); color: var(--on-accent); border-radius: 8px; padding: 8px 10px; font-weight: 600; margin-bottom: 14px; text-align: center; }
+  .mock .side .row { padding: 6px 10px; border-radius: 7px; color: var(--fg-2); display: flex; gap: 8px; align-items: center; }
+  .mock .side .row.on { background: var(--accent-soft); color: var(--fg); }
+  .mock .side .row i { width: 12px; height: 9px; border: 1.5px solid currentColor; border-radius: 2px; opacity: .8; }
+  .mock .side .acct { margin: 14px 10px 6px; font-size: 10px; color: var(--muted); font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+  .mock .list { background: var(--card); border-right: 1px solid var(--border); }
+  .mock .list .msg { padding: 10px 14px; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 26px 1fr auto; gap: 10px; align-items: center; }
+  .mock .list .msg.on { background: var(--accent-soft); }
+  .mock .av { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-weight: 600; color: #fff; font-size: 10px; }
+  .mock .msg b { display: block; color: var(--fg); font-weight: 600; }
+  .mock .msg span { color: var(--muted); }
+  .mock .msg small { color: var(--muted); font-size: 10px; }
+  .mock .read { padding: 18px 22px; background: var(--card-2); }
+  .mock .read h4 { margin: 0 0 6px; font-size: 15px; }
+  .mock .read .from { color: var(--muted); margin-bottom: 16px; }
+  .mock .read p { color: var(--fg-2); margin: 0 0 10px; }
+  .mock .line { height: 8px; border-radius: 4px; background: var(--border); margin: 8px 0; }
+  @media (max-width: 720px) { .mock .body { grid-template-columns: 1fr; } .mock .side, .mock .read { display: none; } }
+
+  /* features */
+  section { padding: 84px 0; }
+  .kicker { color: var(--accent); font-weight: 600; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; margin: 0 0 10px; }
+  h2 { font-size: clamp(28px, 4vw, 38px); letter-spacing: -.02em; line-height: 1.12; margin: 0 0 14px; }
+  .sub { color: var(--muted); font-size: 17px; max-width: 620px; margin: 0 0 44px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 860px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
+  .card .ic { width: 42px; height: 42px; border-radius: 12px; background: var(--accent-soft); display: grid; place-items: center; margin-bottom: 18px; }
+  .card .ic svg { width: 21px; height: 21px; stroke: var(--accent); fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  .card h3 { margin: 0 0 6px; font-size: 16.5px; }
+  .card p { margin: 0; color: var(--muted); font-size: 14.5px; }
+
+  /* privacy */
+  .split { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
+  @media (max-width: 800px) { .split { grid-template-columns: 1fr; gap: 32px; } }
+  .checks { list-style: none; padding: 0; margin: 0; }
+  .checks li { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); color: var(--fg-2); }
+  .checks li:last-child { border-bottom: 0; }
+  .checks svg { flex: none; width: 20px; height: 20px; stroke: var(--accent); fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; margin-top: 2px; }
+  .checks b { color: var(--fg); font-weight: 600; }
+
+  /* download */
+  .dl { background: var(--bg-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); text-align: center; }
+  .dl h2 { margin-bottom: 8px; }
+  .dl .req { color: var(--muted); font-size: 14px; margin: 18px 0 0; }
+  details { max-width: 640px; margin: 28px auto 0; text-align: left; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 4px 18px; }
+  details summary { cursor: pointer; font-weight: 600; padding: 12px 0; color: var(--fg); }
+  details p { color: var(--muted); font-size: 14.5px; margin: 0 0 14px; }
+
+  /* faq */
+  .faq details { margin: 0 0 10px; max-width: 760px; }
+
+  footer { padding: 40px 0 56px; color: var(--muted); font-size: 13.5px; }
+  footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: center; }
+  footer a { color: var(--fg-2); }
+
+  /* language menu */
+  nav .links details.lang { position: relative; align-self: center; margin: 0; padding: 0; border: 0; background: none; max-width: none; text-align: initial; }
+  nav .links details.lang summary { list-style: none; cursor: pointer; font-weight: 600; letter-spacing: .04em; border: 1px solid var(--border); border-radius: 7px; padding: 5px 9px; font-size: 12px; color: var(--fg-2); user-select: none; }
+  nav .links details.lang summary::-webkit-details-marker { display: none; }
+  nav .links details.lang summary span { opacity: .6; font-size: 10px; }
+  nav .links details.lang[open] summary { background: var(--card-2); }
+  nav .links details.lang .menu { position: absolute; right: 0; top: calc(100% + 8px); background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 6px; min-width: 170px; box-shadow: var(--shadow); display: grid; grid-template-columns: repeat(2, minmax(150px, 1fr)); gap: 0 4px; z-index: 20; }
+  nav .links details.lang .menu a { display: block; white-space: nowrap; padding: 8px 12px; border-radius: 8px; color: var(--fg); font-size: 14px; }
+  nav .links details.lang .menu a:hover { background: var(--card-2); }
+  nav .links details.lang .menu a.on { color: var(--accent); font-weight: 600; }
+
+  /* stats */
+  .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 28px; }
+  @media (max-width: 640px) { .tiles { grid-template-columns: 1fr; } }
+  .tile { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 26px 24px; text-align: center; }
+  .tile b { display: block; font-size: clamp(34px, 5vw, 48px); letter-spacing: -.03em; line-height: 1; color: var(--fg); font-variant-numeric: tabular-nums; }
+  .tile span { display: block; margin-top: 10px; color: var(--muted); font-size: 14px; }
+  .top { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
+  .top h3 { margin: 0 0 14px; font-size: 16px; }
+  .countries { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .countries li { display: grid; grid-template-columns: 22px 28px minmax(90px, 160px) 1fr auto; align-items: center; gap: 10px; font-size: 14px; }
+  .countries .rank { color: var(--muted); font-variant-numeric: tabular-nums; text-align: right; }
+  .countries .flag { font-size: 18px; line-height: 1; }
+  .countries .cname { color: var(--fg); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .countries .bar { height: 8px; background: var(--card-2); border-radius: 4px; overflow: hidden; }
+  .countries .bar i { display: block; height: 100%; background: var(--accent); border-radius: 4px; }
+  .countries .cnt { color: var(--muted); font-variant-numeric: tabular-nums; min-width: 3ch; text-align: right; }
+  .top .empty, .top .updated { color: var(--muted); font-size: 13px; margin: 12px 0 0; }
+  .top .updated:empty { display: none; }
+
+  /* inner pages */
+  .page { padding: 72px 0 84px; }
+  .wrap.narrow { max-width: 760px; }
+  .hero-icon { border-radius: 22px; box-shadow: var(--shadow); margin-bottom: 26px; }
+  .h2 { font-size: clamp(30px, 4.5vw, 42px); letter-spacing: -.02em; line-height: 1.1; margin: 0 0 18px; }
+  .h3 { font-size: 20px; margin: 0; display: flex; align-items: center; gap: 10px; }
+  .lede-left { font-size: 17px; color: var(--fg-2); margin: 0 0 16px; }
+  .suggest { background: var(--accent-soft); border-radius: 14px; padding: 18px 20px; margin: 24px 0; font-size: 16px; color: var(--fg); }
+  .donate-buttons { display: flex; gap: 12px; flex-wrap: wrap; margin: 8px 0 28px; }
+  .donate-buttons .btn { padding: 14px 24px; }
+  .soon { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; color: var(--fg-2); font-size: 15px; }
+  .thanks { font-size: 22px; font-weight: 600; margin: 0 0 8px; }
+  .other { color: var(--muted); }
+  .release { border-top: 1px solid var(--border); padding: 28px 0; }
+  .release:last-child { border-bottom: 1px solid var(--border); }
+  .rel-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 10px; }
+  .rel-head time { color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
+  .badge { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; background: var(--accent-soft); color: var(--accent); border-radius: 999px; padding: 3px 9px; }
+  .release p { color: var(--fg-2); margin: 0 0 10px; }
+  .release ul { margin: 0 0 16px; padding-left: 20px; color: var(--fg-2); }
+  .release li { margin: 4px 0; }
+  .btn.small { padding: 9px 14px; font-size: 14px; }
+  .policy p, .policy li { color: var(--fg-2); }
+  .policy h2 { font-size: 20px; margin: 30px 0 8px; }
+  .policy .date { color: var(--muted); margin: -8px 0 24px; }
+  .policy hr { border: 0; border-top: 1px solid var(--border); margin: 36px 0; }
+
+  /* Right-to-left languages (Arabic): flip the few physical-direction rules above. */
+  [dir="rtl"] nav .links { margin-left: 0; margin-right: auto; }
+  [dir="rtl"] nav .links details.lang .menu { right: auto; left: 0; }
+  [dir="rtl"] .mock { text-align: right; }
+  [dir="rtl"] .mock .side, [dir="rtl"] .mock .list { border-right: 0; border-left: 1px solid var(--border); }
+  [dir="rtl"] details { text-align: right; }
+  [dir="rtl"] .release ul { padding-left: 0; padding-right: 20px; }
+  [dir="rtl"] .countries .rank, [dir="rtl"] .countries .cnt { text-align: left; }
+
+  /* heart / support */
+  nav .links a.heart { display: inline-flex; align-items: center; gap: 5px; color: var(--fg); }
+  nav .links a.heart .ic-heart { color: #E0245E; }
+  .support { padding: 0 0 72px; }
+  .support-card { display: flex; align-items: center; gap: 22px; background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 26px 28px; box-shadow: var(--shadow); }
+  .support-card h3 { margin: 0 0 6px; font-size: 18px; }
+  .support-card p { margin: 0; color: var(--muted); font-size: 15px; max-width: 62ch; }
+  .support-card > div:not(.support-heart) { flex: 1; }
+  .support-heart { width: 48px; height: 48px; border-radius: 14px; background: rgba(224,36,94,.10); color: #E0245E; display: grid; place-items: center; flex: none; }
+  .support-heart .ic-heart { width: 22px; height: 22px; }
+  .amount-note { color: var(--muted); font-size: 14px; margin: 12px 0 0; flex-basis: 100%; }
+  @media (max-width: 720px) { .support-card { flex-direction: column; align-items: flex-start; } }
+
+  /* guide */
+  .guide .step { display: grid; grid-template-columns: 1fr 1.25fr; gap: 36px; align-items: center; padding: 40px 0; border-top: 1px solid var(--border); }
+  .guide .step:nth-child(even) .step-text { order: 2; }
+  .guide .step-no { display: inline-grid; place-items: center; width: 32px; height: 32px; border-radius: 10px; background: var(--accent); color: var(--on-accent); font-weight: 700; font-size: 15px; margin-bottom: 12px; }
+  .guide .step h2 { font-size: 24px; margin: 0 0 10px; letter-spacing: -.01em; }
+  .guide .step p { color: var(--fg-2); font-size: 15.5px; line-height: 1.6; margin: 0; }
+  .guide .step-img { margin: 0; border-radius: 14px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); background: var(--card); }
+  .guide .step-img img { display: block; width: 100%; height: auto; }
+  .guide kbd { display: inline-block; min-width: 1.6em; text-align: center; padding: 1px 6px; border-radius: 6px; border: 1px solid var(--border); border-bottom-width: 2px; background: var(--card-2); font: 600 12.5px/1.5 ui-monospace, "SF Mono", Consolas, monospace; color: var(--fg); }
+  .guide-cta { margin-top: 24px; padding: 26px 28px; border-radius: 16px; background: var(--card); border: 1px solid var(--border); }
+  .guide-cta h3 { margin: 0 0 6px; font-size: 18px; }
+  .guide-cta p { margin: 0; color: var(--muted); }
+  @media (max-width: 760px) { .guide .step { grid-template-columns: 1fr; gap: 18px; } .guide .step:nth-child(even) .step-text { order: 0; } }
+  [dir="rtl"] .guide .step-text, [dir="rtl"] .guide .step-img { direction: rtl; }
+
+  .stripe-embed { margin: 6px 0 18px; min-height: 48px; }
+  .donate-links { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.gal[data-theme="light"]{--g-win:#EEF1F5;--g-side:#F4F6F9;--g-list:#FAFBFD;--g-reader:#FFFFFF;--g-card:#FFFFFF;--g-hover:#E9EDF3;--g-sel:#C8E5DC;--g-input:#FFFFFF;--g-chip:#EDF0F5;--g-fg:#121620;--g-fg2:#454E5D;--g-muted:#515A6A;--g-border:#D5DAE3;--g-ctrl:#72798A;--g-shadow:rgba(122,135,155,.28)}
+.gal[data-theme="dark"]{--g-win:#0F1218;--g-side:#151920;--g-list:#1A1E26;--g-reader:#20242D;--g-card:#262B35;--g-hover:#232833;--g-sel:#254439;--g-input:#151920;--g-chip:#262B35;--g-fg:#EDF0F5;--g-fg2:#B9C1CF;--g-muted:#A5AEBF;--g-border:#333A47;--g-ctrl:#8B919C;--g-shadow:rgba(0,0,0,.5)}
+.gal[data-theme="light"][data-accent="default"]{--g-acc:#076354;--g-acch:#055446;--g-accs:#C6EAE1;--g-onacc:#FFFFFF}
+.gal[data-theme="dark"][data-accent="default"]{--g-acc:#5FD3BA;--g-acch:#82E2CD;--g-accs:#1E413A;--g-onacc:#08121A}
+.gal[data-theme="light"] .dot[data-accent="default"]{background:#076354} .gal[data-theme="dark"] .dot[data-accent="default"]{background:#5FD3BA}
+.gal[data-theme="light"][data-accent="blue"]{--g-acc:#2161BA;--g-acch:#1C53A0;--g-accs:#D6E3F5;--g-onacc:#FFFFFF}
+.gal[data-theme="dark"][data-accent="blue"]{--g-acc:#7FABE8;--g-acch:#99BCED;--g-accs:#152E51;--g-onacc:#08121A}
+.gal[data-theme="light"] .dot[data-accent="blue"]{background:#2161BA} .gal[data-theme="dark"] .dot[data-accent="blue"]{background:#7FABE8}
+.gal[data-theme="light"][data-accent="purple"]{--g-acc:#6834B2;--g-acch:#5A2D9A;--g-accs:#E4DAF1;--g-onacc:#FFFFFF}
+.gal[data-theme="dark"][data-accent="purple"]{--g-acc:#B99BE2;--g-acch:#CAB3E9;--g-accs:#2F1B4B;--g-onacc:#08121A}
+.gal[data-theme="light"] .dot[data-accent="purple"]{background:#6834B2} .gal[data-theme="dark"] .dot[data-accent="purple"]{background:#B99BE2}
+.gal[data-theme="light"][data-accent="pink"]{--g-acc:#B72763;--g-acch:#9E2255;--g-accs:#F4D8E3;--g-onacc:#FFFFFF}
+.gal[data-theme="dark"][data-accent="pink"]{--g-acc:#E78DB2;--g-acch:#ECA6C3;--g-accs:#4F172E;--g-onacc:#08121A}
+.gal[data-theme="light"] .dot[data-accent="pink"]{background:#B72763} .gal[data-theme="dark"] .dot[data-accent="pink"]{background:#E78DB2}
+.gal[data-theme="light"][data-accent="orange"]{--g-acc:#975011;--g-acch:#7B410E;--g-accs:#F7E4D4;--g-onacc:#FFFFFF}
+.gal[data-theme="dark"][data-accent="orange"]{--g-acc:#EB9447;--g-acch:#EEA463;--g-accs:#563110;--g-onacc:#08121A}
+.gal[data-theme="light"] .dot[data-accent="orange"]{background:#975011} .gal[data-theme="dark"] .dot[data-accent="orange"]{background:#EB9447}
+.gal[data-theme="light"][data-accent="graphite"]{--g-acc:#5B6374;--g-acch:#4E5463;--g-accs:#E3E4E8;--g-onacc:#FFFFFF}
+.gal[data-theme="dark"][data-accent="graphite"]{--g-acc:#A3A9B7;--g-acch:#B4B9C4;--g-accs:#2E3138;--g-onacc:#08121A}
+.gal[data-theme="light"] .dot[data-accent="graphite"]{background:#5B6374} .gal[data-theme="dark"] .dot[data-accent="graphite"]{background:#A3A9B7}
+
+.gal-ctl{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:center;margin:0 0 26px}
+.gal-seg{display:flex;border:1px solid var(--border);border-radius:9px;overflow:hidden;font-size:13.5px}
+.gal-seg button{border:0;background:var(--card);color:var(--fg-2);padding:8px 16px;cursor:pointer;font:inherit;font-weight:600}
+.gal-seg button.on{background:var(--accent);color:var(--on-accent)}
+.gal-dots{display:flex;gap:10px;align-items:center}
+.gal .dot{width:24px;height:24px;border-radius:50%;border:0;cursor:pointer;box-shadow:inset 0 0 0 2px rgba(255,255,255,.35);position:relative}
+.gal .dot.on{outline:2px solid var(--fg);outline-offset:3px}
+.gal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+@media(max-width:760px){.gal-grid{grid-template-columns:1fr}}
+.gal-item{cursor:zoom-in;background:none;border:0;padding:0;text-align:left;font:inherit;color:inherit}
+.gal-item figure{margin:0}
+.gal-item figcaption{margin-top:10px;font-size:14px;color:var(--fg-2);display:flex;gap:8px;align-items:center}
+.gal-item figcaption b{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:7px;background:var(--accent);color:var(--on-accent);font-size:12px}
+.shot{position:relative;width:100%;aspect-ratio:1280/800;overflow:hidden;border-radius:12px;border:1px solid var(--border);box-shadow:var(--shadow);background:var(--g-win)}
+.shot .scr{position:absolute;left:0;top:0;width:1280px;height:800px;transform-origin:0 0;transform:scale(var(--s,.4))}
+dialog.gal-box{border:0;padding:0;background:transparent;max-width:min(96vw,1400px);width:100%}
+dialog.gal-box::backdrop{background:rgba(6,9,14,.82);backdrop-filter:blur(6px)}
+dialog.gal-box .shot{border-radius:14px;box-shadow:0 40px 100px rgba(0,0,0,.5)}
+dialog.gal-box .cap{color:#fff;text-align:center;margin:14px 0 0;font-size:15px;opacity:.9}
+dialog.gal-box .x{position:absolute;right:-6px;top:-44px;background:rgba(255,255,255,.14);color:#fff;border:0;border-radius:999px;width:36px;height:36px;font-size:18px;cursor:pointer}
+/* ---- the app itself ---- */
+.scr{font:13px/1.35 Inter,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--g-fg);background:var(--g-win);display:flex;flex-direction:column;box-sizing:border-box}
+.scr *{box-sizing:border-box}
+.scr .tb{height:40px;display:flex;align-items:center;gap:10px;padding:0 14px;background:var(--g-side);border-bottom:1px solid var(--g-border);font-size:13px;color:var(--g-fg2);flex:none}
+.scr .tb .brand{width:20px;height:20px;border-radius:6px;background:var(--g-acc);position:relative}
+.scr .tb .brand:after{content:"";position:absolute;left:4px;top:6px;width:12px;height:8px;border-radius:2px;background:#F1EFE8}
+.scr .tb .wb{margin-left:auto;display:flex;gap:18px;color:var(--g-muted);font-size:12px}
+.scr .body{flex:1;display:flex;min-height:0}
+.scr .side{width:232px;background:var(--g-side);border-right:1px solid var(--g-border);padding:12px;display:flex;flex-direction:column}
+.scr .btn{background:var(--g-acc);color:var(--g-onacc);border-radius:8px;padding:9px 12px;font-weight:600;text-align:center}
+.scr .ghost{border:1px solid var(--g-border);color:var(--g-fg2);border-radius:8px;padding:8px 12px;font-weight:600;background:var(--g-card)}
+.scr .side .it{padding:7px 10px;border-radius:7px;color:var(--g-fg2);display:flex;align-items:center;gap:9px;margin-top:1px}
+.scr .side .it.on{background:var(--g-accs);color:var(--g-fg);font-weight:600}
+.scr .side .it .n{margin-left:auto;font-size:11.5px;color:var(--g-muted)}
+.scr .side .it.on .n{color:var(--g-fg)}
+.scr .side .grp{display:flex;align-items:center;gap:7px;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--g-muted);margin:16px 10px 5px}
+.scr .side .grp i{width:8px;height:8px;border-radius:50%;display:inline-block}
+.scr .side .foot{margin-top:auto;border-top:1px solid var(--g-border);padding-top:8px;display:flex;gap:6px;color:var(--g-muted)}
+.scr .side .foot span{width:28px;height:28px;border-radius:7px;display:grid;place-items:center;font-size:14px}
+.scr .ico{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.scr .list{width:380px;background:var(--g-list);border-right:1px solid var(--g-border);display:flex;flex-direction:column}
+.scr .search{margin:12px 12px 8px;height:34px;border:1px solid var(--g-border);border-radius:8px;background:var(--g-input);display:flex;align-items:center;gap:8px;padding:0 10px;color:var(--g-muted)}
+.scr .search .chip{background:var(--g-accs);color:var(--g-fg);border-radius:6px;padding:2px 7px;font-size:11.5px;font-weight:600}
+.scr .lhead{display:flex;justify-content:space-between;padding:4px 14px 8px;font-size:12px;color:var(--g-muted)}
+.scr .row{display:flex;gap:10px;padding:10px 14px;border-bottom:1px solid var(--g-border);align-items:flex-start}
+.scr .row.on{background:var(--g-accs)}
+.scr .row .av{width:32px;height:32px;border-radius:50%;color:#fff;font-size:11px;font-weight:700;display:grid;place-items:center;flex:none}
+.scr .row .m{flex:1;min-width:0}
+.scr .row .m b{display:flex;align-items:center;gap:6px;font-size:13px}
+.scr .row .m b em{margin-left:auto;font-style:normal;font-weight:400;color:var(--g-muted);font-size:11.5px}
+.scr .row .m span{display:block;color:var(--g-fg2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:12.5px}
+.scr .row .m small{display:block;color:var(--g-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:11.5px;margin-top:2px}
+.scr .row.u .m b{font-weight:700}.scr .row.u .m b:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--g-acc);display:inline-block;flex:none}
+.scr .row .st{color:#E0A61C;font-size:13px}
+.scr .reader{flex:1;background:var(--g-reader);display:flex;flex-direction:column;min-width:0}
+.scr .rh{padding:22px 28px 14px;border-bottom:1px solid var(--g-border)}
+.scr .rh h2{margin:0 0 12px;font-size:20px;letter-spacing:-.01em}
+.scr .rh .who{display:flex;align-items:center;gap:12px}
+.scr .rh .who .av{width:38px;height:38px;border-radius:50%;color:#fff;font-weight:700;display:grid;place-items:center}
+.scr .rh .who small{display:block;color:var(--g-muted);font-size:12px}
+.scr .rh .who em{margin-left:auto;font-style:normal;color:var(--g-muted);font-size:12px}
+.scr .acts{display:flex;gap:6px;margin-top:14px;flex-wrap:wrap}
+.scr .acts span{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--g-border);border-radius:7px;padding:6px 10px;font-size:12px;color:var(--g-fg2);background:var(--g-card)}
+.scr .rb{padding:22px 28px;color:var(--g-fg);font-size:14px;line-height:1.6;max-width:640px}
+.scr .rb p{margin:0 0 14px}
+.scr .att{display:flex;gap:10px;padding:0 28px 20px}
+.scr .att span{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--g-border);border-radius:9px;padding:8px 12px;font-size:12.5px;background:var(--g-card)}
+.scr .att span i{width:26px;height:26px;border-radius:6px;background:var(--g-accs);display:grid;place-items:center;font-style:normal;font-size:10px;font-weight:700;color:var(--g-acc)}
+.scr .status{height:26px;border-top:1px solid var(--g-border);background:var(--g-side);font-size:11.5px;color:var(--g-muted);display:flex;align-items:center;padding:0 12px;gap:16px;flex:none}
+/* windows (compose, settings, contacts, wizard) */
+.scr.win{align-items:center;justify-content:center;background:var(--g-win)}
+.scr .w{background:var(--g-reader);border:1px solid var(--g-border);border-radius:12px;box-shadow:0 24px 70px var(--g-shadow);overflow:hidden;display:flex;flex-direction:column}
+.scr .w .tb{background:var(--g-side)}
+.scr .field{display:flex;align-items:center;gap:10px;padding:10px 18px;border-bottom:1px solid var(--g-border)}
+.scr .field label{width:64px;color:var(--g-muted);font-size:12.5px}
+.scr .field .pill{background:var(--g-chip);border-radius:999px;padding:3px 10px;font-size:12.5px;display:inline-flex;align-items:center;gap:6px}
+.scr .field .pill i{width:16px;height:16px;border-radius:50%;display:inline-block}
+.scr .ctool{display:flex;gap:4px;padding:8px 14px;border-bottom:1px solid var(--g-border);color:var(--g-muted)}
+.scr .ctool span{padding:5px 8px;border-radius:6px;font-size:12px}
+.scr .cbody{padding:18px;font-size:14px;line-height:1.6;flex:1;color:var(--g-fg)}
+.scr .cbody p{margin:0 0 12px}
+.scr .cfoot{display:flex;align-items:center;gap:10px;padding:12px 18px;border-top:1px solid var(--g-border);background:var(--g-side)}
+.scr .cfoot .muted{margin-left:auto;color:var(--g-muted);font-size:12px}
+.scr .snav{width:220px;background:var(--g-side);border-right:1px solid var(--g-border);padding:12px}
+.scr .snav .it{padding:8px 12px;border-radius:7px;color:var(--g-fg2);display:flex;gap:9px;align-items:center}
+.scr .snav .it.on{background:var(--g-accs);color:var(--g-fg);font-weight:600}
+.scr .pane{flex:1;padding:24px 28px;overflow:hidden}
+.scr .pane h3{margin:0 0 14px;font-size:16px}
+.scr .opt{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--g-border);font-size:13.5px}
+.scr .opt small{display:block;color:var(--g-muted);font-size:12px;margin-top:2px}
+.scr .opt .r{margin-left:auto;display:flex;align-items:center;gap:8px}
+.scr .tg{width:38px;height:22px;border-radius:11px;background:var(--g-acc);position:relative;flex:none}
+.scr .tg:after{content:"";position:absolute;right:2px;top:2px;width:18px;height:18px;border-radius:50%;background:#fff}
+.scr .tg.off{background:var(--g-ctrl)}.scr .tg.off:after{right:auto;left:2px}
+.scr .sel{border:1px solid var(--g-border);background:var(--g-input);border-radius:7px;padding:6px 10px;font-size:12.5px;min-width:150px;display:flex;justify-content:space-between}
+.scr .seg{display:flex;border:1px solid var(--g-border);border-radius:8px;overflow:hidden;font-size:12px}
+.scr .seg span{padding:6px 12px;color:var(--g-fg2)}.scr .seg span.on{background:var(--g-acc);color:var(--g-onacc);font-weight:600}
+.scr .dots{display:flex;gap:8px}.scr .dots i{width:20px;height:20px;border-radius:50%;display:block}.scr .dots i.on{outline:2px solid var(--g-fg);outline-offset:2px}
+.scr .chips span{display:inline-block;border:1px solid var(--g-border);border-radius:999px;padding:3px 10px;font-size:12px;margin:6px 6px 0 0;background:var(--g-card)}
+.scr .hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding:48px 60px 40px}
+.scr .hero .tile{width:96px;height:96px;border-radius:28px;background:var(--g-acc);display:grid;place-items:center;box-shadow:0 18px 40px var(--g-shadow);margin-bottom:24px}
+.scr .hero .tile:after{content:"";width:52px;height:36px;border-radius:6px;background:#F1EFE8}
+.scr .hero h1{font-size:30px;margin:0 0 10px;letter-spacing:-.02em}
+.scr .hero p{color:var(--g-fg2);font-size:15px;max-width:460px;margin:0 0 28px;line-height:1.55}
+.scr .hero .pdots{display:flex;gap:8px;margin-top:26px}.scr .hero .pdots i{width:7px;height:7px;border-radius:50%;background:var(--g-border)}.scr .hero .pdots i.on{background:var(--g-acc);width:18px;border-radius:4px}
+.scr .ctable{flex:1;display:flex;flex-direction:column}
+.scr .crow{display:flex;align-items:center;gap:12px;padding:10px 18px;border-bottom:1px solid var(--g-border);font-size:13px}
+.scr .crow .av{width:30px;height:30px;border-radius:50%;color:#fff;font-size:10.5px;font-weight:700;display:grid;place-items:center}
+.scr .crow small{color:var(--g-muted);margin-left:auto;font-size:12px}
+.scr .crow em{font-style:normal;color:var(--g-muted);font-size:12px}
+</style>
+<script>
+(function(){try{
+  var cur="de",routes={"pt": "/", "pt-br": "/pt-br/", "en": "/en/", "es": "/es/", "fr": "/fr/", "de": "/de/", "it": "/it/", "nl": "/nl/", "pl": "/pl/", "ru": "/ru/", "uk": "/uk/", "tr": "/tr/", "ro": "/ro/", "sv": "/sv/", "da": "/da/", "nb": "/nb/", "fi": "/fi/", "cs": "/cs/", "hu": "/hu/", "el": "/el/", "ja": "/ja/", "zh": "/zh/", "ko": "/ko/", "ar": "/ar/"},supported=["pt", "pt-br", "en", "es", "fr", "de", "it", "nl", "pl", "ru", "uk", "tr", "ro", "sv", "da", "nb", "fi", "cs", "hu", "el", "ja", "zh", "ko", "ar"];
+  var saved=null;try{saved=localStorage.getItem('sidsmail-lang');}catch(e){}
+  var internal=document.referrer&&document.referrer.indexOf(location.origin)===0;
+  if(internal)return;
+  var want=saved&&supported.indexOf(saved)>=0?saved:null;
+  if(!want){var ls=(navigator.languages||[navigator.language||'']).map(function(x){return String(x).toLowerCase();});
+    for(var i=0;i<ls.length&&!want;i++){var full=ls[i].replace('_','-'),two=full.slice(0,2);
+      if(supported.indexOf(full)>=0)want=full;else if(supported.indexOf(two)>=0)want=two;
+      else if(two==='nn'||two==='no')want='nb';}
+    if(!want)want='en';}
+  if(want!==cur&&routes[want])location.replace(routes[want]);
+}catch(e){}})();
+</script>
+<script data-goatcounter="https://sidsmail.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body><nav>
+  <div class="wrap">
+    <a class="brand" href="/de/"><img src="/icon.png" alt=""> Sidsmail</a>
+    <div class="links">
+      <a href="/de/#features">Funktionen</a>
+      <a href="/de/#privacy">Datenschutz</a>
+      <a href="/de/guide/">Anleitung</a>
+      <a href="/de/changelog/">Neuerungen</a>
+      <a class="heart" href="/de/donate/"><svg class="ic-heart" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.5 2.6 4.5 6.4 4.1c2.1-.2 3.9.9 5.6 2.9 1.7-2 3.5-3.1 5.6-2.9 3.8.4 5.5 4.4 4 7.7C19.5 16.4 12 21 12 21z"/></svg> Unterstützen</a>
+      <details class="lang"><summary aria-label="Language">DE <span>▾</span></summary><div class="menu"><a href="/" lang="pt-PT" hreflang="pt-PT" onclick="try{localStorage.setItem('sidsmail-lang','pt')}catch(e){}">Português (Portugal)</a><a href="/pt-br/" lang="pt-BR" hreflang="pt-BR" onclick="try{localStorage.setItem('sidsmail-lang','pt-br')}catch(e){}">Português (Brasil)</a><a href="/en/" lang="en" hreflang="en" onclick="try{localStorage.setItem('sidsmail-lang','en')}catch(e){}">English</a><a href="/es/" lang="es" hreflang="es" onclick="try{localStorage.setItem('sidsmail-lang','es')}catch(e){}">Español</a><a href="/fr/" lang="fr" hreflang="fr" onclick="try{localStorage.setItem('sidsmail-lang','fr')}catch(e){}">Français</a><a href="/de/" lang="de" hreflang="de" class=on onclick="try{localStorage.setItem('sidsmail-lang','de')}catch(e){}">Deutsch</a><a href="/it/" lang="it" hreflang="it" onclick="try{localStorage.setItem('sidsmail-lang','it')}catch(e){}">Italiano</a><a href="/nl/" lang="nl" hreflang="nl" onclick="try{localStorage.setItem('sidsmail-lang','nl')}catch(e){}">Nederlands</a><a href="/pl/" lang="pl" hreflang="pl" onclick="try{localStorage.setItem('sidsmail-lang','pl')}catch(e){}">Polski</a><a href="/ru/" lang="ru" hreflang="ru" onclick="try{localStorage.setItem('sidsmail-lang','ru')}catch(e){}">Русский</a><a href="/uk/" lang="uk" hreflang="uk" onclick="try{localStorage.setItem('sidsmail-lang','uk')}catch(e){}">Українська</a><a href="/tr/" lang="tr" hreflang="tr" onclick="try{localStorage.setItem('sidsmail-lang','tr')}catch(e){}">Türkçe</a><a href="/ro/" lang="ro" hreflang="ro" onclick="try{localStorage.setItem('sidsmail-lang','ro')}catch(e){}">Română</a><a href="/sv/" lang="sv" hreflang="sv" onclick="try{localStorage.setItem('sidsmail-lang','sv')}catch(e){}">Svenska</a><a href="/da/" lang="da" hreflang="da" onclick="try{localStorage.setItem('sidsmail-lang','da')}catch(e){}">Dansk</a><a href="/nb/" lang="nb" hreflang="nb" onclick="try{localStorage.setItem('sidsmail-lang','nb')}catch(e){}">Norsk bokmål</a><a href="/fi/" lang="fi" hreflang="fi" onclick="try{localStorage.setItem('sidsmail-lang','fi')}catch(e){}">Suomi</a><a href="/cs/" lang="cs" hreflang="cs" onclick="try{localStorage.setItem('sidsmail-lang','cs')}catch(e){}">Čeština</a><a href="/hu/" lang="hu" hreflang="hu" onclick="try{localStorage.setItem('sidsmail-lang','hu')}catch(e){}">Magyar</a><a href="/el/" lang="el" hreflang="el" onclick="try{localStorage.setItem('sidsmail-lang','el')}catch(e){}">Ελληνικά</a><a href="/ja/" lang="ja" hreflang="ja" onclick="try{localStorage.setItem('sidsmail-lang','ja')}catch(e){}">日本語</a><a href="/zh/" lang="zh-Hans" hreflang="zh-Hans" onclick="try{localStorage.setItem('sidsmail-lang','zh')}catch(e){}">中文（简体）</a><a href="/ko/" lang="ko" hreflang="ko" onclick="try{localStorage.setItem('sidsmail-lang','ko')}catch(e){}">한국어</a><a href="/ar/" lang="ar" hreflang="ar" onclick="try{localStorage.setItem('sidsmail-lang','ar')}catch(e){}">العربية</a></div></details>
+      <a class="btn btn-accent" href="/de/#download">Herunterladen</a>
+    </div>
+  </div>
+</nav>
+<header class="hero">
+  <div class="wrap">
+    <img src="/icon.png" alt="Sidsmail" width="112" height="112">
+    <h1>Deine Mails,<br>leicht und ohne Ablenkung.</h1>
+    <p class="lede">Sidsmail ist ein E-Mail-Client für Windows, der alle deine Konten in einen Posteingang bringt, alles auf deinem eigenen Rechner behält und dich nie unterbricht, wenn du es nicht willst.</p>
+    <div class="cta">
+      <a class="btn btn-accent" href="https://github.com/hfmls/sidsmail-site/releases/latest"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12M6 11l6 6 6-6M4 20h16"/></svg> Für Windows herunterladen</a>
+      <a class="btn btn-ghost" href="#features">Was er kann</a>
+    </div>
+    <p class="fine">Kostenlos · Windows 10 und 11 · kein Konto, keine Cloud, keine Werbung · v1.0.3</p>
+    <div class="hero-stats" id="hero-stats" hidden>
+      <span class="chip"><b id="hs-downloads">…</b> Downloads</span>
+      <span class="chip"><b id="hs-countries">…</b> Länder</span>
+    </div>
+
+    <div class="mock" aria-hidden="true">
+      <div class="bar"><span class="dot"></span> Sidsmail <span style="margin-left:auto">Gerade aktualisiert</span></div>
+      <div class="body">
+        <div class="side">
+          <div class="new">✎ Neue Nachricht</div>
+          <div class="row on"><i></i> Alle Posteingänge</div>
+          <div class="row"><i></i> Ungelesen</div>
+          <div class="row"><i></i> Mit Stern</div>
+          <div class="acct">Privat</div>
+          <div class="row"><i></i> Posteingang</div>
+          <div class="row"><i></i> Gesendet</div>
+          <div class="acct">Arbeit</div>
+          <div class="row"><i></i> Posteingang</div>
+          <div class="row"><i></i> Archiv</div>
+        </div>
+        <div class="list"><div class="msg on"><span class="av" style="background:#3B82F6">AM</span><div><b>Anna Martin</b><span>Fotos vom Wochenende</span></div><small>10:42</small></div><div class="msg"><span class="av" style="background:#8B5CF6">Z</span><div><b>Zentralbank</b><span>Dein Kontoauszug für August</span></div><small>09:15</small></div><div class="msg"><span class="av" style="background:#F59E0B">RL</span><div><b>Robert Lang</b><span>Re: Besprechung am Donnerstag</span></div><small>gestern</small></div><div class="msg"><span class="av" style="background:#EC4899">P</span><div><b>Parkladen</b><span>Deine Bestellung wurde versandt</span></div><small>gestern</small></div><div class="msg"><span class="av" style="background:#0B8A72">TS</span><div><b>Theresa Silva</b><span>Unterlagen für die Bewerbung</span></div><small>Mo.</small></div><div class="msg"><span class="av" style="background:#64748B">N</span><div><b>Newsletter</b><span>5 Ideen für September</span></div><small>Mo.</small></div></div>
+        <div class="read">
+          <h4>Fotos vom Wochenende</h4>
+          <div class="from">Anna Martin · an mich</div>
+          <p>Hallo! Hier die Fotos von Samstag, wie versprochen.</p>
+          <div class="line" style="width:92%"></div><div class="line" style="width:78%"></div><div class="line" style="width:85%"></div><div class="line" style="width:40%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="features">
+  <div class="wrap">
+    <p class="kicker">Funktionen</p>
+    <h2>Alles, was ein E-Mail-Client können sollte.<br>Und nichts, was er nicht sollte.</h2>
+    <p class="sub">Gemacht für Leute, die viele Mails lesen und sie schnell erledigen wollen — per Tastatur, ohne Warten, ohne Lärm.</p>
+    <div class="grid"><div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 13h5l1.5 2.5h5L16 13h5M3 13l2.5-8h13l2.5 8v5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg></div><h3>Alle Konten, ein Posteingang</h3><p>Gmail, Outlook, iCloud, Yahoo oder jeder IMAP-Server, nebeneinander. Die Ansicht „Alle Posteingänge“ fasst alles zusammen; jedes Konto behält seine Farbe.</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3.5a4.5 4.5 0 0 0-4.5 4.5c0 5-2 6.5-2 8.5h13c0-2-2-3.5-2-8.5a4.5 4.5 0 0 0-4.5-4.5zM9.8 19a2.3 2.3 0 0 0 4.4 0"/></svg></div><h3>Mails in Echtzeit</h3><p>IMAP IDLE: Die Nachricht kommt in der Sekunde an, in der sie gesendet wird, ohne Abfragen. Lebt neben der Uhr, mit Badge und Ton — wenn du willst.</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 20.5a8.5 8.5 0 1 1 .01 0zM12 7.5V12l3 2"/></svg></div><h3>Ruhezeiten und Zurückstellen</h3><p>Lege fest, wann du nicht gestört werden willst, mit Ausnahme für die Absender, die zählen. Stelle eine Nachricht auf später, morgen oder nächste Woche zurück.</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h7"/></svg></div><h3>Sortieren per Tastatur</h3><p>Archivieren, löschen, Stern, verschieben, nächste ungelesene — alles mit einer Taste. Suche mit Operatoren: <em>from:</em>, <em>subject:</em>, <em>has:</em>, <em>before:</em>.</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 4a8 8 0 1 1-.01 0zM4 12h16M12 4c3.5 3.5 3.5 12.5 0 16M12 4c-3.5 3.5-3.5 12.5 0 16"/></svg></div><h3>Anmelden mit Google oder Microsoft</h3><p>Anmeldung im Browser, wie es sein sollte — oder ein App-Passwort, wenn du magst. Sidsmail findet die Server von selbst.</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 4a8 8 0 1 1-.01 0zM4 12h16M12 4c3.5 3.5 3.5 12.5 0 16M12 4c-3.5 3.5-3.5 12.5 0 16M8 8.5c2.5 1 5.5 1 8 0M8 15.5c2.5-1 5.5-1 8 0"/></svg></div><h3>Spricht deine Sprache</h3><p>Mehr als zwanzig Sprachen, automatisch aus Windows gewählt. Helles und dunkles Design, sechs Akzentfarben, Antwortvorlagen, Wortzähler, ein Papierkorb, der sich selbst leert.</p></div></div>
+  </div>
+</section>
+
+
+<section id="gallery">
+  <div class="wrap">
+    <p class="kicker">Galerie</p>
+    <h2>Sieh dir die App von innen an.</h2>
+    <p class="sub">Helles oder dunkles Design, sechs Akzentfarben — wähle sie hier und sieh, wie es aussieht. Klicke auf ein Bild, um es zu vergrößern.</p>
+    <div class="gal" data-theme="light" data-accent="default">
+      <div class="gal-ctl">
+        <div class="gal-seg" role="group"><button class="on" data-theme="light">Hell</button><button data-theme="dark">Dunkel</button></div>
+        <div class="gal-dots"><button class="dot on" data-accent="default" title="Grün" aria-label="Grün"></button><button class="dot" data-accent="blue" title="Blau" aria-label="Blau"></button><button class="dot" data-accent="purple" title="Lila" aria-label="Lila"></button><button class="dot" data-accent="pink" title="Rosa" aria-label="Rosa"></button><button class="dot" data-accent="orange" title="Orange" aria-label="Orange"></button><button class="dot" data-accent="graphite" title="Graphit" aria-label="Graphit"></button></div>
+      </div>
+      <div class="gal-grid"><button class="gal-item" data-i="1"><figure><div class="shot"><div class="scr"><div class="tb"><span class="brand"></span>Sidsmail<span class="wb"><span>—</span><span>▢</span><span>✕</span></span></div><div class="body"><div class="side"><div class="btn">✎ Neue Nachricht</div>
+    <div style="margin-top:10px"><div class="it on"><svg class="ico" viewBox="0 0 24 24"><path d="M3 13h5l1.5 2.5h5L16 13h5M3 13l2.5-8h13l2.5 8v5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>Alle Posteingänge<span class="n">12</span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M4 6h16v12H4zM4 7l8 6 8-6"/></svg>Ungelesen<span class="n">4</span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3.6l2.6 5.5 5.9.8-4.3 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.5 9.9l5.9-.8z"/></svg>Mit Stern<span class="n"></span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M12 20.5a8.5 8.5 0 1 1 .01 0zM12 7.5V12l3 2"/></svg>Zurückgestellt<span class="n">2</span></div></div>
+    <div class="grp"><i style="background:#3B82F6"></i>Privat</div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M3 13h5l1.5 2.5h5L16 13h5M3 13l2.5-8h13l2.5 8v5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>Posteingang<span class="n">7</span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M3 12l18-8-6 18-3-8z"/></svg>Gesendet<span class="n"></span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M4 8h16v12H4zM3 4h18v4H3zM10 12h4"/></svg>Archiv<span class="n"></span></div>
+    <div class="grp"><i style="background:#8B5CF6"></i>Arbeit</div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M3 13h5l1.5 2.5h5L16 13h5M3 13l2.5-8h13l2.5 8v5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>Posteingang<span class="n">5</span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M3 12l18-8-6 18-3-8z"/></svg>Gesendet<span class="n"></span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M5 7h14M9 7V4h6v3M7 7l1 13h8l1-13"/></svg>Papierkorb<span class="n"></span></div>
+    <div class="foot"><span><svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span><span><svg class="ico" viewBox="0 0 24 24"><path d="M12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8zM4 12h2M18 12h2M12 4v2M12 18v2"/></svg></span><span><svg class="ico" viewBox="0 0 24 24"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM2 20a6 6 0 0 1 12 0M16 11a3 3 0 1 0 0-6M22 20a6 6 0 0 0-6-6"/></svg></span><span><svg class="ico" viewBox="0 0 24 24"><path d="M12 20.5a8.5 8.5 0 1 1 .01 0zM9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 1-1 1.7M12 17h.01"/></svg></span><span style="color:#E0245E"><svg class="ico" viewBox="0 0 24 24"><path d="M12 20.2S4.2 15.4 3.3 10.6C2.7 7.5 4.7 4.9 7.4 4.9c1.8 0 3.5 1 4.6 2.7 1.1-1.7 2.8-2.7 4.6-2.7 2.7 0 4.7 2.6 4.1 5.7-.9 4.8-8.7 9.6-8.7 9.6z"/></svg></span></div></div><div class="list"><div class="search"><svg class="ico" viewBox="0 0 24 24"><path d="M11 4a7 7 0 1 1 0 14 7 7 0 0 1 0-14zM20 20l-4-4"/></svg>Suchen</div><div class="lhead"><span>Alle Posteingänge</span><span>Neueste zuerst</span></div><div class="row on u"><span class="av" style="background:#3B82F6">AM</span><div class="m"><b>Anna Martin<em>10:42</em></b><span>Fotos vom Wochenende</span><small>Hallo! Hier die Fotos von Samstag, wie versprochen…</small></div></div><div class="row  u"><span class="av" style="background:#8B5CF6">Z</span><div class="m"><b>Zentralbank<em>09:15</em></b><span>Dein Kontoauszug für August</span><small>Dein Kontoauszug für August ist jetzt in deinem…</small></div></div><div class="row "><span class="av" style="background:#F59E0B">RL</span><div class="m"><b>Robert Lang<em>gestern</em></b><span>Re: Besprechung am Donnerstag</span><small>Passt dir Donnerstag um 10? Ich bringe die…</small></div></div><div class="row  u"><span class="av" style="background:#EC4899">P</span><div class="m"><b>Parkladen<em>gestern</em></b><span>Deine Bestellung wurde versandt</span><small>Deine Bestellung #48213 wurde heute versandt und kommt in 2 Tagen…</small></div></div><div class="row "><span class="av" style="background:#0B8A72">TS</span><div class="m"><b>Theresa Silva<em>Mo.</em></b><span>Unterlagen für die Bewerbung</span><small>Anbei der Lebenslauf und das Anschreiben. Sag mir, falls…</small></div><span class="st">★</span></div><div class="row "><span class="av" style="background:#64748B">N</span><div class="m"><b>Newsletter<em>Mo.</em></b><span>5 Ideen für September</span><small>Fünf Ideen, um den September optimal zu nutzen…</small></div></div><div class="row  u"><span class="av" style="background:#0EA5E9">MC</span><div class="m"><b>Michael Costa<em>So.</em></b><span>Abendessen am Samstag</span><small>Reserviert für 20:30, wir sind zu sechst. Kannst du bestätigen?</small></div></div><div class="row "><span class="av" style="background:#D97706">TS</span><div class="m"><b>Team Sidstuga<em>Sa.</em></b><span>Willkommen im Team</span><small>Anbei der Willkommensleitfaden und deine Zugänge…</small></div></div></div><div class="reader"><div class="rh"><h2>Fotos vom Wochenende</h2><div class="who"><span class="av" style="background:#3B82F6">AM</span><div><b>Anna Martin</b><small>an mich</small></div><em>10:42</em></div><div class="acts"><span><svg class="ico" viewBox="0 0 24 24"><path d="M9 17l-5-5 5-5M4 12h11a5 5 0 0 1 5 5v2"/></svg>Antworten</span><span><svg class="ico" viewBox="0 0 24 24"><path d="M7 17l-5-5 5-5M12 17l-5-5 5-5M7 12h8a5 5 0 0 1 5 5v2"/></svg>Allen antworten</span><span><svg class="ico" viewBox="0 0 24 24"><path d="M15 7l5 5-5 5M20 12H9a5 5 0 0 0-5 5v2"/></svg>Weiterleiten</span><span><svg class="ico" viewBox="0 0 24 24"><path d="M4 8h16v12H4zM3 4h18v4H3zM10 12h4"/></svg>Archivieren</span><span><svg class="ico" viewBox="0 0 24 24"><path d="M5 7h14M9 7V4h6v3M7 7l1 13h8l1-13"/></svg>Löschen</span><span><svg class="ico" viewBox="0 0 24 24"><path d="M12 3.6l2.6 5.5 5.9.8-4.3 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.5 9.9l5.9-.8z"/></svg>Stern</span></div></div>
+    <div class="rb"><p>Hallo! Hier die Fotos von Samstag, wie versprochen.</p><p>Wenn du magst, lege ich sie in ein geteiltes Album. Sag mir, welche dir am besten gefallen, und ich kümmere mich um den Rest.</p><p>— Anna</p></div></div></div><div class="status"><span>2 Konten verbunden · IMAP IDLE aktiv</span><span>Gerade aktualisiert</span></div></div></div><figcaption><b>1</b>Alle Konten in einem Posteingang</figcaption></figure></button><button class="gal-item" data-i="2"><figure><div class="shot"><div class="scr"><div class="tb"><span class="brand"></span>Sidsmail<span class="wb"><span>—</span><span>▢</span><span>✕</span></span></div><div class="body"><div class="side"><div class="btn">✎ Neue Nachricht</div>
+    <div style="margin-top:10px"><div class="it on"><svg class="ico" viewBox="0 0 24 24"><path d="M3 13h5l1.5 2.5h5L16 13h5M3 13l2.5-8h13l2.5 8v5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>Alle Posteingänge<span class="n">12</span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M4 6h16v12H4zM4 7l8 6 8-6"/></svg>Ungelesen<span class="n">4</span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3.6l2.6 5.5 5.9.8-4.3 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.5 9.9l5.9-.8z"/></svg>Mit Stern<span class="n"></span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M12 20.5a8.5 8.5 0 1 1 .01 0zM12 7.5V12l3 2"/></svg>Zurückgestellt<span class="n">2</span></div></div>
+    <div class="grp"><i style="background:#3B82F6"></i>Privat</div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M3 13h5l1.5 2.5h5L16 13h5M3 13l2.5-8h13l2.5 8v5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>Posteingang<span class="n">7</span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M3 12l18-8-6 18-3-8z"/></svg>Gesendet<span class="n"></span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M4 8h16v12H4zM3 4h18v4H3zM10 12h4"/></svg>Archiv<span class="n"></span></div>
+    <div class="grp"><i style="background:#8B5CF6"></i>Arbeit</div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M3 13h5l1.5 2.5h5L16 13h5M3 13l2.5-8h13l2.5 8v5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>Posteingang<span class="n">5</span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M3 12l18-8-6 18-3-8z"/></svg>Gesendet<span class="n"></span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M5 7h14M9 7V4h6v3M7 7l1 13h8l1-13"/></svg>Papierkorb<span class="n"></span></div>
+    <div class="foot"><span><svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span><span><svg class="ico" viewBox="0 0 24 24"><path d="M12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8zM4 12h2M18 12h2M12 4v2M12 18v2"/></svg></span><span><svg class="ico" viewBox="0 0 24 24"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM2 20a6 6 0 0 1 12 0M16 11a3 3 0 1 0 0-6M22 20a6 6 0 0 0-6-6"/></svg></span><span><svg class="ico" viewBox="0 0 24 24"><path d="M12 20.5a8.5 8.5 0 1 1 .01 0zM9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 1-1 1.7M12 17h.01"/></svg></span><span style="color:#E0245E"><svg class="ico" viewBox="0 0 24 24"><path d="M12 20.2S4.2 15.4 3.3 10.6C2.7 7.5 4.7 4.9 7.4 4.9c1.8 0 3.5 1 4.6 2.7 1.1-1.7 2.8-2.7 4.6-2.7 2.7 0 4.7 2.6 4.1 5.7-.9 4.8-8.7 9.6-8.7 9.6z"/></svg></span></div></div><div class="list"><div class="search"><svg class="ico" viewBox="0 0 24 24"><path d="M11 4a7 7 0 1 1 0 14 7 7 0 0 1 0-14zM20 20l-4-4"/></svg>Suchen</div><div class="lhead"><span>Alle Posteingänge</span><span>Neueste zuerst</span></div><div class="row  u"><span class="av" style="background:#3B82F6">AM</span><div class="m"><b>Anna Martin<em>10:42</em></b><span>Fotos vom Wochenende</span><small>Hallo! Hier die Fotos von Samstag, wie versprochen…</small></div></div><div class="row  u"><span class="av" style="background:#8B5CF6">Z</span><div class="m"><b>Zentralbank<em>09:15</em></b><span>Dein Kontoauszug für August</span><small>Dein Kontoauszug für August ist jetzt in deinem…</small></div></div><div class="row "><span class="av" style="background:#F59E0B">RL</span><div class="m"><b>Robert Lang<em>gestern</em></b><span>Re: Besprechung am Donnerstag</span><small>Passt dir Donnerstag um 10? Ich bringe die…</small></div></div><div class="row  u"><span class="av" style="background:#EC4899">P</span><div class="m"><b>Parkladen<em>gestern</em></b><span>Deine Bestellung wurde versandt</span><small>Deine Bestellung #48213 wurde heute versandt und kommt in 2 Tagen…</small></div></div><div class="row on"><span class="av" style="background:#0B8A72">TS</span><div class="m"><b>Theresa Silva<em>Mo.</em></b><span>Unterlagen für die Bewerbung</span><small>Anbei der Lebenslauf und das Anschreiben. Sag mir, falls…</small></div><span class="st">★</span></div><div class="row "><span class="av" style="background:#64748B">N</span><div class="m"><b>Newsletter<em>Mo.</em></b><span>5 Ideen für September</span><small>Fünf Ideen, um den September optimal zu nutzen…</small></div></div><div class="row  u"><span class="av" style="background:#0EA5E9">MC</span><div class="m"><b>Michael Costa<em>So.</em></b><span>Abendessen am Samstag</span><small>Reserviert für 20:30, wir sind zu sechst. Kannst du bestätigen?</small></div></div><div class="row "><span class="av" style="background:#D97706">TS</span><div class="m"><b>Team Sidstuga<em>Sa.</em></b><span>Willkommen im Team</span><small>Anbei der Willkommensleitfaden und deine Zugänge…</small></div></div></div><div class="reader"><div class="rh"><h2>Unterlagen für die Bewerbung</h2><div class="who"><span class="av" style="background:#3B82F6">TS</span><div><b>Theresa Silva</b><small>an mich</small></div><em>Mo.</em></div><div class="acts"><span><svg class="ico" viewBox="0 0 24 24"><path d="M9 17l-5-5 5-5M4 12h11a5 5 0 0 1 5 5v2"/></svg>Antworten</span><span><svg class="ico" viewBox="0 0 24 24"><path d="M7 17l-5-5 5-5M12 17l-5-5 5-5M7 12h8a5 5 0 0 1 5 5v2"/></svg>Allen antworten</span><span><svg class="ico" viewBox="0 0 24 24"><path d="M15 7l5 5-5 5M20 12H9a5 5 0 0 0-5 5v2"/></svg>Weiterleiten</span><span><svg class="ico" viewBox="0 0 24 24"><path d="M4 8h16v12H4zM3 4h18v4H3zM10 12h4"/></svg>Archivieren</span><span><svg class="ico" viewBox="0 0 24 24"><path d="M5 7h14M9 7V4h6v3M7 7l1 13h8l1-13"/></svg>Löschen</span><span><svg class="ico" viewBox="0 0 24 24"><path d="M12 3.6l2.6 5.5 5.9.8-4.3 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.5 9.9l5.9-.8z"/></svg>Stern</span></div></div>
+    <div class="rb"><p>Anbei alles, was sie verlangt haben: der aktualisierte Lebenslauf und das Anschreiben. Das Foto ist das, auf das wir uns geeinigt hatten.</p><p>Falls etwas fehlt, sag mir bis Donnerstag Bescheid — die Frist endet Freitag um 12 Uhr.</p><p>Danke,
+Theresa</p></div><div class="att"><span><i>PDF</i>Bewerbung.pdf · 240 KB</span><span><i>JPG</i>Foto.jpg · 1,2 MB</span></div></div></div><div class="status"><span>2 Konten verbunden · IMAP IDLE aktiv</span><span>2 Anhänge · lokal gespeichert</span></div></div></div><figcaption><b>2</b>Lesen, mit Anhängen und Aktionen per Klick</figcaption></figure></button><button class="gal-item" data-i="3"><figure><div class="shot"><div class="scr win"><div class="w" style="width:860px;height:600px"><div class="tb"><span class="brand"></span>Neue Nachricht<span class="wb"><span>—</span><span>▢</span><span>✕</span></span></div>
+    <div class="field"><label>An</label><span class="pill"><i style="background:#F59E0B"></i>Robert Lang</span></div>
+    <div class="field"><label>Cc</label><span class="pill"><i style="background:#0B8A72"></i>Theresa Silva</span></div>
+    <div class="field"><label>Betreff</label><b>Re: Besprechung am Donnerstag</b></div>
+    <div class="ctool"><span>B</span><span>I</span><span>U</span><span>•</span><span>1.</span><span>“</span><span>🔗</span><span>📎</span><span>😊</span></div>
+    <div class="cbody"><p>Hallo Robert, Donnerstag um 10 passt mir sehr gut. Ich bringe die Bewerbungsunterlagen und den überarbeiteten Vorschlag mit. Bis dann!</p><p>— Anna</p></div>
+    <div class="cfoot"><span class="btn">Senden ⌘↵</span><span class="ghost">Senden planen</span><span class="ghost">Anhängen</span><span class="muted">38 Wörter · Entwurf gespeichert</span></div></div></div></div><figcaption><b>3</b>Neue Nachricht</figcaption></figure></button><button class="gal-item" data-i="4"><figure><div class="shot"><div class="scr"><div class="tb"><span class="brand"></span>Sidsmail<span class="wb"><span>—</span><span>▢</span><span>✕</span></span></div><div class="body"><div class="side"><div class="btn">✎ Neue Nachricht</div>
+    <div style="margin-top:10px"><div class="it on"><svg class="ico" viewBox="0 0 24 24"><path d="M3 13h5l1.5 2.5h5L16 13h5M3 13l2.5-8h13l2.5 8v5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>Alle Posteingänge<span class="n">12</span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M4 6h16v12H4zM4 7l8 6 8-6"/></svg>Ungelesen<span class="n">4</span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3.6l2.6 5.5 5.9.8-4.3 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.5 9.9l5.9-.8z"/></svg>Mit Stern<span class="n"></span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M12 20.5a8.5 8.5 0 1 1 .01 0zM12 7.5V12l3 2"/></svg>Zurückgestellt<span class="n">2</span></div></div>
+    <div class="grp"><i style="background:#3B82F6"></i>Privat</div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M3 13h5l1.5 2.5h5L16 13h5M3 13l2.5-8h13l2.5 8v5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>Posteingang<span class="n">7</span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M3 12l18-8-6 18-3-8z"/></svg>Gesendet<span class="n"></span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M4 8h16v12H4zM3 4h18v4H3zM10 12h4"/></svg>Archiv<span class="n"></span></div>
+    <div class="grp"><i style="background:#8B5CF6"></i>Arbeit</div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M3 13h5l1.5 2.5h5L16 13h5M3 13l2.5-8h13l2.5 8v5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>Posteingang<span class="n">5</span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M3 12l18-8-6 18-3-8z"/></svg>Gesendet<span class="n"></span></div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M5 7h14M9 7V4h6v3M7 7l1 13h8l1-13"/></svg>Papierkorb<span class="n"></span></div>
+    <div class="foot"><span><svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span><span><svg class="ico" viewBox="0 0 24 24"><path d="M12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8zM4 12h2M18 12h2M12 4v2M12 18v2"/></svg></span><span><svg class="ico" viewBox="0 0 24 24"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM2 20a6 6 0 0 1 12 0M16 11a3 3 0 1 0 0-6M22 20a6 6 0 0 0-6-6"/></svg></span><span><svg class="ico" viewBox="0 0 24 24"><path d="M12 20.5a8.5 8.5 0 1 1 .01 0zM9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 1-1 1.7M12 17h.01"/></svg></span><span style="color:#E0245E"><svg class="ico" viewBox="0 0 24 24"><path d="M12 20.2S4.2 15.4 3.3 10.6C2.7 7.5 4.7 4.9 7.4 4.9c1.8 0 3.5 1 4.6 2.7 1.1-1.7 2.8-2.7 4.6-2.7 2.7 0 4.7 2.6 4.1 5.7-.9 4.8-8.7 9.6-8.7 9.6z"/></svg></span></div></div><div class="list"><div class="search"><svg class="ico" viewBox="0 0 24 24"><path d="M11 4a7 7 0 1 1 0 14 7 7 0 0 1 0-14zM20 20l-4-4"/></svg><span class="chip">from:ana</span><span class="chip">has:attachment</span></div><div class="lhead"><span>3 Ergebnisse</span><span>Neueste zuerst</span></div><div class="row on"><span class="av" style="background:#3B82F6">AM</span><div class="m"><b>Anna Martin<em>10:42</em></b><span>Fotos vom Wochenende</span><small>Hallo! Hier die Fotos von Samstag, wie versprochen…</small></div></div><div class="row "><span class="av" style="background:#8B5CF6">TS</span><div class="m"><b>Theresa Silva<em>Mo.</em></b><span>Unterlagen für die Bewerbung</span><small>Anbei der Lebenslauf und das Anschreiben. Sag mir, falls…</small></div></div><div class="row "><span class="av" style="background:#F59E0B">TS</span><div class="m"><b>Team Sidstuga<em>Sa.</em></b><span>Willkommen im Team</span><small>Anbei der Willkommensleitfaden und deine Zugänge…</small></div></div></div><div class="reader"><div class="rh"><h2>Fotos vom Wochenende</h2><div class="who"><span class="av" style="background:#3B82F6">AM</span><div><b>Anna Martin</b><small>an mich</small></div><em>10:42</em></div><div class="acts"><span><svg class="ico" viewBox="0 0 24 24"><path d="M9 17l-5-5 5-5M4 12h11a5 5 0 0 1 5 5v2"/></svg>Antworten</span><span><svg class="ico" viewBox="0 0 24 24"><path d="M7 17l-5-5 5-5M12 17l-5-5 5-5M7 12h8a5 5 0 0 1 5 5v2"/></svg>Allen antworten</span><span><svg class="ico" viewBox="0 0 24 24"><path d="M15 7l5 5-5 5M20 12H9a5 5 0 0 0-5 5v2"/></svg>Weiterleiten</span><span><svg class="ico" viewBox="0 0 24 24"><path d="M4 8h16v12H4zM3 4h18v4H3zM10 12h4"/></svg>Archivieren</span><span><svg class="ico" viewBox="0 0 24 24"><path d="M5 7h14M9 7V4h6v3M7 7l1 13h8l1-13"/></svg>Löschen</span><span><svg class="ico" viewBox="0 0 24 24"><path d="M12 3.6l2.6 5.5 5.9.8-4.3 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.5 9.9l5.9-.8z"/></svg>Stern</span></div></div>
+    <div class="rb"><p>Hallo! Hier die Fotos von Samstag, wie versprochen.</p><p>Wenn du magst, lege ich sie in ein geteiltes Album. Sag mir, welche dir am besten gefallen, und ich kümmere mich um den Rest.</p><p>— Anna</p></div><div class="att"><span><i>PDF</i>Bewerbung.pdf · 240 KB</span><span><i>JPG</i>Foto.jpg · 1,2 MB</span></div></div></div><div class="status"><span>Suche: from: subject: has: before:</span></div></div></div><figcaption><b>4</b>Suche mit Operatoren</figcaption></figure></button><button class="gal-item" data-i="5"><figure><div class="shot"><div class="scr win"><div class="w" style="width:900px;height:640px"><div class="tb"><span class="brand"></span>Einstellungen · Darstellung<span class="wb"><span>—</span><span>▢</span><span>✕</span></span></div><div class="body"><div class="snav"><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8zM4 12h2M18 12h2M12 4v2M12 18v2"/></svg>Allgemein</div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM2 20a6 6 0 0 1 12 0M16 11a3 3 0 1 0 0-6M22 20a6 6 0 0 0-6-6"/></svg>Konten</div><div class="it on"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0 0 18c1 0 1.5-.7 1.5-1.5 0-.5-.2-.8-.5-1.2-.3-.4-.5-.7-.5-1.3 0-1 .8-1.5 1.7-1.5H16a5 5 0 0 0 5-5c0-4-4-7.5-9-7.5z"/></svg>Darstellung</div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3.5a4.5 4.5 0 0 0-4.5 4.5c0 5-2 6.5-2 8.5h13c0-2-2-3.5-2-8.5a4.5 4.5 0 0 0-4.5-4.5zM9.8 19a2.3 2.3 0 0 0 4.4 0"/></svg>Benachrichtigungen</div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg>Sicherheit und Daten</div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M12 20.5a8.5 8.5 0 1 1 .01 0zM12 11v5M12 8h.01"/></svg>Info</div></div><div class="pane"><h3>Darstellung</h3>
+    <div class="opt"><div>Design</div><div class="r"><div class="seg"><span class="on">Hell</span><span>Dunkel</span><span>System</span></div></div></div>
+    <div class="opt"><div>Akzentfarbe<small>Schaltflächen, Auswahl und Hervorhebungen</small></div><div class="r"><div class="dots"><i style="background:#076354" class=on></i><i style="background:#2161BA"></i><i style="background:#6834B2"></i><i style="background:#B72763"></i><i style="background:#975011"></i><i style="background:#5B6374"></i></div></div></div>
+    <div class="opt"><div>Textgröße</div><div class="r"><div class="seg"><span>A−</span><span class="on">A</span><span>A+</span></div></div></div>
+    <div class="opt"><div>Sprache</div><div class="r"><span class="sel">System folgen<span>▾</span></span></div></div>
+    <div class="opt"><div>Listendichte</div><div class="r"><div class="seg"><span class="on">Komfortabel</span><span>Kompakt</span></div></div></div></div></div></div></div></div><figcaption><b>5</b>Einstellungen › Darstellung</figcaption></figure></button><button class="gal-item" data-i="6"><figure><div class="shot"><div class="scr win"><div class="w" style="width:900px;height:640px"><div class="tb"><span class="brand"></span>Einstellungen · Benachrichtigungen<span class="wb"><span>—</span><span>▢</span><span>✕</span></span></div><div class="body"><div class="snav"><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8zM4 12h2M18 12h2M12 4v2M12 18v2"/></svg>Allgemein</div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM2 20a6 6 0 0 1 12 0M16 11a3 3 0 1 0 0-6M22 20a6 6 0 0 0-6-6"/></svg>Konten</div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0 0 18c1 0 1.5-.7 1.5-1.5 0-.5-.2-.8-.5-1.2-.3-.4-.5-.7-.5-1.3 0-1 .8-1.5 1.7-1.5H16a5 5 0 0 0 5-5c0-4-4-7.5-9-7.5z"/></svg>Darstellung</div><div class="it on"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3.5a4.5 4.5 0 0 0-4.5 4.5c0 5-2 6.5-2 8.5h13c0-2-2-3.5-2-8.5a4.5 4.5 0 0 0-4.5-4.5zM9.8 19a2.3 2.3 0 0 0 4.4 0"/></svg>Benachrichtigungen</div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg>Sicherheit und Daten</div><div class="it"><svg class="ico" viewBox="0 0 24 24"><path d="M12 20.5a8.5 8.5 0 1 1 .01 0zM12 11v5M12 8h.01"/></svg>Info</div></div><div class="pane"><h3>Benachrichtigungen</h3>
+    <div class="opt"><div>Ton bei neuer Mail</div><div class="r"><span class="tg"></span></div></div>
+    <div class="opt"><div>Symbol neben der Uhr<small>Mit der Zahl ungelesener Nachrichten</small></div><div class="r"><span class="tg"></span></div></div>
+    <div class="opt"><div>Ruhezeiten<small>🌙 23:00 → 08:00</small></div><div class="r"><span class="tg"></span></div></div>
+    <div class="opt"><div>Ausnahmen<small>Diese Absender kommen immer durch</small><div class="chips"><span>Anna Martin</span><span>Zentralbank</span><span>Theresa Silva</span></div></div></div>
+    <div class="opt"><div>Tägliche Zusammenfassung um 18:00</div><div class="r"><span class="tg off"></span></div></div></div></div></div></div></div><figcaption><b>6</b>Benachrichtigungen und Ruhezeiten</figcaption></figure></button><button class="gal-item" data-i="7"><figure><div class="shot"><div class="scr win"><div class="w" style="width:720px;height:560px"><div class="tb"><span class="brand"></span>Sidsmail<span class="wb"><span>—</span><span>▢</span><span>✕</span></span></div>
+    <div class="hero"><div class="tile"></div><h1>Willkommen bei Sidsmail</h1><p>Alle deine Konten in einem Posteingang, gespeichert auf deinem eigenen Computer. Beginne damit, das erste hinzuzufügen.</p>
+    <span class="btn" style="padding:12px 26px;font-size:14px">Erstes Konto hinzufügen</span><span style="margin-top:14px;color:var(--g-muted);font-size:13px">Jetzt nicht</span>
+    <div class="pdots"><i class="on"></i><i></i><i></i></div></div></div></div></div><figcaption><b>7</b>Assistent beim ersten Start</figcaption></figure></button><button class="gal-item" data-i="8"><figure><div class="shot"><div class="scr win"><div class="w" style="width:760px;height:600px"><div class="tb"><span class="brand"></span>Kontakte<span class="wb"><span>—</span><span>▢</span><span>✕</span></span></div>
+    <div class="search" style="margin:12px 18px 6px"><svg class="ico" viewBox="0 0 24 24"><path d="M11 4a7 7 0 1 1 0 14 7 7 0 0 1 0-14zM20 20l-4-4"/></svg>Suchen</div>
+    <div class="lhead" style="padding:4px 18px 6px"><span>128 Kontakte · nach Häufigkeit</span><span>vCard importieren</span></div>
+    <div class="ctable"><div class="crow"><span class="av" style="background:#3B82F6">AM</span><div><b>Anna Martin</b><br><em>ana@exemplo.pt</em></div><small>42 Nachrichten</small></div><div class="crow"><span class="av" style="background:#8B5CF6">RL</span><div><b>Robert Lang</b><br><em>rui.lopes@exemplo.pt</em></div><small>31 Nachrichten</small></div><div class="crow"><span class="av" style="background:#F59E0B">TS</span><div><b>Theresa Silva</b><br><em>teresa.silva@exemplo.pt</em></div><small>17 Nachrichten</small></div><div class="crow"><span class="av" style="background:#EC4899">Z</span><div><b>Zentralbank</b><br><em>noreply@banco.exemplo</em></div><small>9 Nachrichten</small></div><div class="crow"><span class="av" style="background:#0B8A72">P</span><div><b>Parkladen</b><br><em>loja@parque.exemplo</em></div><small>6 Nachrichten</small></div><div class="crow"><span class="av" style="background:#64748B">MC</span><div><b>Michael Costa</b><br><em>m.costa@exemplo.pt</em></div><small>5 Nachrichten</small></div><div class="crow"><span class="av" style="background:#0EA5E9">TS</span><div><b>Team Sidstuga</b><br><em>equipa@exemplo.pt</em></div><small>3 Nachrichten</small></div></div></div></div></div><figcaption><b>8</b>Kontakte</figcaption></figure></button></div>
+      <dialog class="gal-box"><button class="x" aria-label="Schließen">✕</button><div class="shot big"></div><p class="cap"></p></dialog>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var g=document.querySelector('.gal');if(!g)return;
+  var fit=function(){g.querySelectorAll('.shot').forEach(function(s){s.style.setProperty('--s',(s.clientWidth/1280).toFixed(4));});};
+  fit();window.addEventListener('resize',fit);
+  try{if(window.matchMedia('(prefers-color-scheme: dark)').matches||document.documentElement.getAttribute('data-theme')==='dark'){g.dataset.theme='dark';g.querySelectorAll('.gal-seg button').forEach(function(b){b.classList.toggle('on',b.dataset.theme==='dark');});}}catch(e){}
+  g.querySelectorAll('.gal-seg button').forEach(function(b){b.addEventListener('click',function(){g.dataset.theme=b.dataset.theme;g.querySelectorAll('.gal-seg button').forEach(function(x){x.classList.toggle('on',x===b);});});});
+  g.querySelectorAll('.dot').forEach(function(d){d.addEventListener('click',function(){g.dataset.accent=d.dataset.accent;g.querySelectorAll('.dot').forEach(function(x){x.classList.toggle('on',x===d);});});});
+  var box=g.querySelector('dialog.gal-box'),big=box.querySelector('.shot'),cap=box.querySelector('.cap');
+  g.querySelectorAll('.gal-item').forEach(function(it){it.addEventListener('click',function(){big.innerHTML=it.querySelector('.shot').innerHTML;cap.textContent=it.querySelector('figcaption').lastChild.textContent;if(box.showModal){box.showModal();fit();}});});
+  box.querySelector('.x').addEventListener('click',function(){box.close();});
+  box.addEventListener('click',function(e){if(e.target===box)box.close();});
+})();
+</script>
+
+<section id="privacy">
+  <div class="wrap split">
+    <div>
+      <p class="kicker">Datenschutz</p>
+      <h2>Deine Mails bleiben auf deinem Rechner.</h2>
+      <p class="sub" style="margin-bottom:0">Sidsmail spricht direkt mit dem Server deines Kontos. Kein Server von uns dazwischen, kein Sidsmail-Konto, keine Telemetrie. Was du behältst, behältst du.</p>
+    </div>
+    <ul class="checks"><li><svg viewBox="0 0 24 24"><path d="M5 12.5l5 5 9-10.5"/></svg><div><b>Externe Bilder blockiert</b> von Haus aus — Tracking-Pixel in Newslettern laden nie ohne dein Okay.</div></li><li><svg viewBox="0 0 24 24"><path d="M5 12.5l5 5 9-10.5"/></svg><div><b>Passwörter verschlüsselt</b> mit dem Datenschutz von Windows selbst, an dein Benutzerprofil gebunden.</div></li><li><svg viewBox="0 0 24 24"><path d="M5 12.5l5 5 9-10.5"/></svg><div><b>Optionale PIN-Sperre</b> beim Start und bei der Rückkehr aus dem Infobereich.</div></li><li><svg viewBox="0 0 24 24"><path d="M5 12.5l5 5 9-10.5"/></svg><div><b>Alles exportieren oder löschen</b> mit einem Klick — die Daten gehören dir, samt dem Recht, sie mitzunehmen.</div></li></ul>
+  </div>
+</section>
+
+<section id="download" class="dl">
+  <div class="wrap">
+    <p class="kicker">Herunterladen</p>
+    <h2>Kostenlos. Ohne Konto. Ohne Kleingedrucktes.</h2>
+    <p class="sub" style="margin:0 auto 28px">Ein Installer von wenigen Megabyte, ohne Administratorrechte. Aktualisiert sich selbst und zeigt dir vorher, was neu ist.</p>
+    <a class="btn btn-accent" style="padding:15px 30px;font-size:16px" href="https://github.com/hfmls/sidsmail-site/releases/latest"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12M6 11l6 6 6-6M4 20h16"/></svg> Sidsmail für Windows herunterladen</a>
+    <p class="req">Windows 10 (1809) oder Windows 11 · 64 Bit · braucht die <a href="https://dotnet.microsoft.com/download/dotnet/8.0/runtime">.NET 8 Desktop Runtime</a> (der Installer sagt Bescheid, wenn sie fehlt)</p>
+    <details><summary>Hat Windows beim Öffnen eine blaue Warnung („SmartScreen“) gezeigt?</summary><p>Das ist bei einem neuen Programm ohne bezahltes Signaturzertifikat normal. Klicke auf <b>Weitere Informationen</b> und dann auf <b>Trotzdem ausführen</b>. Der Installer ist dieselbe Datei wie auf dieser Seite; Größe und Version kannst du auf der Download-Seite prüfen.</p></details>
+  </div>
+</section>
+
+<section id="support" class="support">
+  <div class="wrap">
+    <div class="support-card">
+      <div class="support-heart"><svg class="ic-heart" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.5 2.6 4.5 6.4 4.1c2.1-.2 3.9.9 5.6 2.9 1.7-2 3.5-3.1 5.6-2.9 3.8.4 5.5 4.4 4 7.7C19.5 16.4 12 21 12 21z"/></svg></div>
+      <div>
+        <h3>Von einer Person gemacht, in freien Stunden.</h3>
+        <p>Sidsmail ist kostenlos und bleibt es. Wenn es dir nützt, zahlen 5 € — oder was du möchtest — die Domain und das Signaturzertifikat für den Installer.</p>
+      </div>
+      <a class="btn btn-accent" href="/de/donate/">Sidsmail unterstützen</a>
+    </div>
+  </div>
+</section>
+
+<section id="stats">
+  <div class="wrap">
+    <p class="kicker">In Zahlen</p>
+    <h2>Wer Sidsmail schon nutzt.</h2>
+    <p class="sub">Öffentliche Zähler, stündlich aktualisiert. Ohne Cookies: nur das Land, nie die Person.</p>
+    <div class="tiles">
+      <div class="tile"><b id="st-downloads">…</b><span>Downloads</span></div>
+      <div class="tile"><b id="st-visits">…</b><span>Besuche der Website</span></div>
+      <div class="tile"><b id="st-countries">…</b><span>Länder</span></div>
+    </div>
+    <div class="top">
+      <h3>Die 10 Länder mit den meisten Besuchen</h3>
+      <ol id="st-top" class="countries"></ol>
+      <p id="st-empty" class="empty" hidden>Noch nicht genug Daten — schau bald wieder vorbei.</p>
+      <p id="st-updated" class="updated"></p>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <p class="kicker">Fragen</p>
+    <h2>Bevor du fragst.</h2>
+    <div class="faq"><details><summary>Funktioniert es mit Gmail?</summary><p>Ja. Entweder meldest du dich mit Google an (ein Klick im Browser) oder du nutzt ein <a href="https://myaccount.google.com/apppasswords">App-Passwort</a> — Gmail lehnt das normale Passwort in jedem E-Mail-Client ab, das liegt nicht an Sidsmail.</p></details><details><summary>Und mit Outlook und Hotmail?</summary><p>Ja, per Anmeldung mit Microsoft. Microsoft akzeptiert bei privaten Konten keine App-Passwörter mehr, also ist die Anmeldung im Browser der einzige Weg — Sidsmail erledigt den Rest.</p></details><details><summary>Wo liegen meine Daten?</summary><p>In <code>%APPDATA%\Sidsmail</code>, auf deinem Rechner: Konten, Einstellungen und eine lokale Kopie der Nachrichten zum Lesen ohne Netz. Deinstallieren rührt diesen Ordner nicht an; „Lokale Daten löschen“ in den Einstellungen entfernt ihn vollständig.</p></details><details><summary>Was kostet es?</summary><p>Nichts. Sidsmail ist kostenlos und hat keine „Pro“-Version. Es wird von einer Person in der Freizeit gemacht — wenn es dir nützt, <a href="/de/donate/">kannst du es unterstützen</a>, aber das ist nie Pflicht und nichts ist gesperrt.</p></details><details><summary>HTML-Nachrichten erscheinen nur als Text?</summary><p>Sidsmail nutzt Windows' WebView2 zur HTML-Anzeige. Es ist in Windows 11 und den meisten aktuellen Windows 10 enthalten; falls es fehlt, <a href="https://developer.microsoft.com/microsoft-edge/webview2/">installiere es hier</a> — bis dahin zeigt die App alles als Klartext, nichts geht verloren.</p></details></div>
+  </div>
+</section>
+<script>
+(function(){
+  var el=function(id){return document.getElementById(id);};
+  var fmt=function(n){try{return new Intl.NumberFormat("de").format(n);}catch(e){return String(n);}};
+  var flag=function(cc){cc=String(cc||'').toUpperCase();if(cc.length!==2)return '🌍';return String.fromCodePoint(0x1F1E6+cc.charCodeAt(0)-65,0x1F1E6+cc.charCodeAt(1)-65);};
+  var name=function(cc){try{return new Intl.DisplayNames(["de"],{type:'region'}).of(cc);}catch(e){return cc;}};
+  var snapshot=null;
+  // 1. stats.json — written hourly by the site's own GitHub Action (visits + countries from
+  //    GoatCounter, downloads from the Releases API). Zero cookies, zero third-party calls
+  //    from the visitor's browser for the country list.
+  // Tiny, subtle line in the hero itself (same numbers as the full counters section
+  // further down) — stays hidden until there is a real downloads AND countries figure to
+  // show, so it never flashes a "…" or a "0" at anyone.
+  var showHero=function(){var d=el('hs-downloads'),c=el('hs-countries');
+    if(d&&c&&d.textContent!=='…'&&c.textContent!=='…'){el('hero-stats').hidden=false;}};
+  var fromSnapshot=fetch('/stats.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(s){
+    snapshot=s||{};
+    if(s.visits){el('st-visits').textContent=fmt(s.visits);}
+    if(s.downloads){el('st-downloads').textContent=fmt(s.downloads);el('hs-downloads').textContent=fmt(s.downloads);}
+    var list=(s.countries||[]);
+    if(list.length){el('st-countries').textContent=fmt(s.country_count||list.length);el('hs-countries').textContent=fmt(s.country_count||list.length);}
+    showHero();
+    var top=list.slice(0,10),max=top.length?top[0].count:1,h='';
+    top.forEach(function(c,i){h+='<li><span class="rank">'+(i+1)+'</span><span class="flag">'+flag(c.code)+'</span><span class="cname">'+name(c.code)+'</span><span class="bar"><i style="width:'+Math.max(4,Math.round(100*c.count/max))+'%"></i></span><span class="cnt">'+fmt(c.count)+'</span></li>';});
+    el('st-top').innerHTML=h;
+    if(s.updated){el('st-updated').textContent="Aktualisiert"+' '+new Date(s.updated).toLocaleString("de");}
+    el('st-empty').hidden=top.length>0;
+  }).catch(function(){el('st-empty').hidden=false;});
+  // 2. Live downloads straight from GitHub (fresher than the hourly snapshot; falls back to it).
+  fetch('https://api.github.com/repos/hfmls/sidsmail-site/releases').then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(rels){
+    var n=0;(rels||[]).forEach(function(r){(r.assets||[]).forEach(function(a){n+=a.download_count||0;});});
+    el('st-downloads').textContent=fmt(n);el('hs-downloads').textContent=fmt(n);showHero();
+  }).catch(function(){fromSnapshot.then(function(){if(!(snapshot&&snapshot.downloads))el('st-downloads').textContent='—';});});
+  // 3. Live visit total from GoatCounter's public counter (needs "visitor counter" enabled in
+  //    its settings); the hourly snapshot is the fallback.
+  fetch('https://sidsmail.goatcounter.com/counter/TOTAL.json').then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(c){var n=parseInt(String(c.count||'').replace(/\D/g,''),10);if(n>0)el('st-visits').textContent=fmt(n);}).catch(function(){fromSnapshot.then(function(){if(!(snapshot&&snapshot.visits))el('st-visits').textContent='—';});});
+  fromSnapshot.then(function(){if(!(snapshot&&(snapshot.countries||[]).length))el('st-countries').textContent='—';});
+})();
+</script>
+<footer>
+  <div class="wrap">
+    <span>© <span id="ano"></span> Sidsmail. In Portugal gemacht, von einer Person. · Ein weiteres Projekt des Autors: <a href="https://sidstuga.app">sidstuga.app</a></span>
+    <span><a href="#" id="ct-link" rel="nofollow">Kontakt</a> · <a href="/de/privacy/">Datenschutzerklärung</a> · <a href="/de/guide/">Anleitung</a> · <a href="/de/changelog/">Neuerungen</a> · <a href="/de/donate/">Unterstützen</a> · <a href="/de/#download">Herunterladen</a></span>
+  </div>
+</footer>
+<script>document.getElementById('ano').textContent=new Date().getFullYear();
+// Contacto: o endereço nunca aparece como texto nem como "mailto:" no HTML gerado — é
+// montado aqui em runtime, para não ser apanhado por scrapers de spam que só leem a fonte.
+(function(){var u='hfml85',d='gmail.com',a=document.getElementById('ct-link');
+if(a){a.href='mailto:'+u+'@'+d;}})();
+</script>
+</body>
+</html>

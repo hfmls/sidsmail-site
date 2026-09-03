@@ -1,0 +1,40 @@
+{
+  "releases": [
+    {
+      "version": "1.0.3",
+      "date": "2026-09-03",
+      "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.3/Sidsmail-Setup-1.0.3.exe",
+      "notes": {
+        "pt": "• O ícone no ambiente de trabalho passa a ser sempre criado ao instalar (antes dependia de uma opção escondida no assistente)\n• A app abre maximizada na primeira vez que é aberta",
+        "en": "• The desktop icon is now always created on install (it used to depend on a hidden option in the wizard)\n• The app now opens maximised the first time it's launched"
+      }
+    },
+    {
+      "version": "1.0.2",
+      "date": "2026-09-03",
+      "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.2/Sidsmail-Setup-1.0.2.exe",
+      "notes": {
+        "pt": "• Botão \"Ver novidades\" em Definições › Acerca, para veres o histórico de versões a qualquer momento\n• Instalador com visual próprio (ícone com brilho, sem a caixa 3D genérica)\n• URLs de atualização e de apoio deixaram de ser configuráveis — estavam a mais",
+        "en": "• \"See what's new\" button in Settings › About, to check the version history any time\n• Custom installer artwork (icon with a glow, no more generic 3-D box)\n• The update and support URLs are no longer user-configurable — they were leftover clutter"
+      }
+    },
+    {
+      "version": "1.0.1",
+      "date": "2026-09-03",
+      "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.1/Sidsmail-Setup-1.0.1.exe",
+      "notes": {
+        "pt": "• Contador de downloads em Definições › Acerca\n• Contacto e outro projeto do autor (sidstuga.app) em Acerca e no site\n• Correções de instalação (ficheiro em uso ao atualizar, compilação do instalador)",
+        "en": "• Download counter in Settings › About\n• Contact and another project by the author (sidstuga.app) in About and on the site\n• Install fixes (file-in-use when updating, installer build)"
+      }
+    },
+    {
+      "version": "1.0.0",
+      "date": "2026-09-03",
+      "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.0/Sidsmail-Setup-1.0.0.exe",
+      "notes": {
+        "pt": "Primeira versão pública.\n• Todas as contas numa só caixa (IMAP IDLE em tempo real)\n• Assistente de primeiro arranque\n• Imagens remotas bloqueadas por defeito, palavras-passe cifradas com a DPAPI do Windows\n• Notificações com horas de silêncio, resumo diário e remetentes prioritários\n• Regras simples, modelos de resposta, adiar mensagens, silenciar conversas\n• Tema claro/escuro, seis cores de destaque, Inter como tipo de letra\n• 23 idiomas, escolhidos automaticamente a partir do Windows\n• Atualizações automáticas com lista de novidades\n• Feito por uma pessoa: apoio opcional em sidsmail.com/apoiar",
+        "en": "First public release.\n• Every account in one inbox (real-time IMAP IDLE)\n• First-run assistant\n• Remote images blocked by default, passwords encrypted with Windows DPAPI\n• Notifications with quiet hours, a daily digest and priority senders\n• Simple rules, reply templates, snooze, mute conversations\n• Light/dark theme, six accent colours, Inter as the typeface\n• 23 languages, picked automatically from Windows\n• Automatic updates with a changelog\n• Made by one person: optional support at sidsmail.com/en/donate"
+      }
+    }
+  ]
+}
