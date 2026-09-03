@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="fr" data-lang="fr" data-page="changelog">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nouveautés — Sidsmail</title>
+<meta name="description" content="La même liste que l&#x27;application montre avant d&#x27;installer une mise à jour.">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0F1218" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<link rel="canonical" href="https://sidsmail.com/fr/changelog/">
+<link rel="alternate" hreflang="pt-PT" href="https://sidsmail.com/novidades/">
+<link rel="alternate" hreflang="pt-BR" href="https://sidsmail.com/pt-br/changelog/">
+<link rel="alternate" hreflang="en" href="https://sidsmail.com/en/changelog/">
+<link rel="alternate" hreflang="es" href="https://sidsmail.com/es/changelog/">
+<link rel="alternate" hreflang="fr" href="https://sidsmail.com/fr/changelog/">
+<link rel="alternate" hreflang="de" href="https://sidsmail.com/de/changelog/">
+<link rel="alternate" hreflang="it" href="https://sidsmail.com/it/changelog/">
+<link rel="alternate" hreflang="nl" href="https://sidsmail.com/nl/changelog/">
+<link rel="alternate" hreflang="pl" href="https://sidsmail.com/pl/changelog/">
+<link rel="alternate" hreflang="ru" href="https://sidsmail.com/ru/changelog/">
+<link rel="alternate" hreflang="uk" href="https://sidsmail.com/uk/changelog/">
+<link rel="alternate" hreflang="tr" href="https://sidsmail.com/tr/changelog/">
+<link rel="alternate" hreflang="ro" href="https://sidsmail.com/ro/changelog/">
+<link rel="alternate" hreflang="sv" href="https://sidsmail.com/sv/changelog/">
+<link rel="alternate" hreflang="da" href="https://sidsmail.com/da/changelog/">
+<link rel="alternate" hreflang="nb" href="https://sidsmail.com/nb/changelog/">
+<link rel="alternate" hreflang="fi" href="https://sidsmail.com/fi/changelog/">
+<link rel="alternate" hreflang="cs" href="https://sidsmail.com/cs/changelog/">
+<link rel="alternate" hreflang="hu" href="https://sidsmail.com/hu/changelog/">
+<link rel="alternate" hreflang="el" href="https://sidsmail.com/el/changelog/">
+<link rel="alternate" hreflang="ja" href="https://sidsmail.com/ja/changelog/">
+<link rel="alternate" hreflang="zh-Hans" href="https://sidsmail.com/zh/changelog/">
+<link rel="alternate" hreflang="ko" href="https://sidsmail.com/ko/changelog/">
+<link rel="alternate" hreflang="ar" href="https://sidsmail.com/ar/changelog/">
+<link rel="alternate" hreflang="x-default" href="https://sidsmail.com/en/changelog/">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:title" content="Nouveautés — Sidsmail">
+<meta property="og:description" content="La même liste que l&#x27;application montre avant d&#x27;installer une mise à jour.">
+<meta property="og:image" content="https://sidsmail.com/icon.png">
+<meta property="og:url" content="https://sidsmail.com/fr/changelog/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Same palette as the app's Palette.Dark.xaml / Palette.Light.xaml, so the site and the
+     window it downloads look like the same object. Dark first — it is the theme the app was
+     tuned in — with the light palette on prefers-color-scheme. */
+  :root {
+    --bg: #0F1218; --bg-2: #151920; --card: #1A1E26; --card-2: #20242D;
+    --fg: #EDF0F5; --fg-2: #B9C1CF; --muted: #A5AEBF;
+    --border: #333A47; --accent: #5FD3BA; --accent-hover: #82E2CD; --accent-soft: #1E413A; --on-accent: #08121A;
+    --shadow: 0 30px 80px rgba(0,0,0,.45);
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #FFFFFF; --bg-2: #F5F7FA; --card: #FFFFFF; --card-2: #F5F7FA;
+      --fg: #16191F; --fg-2: #3F4754; --muted: #5D6675;
+      --border: #DFE3EA; --accent: #076354; --accent-hover: #055446; --accent-soft: #C6EAE1; --on-accent: #FFFFFF;
+      --shadow: 0 30px 80px rgba(20,30,40,.14);
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 16px/1.55 Inter, "Segoe UI", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { color: var(--accent-hover); }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+  /* nav */
+  nav { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(14px); background: color-mix(in srgb, var(--bg) 82%, transparent); border-bottom: 1px solid var(--border); }
+  nav .wrap { display: flex; align-items: center; height: 60px; gap: 28px; }
+  .brand { display: flex; align-items: center; gap: 10px; color: var(--fg); font-weight: 600; font-size: 17px; }
+  .brand img { width: 26px; height: 26px; border-radius: 7px; }
+  nav .links { margin-left: auto; display: flex; align-items: center; gap: 24px; font-size: 14px; }
+  nav .links a { color: var(--fg-2); }
+  nav .links a:hover { color: var(--fg); }
+  nav .links a.btn-accent { color: var(--on-accent); }
+  .btn { display: inline-flex; align-items: center; gap: 10px; border-radius: 10px; padding: 12px 22px; font-weight: 600; font-size: 15px; transition: background .12s ease, color .12s ease, transform .12s ease; white-space: nowrap; }
+  .btn-accent { background: var(--accent); color: var(--on-accent); }
+  .btn-accent:hover { background: var(--accent-hover); color: var(--on-accent); transform: translateY(-1px); }
+  .btn-ghost { border: 1px solid var(--border); color: var(--fg); }
+  .btn-ghost:hover { background: var(--card-2); color: var(--fg); }
+  nav .btn { padding: 8px 16px; font-size: 14px; border-radius: 8px; }
+  @media (max-width: 720px) { nav .links > a:not(.btn) { display: none; } }
+
+  /* hero */
+  .hero { padding: 96px 0 72px; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content: ""; position: absolute; inset: -40% -20% auto; height: 120%; background: radial-gradient(60% 55% at 50% 30%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 70%); pointer-events: none; }
+  .hero > * { position: relative; }
+  .hero img { width: 112px; height: 112px; border-radius: 28px; box-shadow: var(--shadow); }
+  h1 { font-size: clamp(36px, 6vw, 58px); line-height: 1.05; letter-spacing: -.02em; font-weight: 700; margin: 32px 0 18px; }
+  .lede { font-size: clamp(17px, 2.2vw, 21px); color: var(--muted); max-width: 620px; margin: 0 auto 36px; }
+  .cta { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+  .cta .btn-accent { padding: 15px 30px; font-size: 16px; }
+  .fine { margin-top: 16px; font-size: 13px; color: var(--muted); }
+  .fine a { color: var(--fg-2); text-decoration: underline; text-decoration-color: var(--border); }
+
+  /* app window mock — the same three-pane layout, drawn in CSS so no real inbox is ever
+     screenshotted for the site */
+  .mock { margin: 64px auto 0; max-width: 900px; border: 1px solid var(--border); border-radius: 14px; background: var(--card); box-shadow: var(--shadow); overflow: hidden; text-align: left; font-size: 12px; }
+  .mock .bar { height: 36px; background: var(--bg-2); border-bottom: 1px solid var(--border); display: flex; align-items: center; padding: 0 14px; gap: 8px; color: var(--muted); }
+  .mock .bar .dot { width: 18px; height: 18px; border-radius: 5px; background: var(--accent); }
+  .mock .body { display: grid; grid-template-columns: 180px 260px 1fr; min-height: 320px; }
+  .mock .side { background: var(--bg-2); border-right: 1px solid var(--border); padding: 14px 10px; }
+  .mock .side .new { background: var(--accent); color: var(--on-accent); border-radius: 8px; padding: 8px 10px; font-weight: 600; margin-bottom: 14px; text-align: center; }
+  .mock .side .row { padding: 6px 10px; border-radius: 7px; color: var(--fg-2); display: flex; gap: 8px; align-items: center; }
+  .mock .side .row.on { background: var(--accent-soft); color: var(--fg); }
+  .mock .side .row i { width: 12px; height: 9px; border: 1.5px solid currentColor; border-radius: 2px; opacity: .8; }
+  .mock .side .acct { margin: 14px 10px 6px; font-size: 10px; color: var(--muted); font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+  .mock .list { background: var(--card); border-right: 1px solid var(--border); }
+  .mock .list .msg { padding: 10px 14px; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 26px 1fr auto; gap: 10px; align-items: center; }
+  .mock .list .msg.on { background: var(--accent-soft); }
+  .mock .av { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-weight: 600; color: #fff; font-size: 10px; }
+  .mock .msg b { display: block; color: var(--fg); font-weight: 600; }
+  .mock .msg span { color: var(--muted); }
+  .mock .msg small { color: var(--muted); font-size: 10px; }
+  .mock .read { padding: 18px 22px; background: var(--card-2); }
+  .mock .read h4 { margin: 0 0 6px; font-size: 15px; }
+  .mock .read .from { color: var(--muted); margin-bottom: 16px; }
+  .mock .read p { color: var(--fg-2); margin: 0 0 10px; }
+  .mock .line { height: 8px; border-radius: 4px; background: var(--border); margin: 8px 0; }
+  @media (max-width: 720px) { .mock .body { grid-template-columns: 1fr; } .mock .side, .mock .read { display: none; } }
+
+  /* features */
+  section { padding: 84px 0; }
+  .kicker { color: var(--accent); font-weight: 600; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; margin: 0 0 10px; }
+  h2 { font-size: clamp(28px, 4vw, 38px); letter-spacing: -.02em; line-height: 1.12; margin: 0 0 14px; }
+  .sub { color: var(--muted); font-size: 17px; max-width: 620px; margin: 0 0 44px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 860px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
+  .card .ic { width: 42px; height: 42px; border-radius: 12px; background: var(--accent-soft); display: grid; place-items: center; margin-bottom: 18px; }
+  .card .ic svg { width: 21px; height: 21px; stroke: var(--accent); fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  .card h3 { margin: 0 0 6px; font-size: 16.5px; }
+  .card p { margin: 0; color: var(--muted); font-size: 14.5px; }
+
+  /* privacy */
+  .split { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
+  @media (max-width: 800px) { .split { grid-template-columns: 1fr; gap: 32px; } }
+  .checks { list-style: none; padding: 0; margin: 0; }
+  .checks li { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); color: var(--fg-2); }
+  .checks li:last-child { border-bottom: 0; }
+  .checks svg { flex: none; width: 20px; height: 20px; stroke: var(--accent); fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; margin-top: 2px; }
+  .checks b { color: var(--fg); font-weight: 600; }
+
+  /* download */
+  .dl { background: var(--bg-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); text-align: center; }
+  .dl h2 { margin-bottom: 8px; }
+  .dl .req { color: var(--muted); font-size: 14px; margin: 18px 0 0; }
+  details { max-width: 640px; margin: 28px auto 0; text-align: left; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 4px 18px; }
+  details summary { cursor: pointer; font-weight: 600; padding: 12px 0; color: var(--fg); }
+  details p { color: var(--muted); font-size: 14.5px; margin: 0 0 14px; }
+
+  /* faq */
+  .faq details { margin: 0 0 10px; max-width: 760px; }
+
+  footer { padding: 40px 0 56px; color: var(--muted); font-size: 13.5px; }
+  footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: center; }
+  footer a { color: var(--fg-2); }
+
+  /* language menu */
+  nav .links details.lang { position: relative; align-self: center; margin: 0; padding: 0; border: 0; background: none; max-width: none; text-align: initial; }
+  nav .links details.lang summary { list-style: none; cursor: pointer; font-weight: 600; letter-spacing: .04em; border: 1px solid var(--border); border-radius: 7px; padding: 5px 9px; font-size: 12px; color: var(--fg-2); user-select: none; }
+  nav .links details.lang summary::-webkit-details-marker { display: none; }
+  nav .links details.lang summary span { opacity: .6; font-size: 10px; }
+  nav .links details.lang[open] summary { background: var(--card-2); }
+  nav .links details.lang .menu { position: absolute; right: 0; top: calc(100% + 8px); background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 6px; min-width: 170px; box-shadow: var(--shadow); display: grid; grid-template-columns: repeat(2, minmax(150px, 1fr)); gap: 0 4px; z-index: 20; }
+  nav .links details.lang .menu a { display: block; white-space: nowrap; padding: 8px 12px; border-radius: 8px; color: var(--fg); font-size: 14px; }
+  nav .links details.lang .menu a:hover { background: var(--card-2); }
+  nav .links details.lang .menu a.on { color: var(--accent); font-weight: 600; }
+
+  /* stats */
+  .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 28px; }
+  @media (max-width: 640px) { .tiles { grid-template-columns: 1fr; } }
+  .tile { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 26px 24px; text-align: center; }
+  .tile b { display: block; font-size: clamp(34px, 5vw, 48px); letter-spacing: -.03em; line-height: 1; color: var(--fg); font-variant-numeric: tabular-nums; }
+  .tile span { display: block; margin-top: 10px; color: var(--muted); font-size: 14px; }
+  .top { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
+  .top h3 { margin: 0 0 14px; font-size: 16px; }
+  .countries { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .countries li { display: grid; grid-template-columns: 22px 28px minmax(90px, 160px) 1fr auto; align-items: center; gap: 10px; font-size: 14px; }
+  .countries .rank { color: var(--muted); font-variant-numeric: tabular-nums; text-align: right; }
+  .countries .flag { font-size: 18px; line-height: 1; }
+  .countries .cname { color: var(--fg); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .countries .bar { height: 8px; background: var(--card-2); border-radius: 4px; overflow: hidden; }
+  .countries .bar i { display: block; height: 100%; background: var(--accent); border-radius: 4px; }
+  .countries .cnt { color: var(--muted); font-variant-numeric: tabular-nums; min-width: 3ch; text-align: right; }
+  .top .empty, .top .updated { color: var(--muted); font-size: 13px; margin: 12px 0 0; }
+  .top .updated:empty { display: none; }
+
+  /* inner pages */
+  .page { padding: 72px 0 84px; }
+  .wrap.narrow { max-width: 760px; }
+  .hero-icon { border-radius: 22px; box-shadow: var(--shadow); margin-bottom: 26px; }
+  .h2 { font-size: clamp(30px, 4.5vw, 42px); letter-spacing: -.02em; line-height: 1.1; margin: 0 0 18px; }
+  .h3 { font-size: 20px; margin: 0; display: flex; align-items: center; gap: 10px; }
+  .lede-left { font-size: 17px; color: var(--fg-2); margin: 0 0 16px; }
+  .suggest { background: var(--accent-soft); border-radius: 14px; padding: 18px 20px; margin: 24px 0; font-size: 16px; color: var(--fg); }
+  .donate-buttons { display: flex; gap: 12px; flex-wrap: wrap; margin: 8px 0 28px; }
+  .donate-buttons .btn { padding: 14px 24px; }
+  .soon { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; color: var(--fg-2); font-size: 15px; }
+  .thanks { font-size: 22px; font-weight: 600; margin: 0 0 8px; }
+  .other { color: var(--muted); }
+  .release { border-top: 1px solid var(--border); padding: 28px 0; }
+  .release:last-child { border-bottom: 1px solid var(--border); }
+  .rel-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 10px; }
+  .rel-head time { color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
+  .badge { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; background: var(--accent-soft); color: var(--accent); border-radius: 999px; padding: 3px 9px; }
+  .release p { color: var(--fg-2); margin: 0 0 10px; }
+  .release ul { margin: 0 0 16px; padding-left: 20px; color: var(--fg-2); }
+  .release li { margin: 4px 0; }
+  .btn.small { padding: 9px 14px; font-size: 14px; }
+  .policy p, .policy li { color: var(--fg-2); }
+  .policy h2 { font-size: 20px; margin: 30px 0 8px; }
+  .policy .date { color: var(--muted); margin: -8px 0 24px; }
+  .policy hr { border: 0; border-top: 1px solid var(--border); margin: 36px 0; }
+
+  /* Right-to-left languages (Arabic): flip the few physical-direction rules above. */
+  [dir="rtl"] nav .links { margin-left: 0; margin-right: auto; }
+  [dir="rtl"] nav .links details.lang .menu { right: auto; left: 0; }
+  [dir="rtl"] .mock { text-align: right; }
+  [dir="rtl"] .mock .side, [dir="rtl"] .mock .list { border-right: 0; border-left: 1px solid var(--border); }
+  [dir="rtl"] details { text-align: right; }
+  [dir="rtl"] .release ul { padding-left: 0; padding-right: 20px; }
+  [dir="rtl"] .countries .rank, [dir="rtl"] .countries .cnt { text-align: left; }
+
+  /* heart / support */
+  nav .links a.heart { display: inline-flex; align-items: center; gap: 5px; color: var(--fg); }
+  nav .links a.heart .ic-heart { color: #E0245E; }
+  .support { padding: 0 0 72px; }
+  .support-card { display: flex; align-items: center; gap: 22px; background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 26px 28px; box-shadow: var(--shadow); }
+  .support-card h3 { margin: 0 0 6px; font-size: 18px; }
+  .support-card p { margin: 0; color: var(--muted); font-size: 15px; max-width: 62ch; }
+  .support-card > div:not(.support-heart) { flex: 1; }
+  .support-heart { width: 48px; height: 48px; border-radius: 14px; background: rgba(224,36,94,.10); color: #E0245E; display: grid; place-items: center; flex: none; }
+  .support-heart .ic-heart { width: 22px; height: 22px; }
+  .amount-note { color: var(--muted); font-size: 14px; margin: 12px 0 0; flex-basis: 100%; }
+  @media (max-width: 720px) { .support-card { flex-direction: column; align-items: flex-start; } }
+
+  /* guide */
+  .guide .step { display: grid; grid-template-columns: 1fr 1.25fr; gap: 36px; align-items: center; padding: 40px 0; border-top: 1px solid var(--border); }
+  .guide .step:nth-child(even) .step-text { order: 2; }
+  .guide .step-no { display: inline-grid; place-items: center; width: 32px; height: 32px; border-radius: 10px; background: var(--accent); color: var(--on-accent); font-weight: 700; font-size: 15px; margin-bottom: 12px; }
+  .guide .step h2 { font-size: 24px; margin: 0 0 10px; letter-spacing: -.01em; }
+  .guide .step p { color: var(--fg-2); font-size: 15.5px; line-height: 1.6; margin: 0; }
+  .guide .step-img { margin: 0; border-radius: 14px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); background: var(--card); }
+  .guide .step-img img { display: block; width: 100%; height: auto; }
+  .guide kbd { display: inline-block; min-width: 1.6em; text-align: center; padding: 1px 6px; border-radius: 6px; border: 1px solid var(--border); border-bottom-width: 2px; background: var(--card-2); font: 600 12.5px/1.5 ui-monospace, "SF Mono", Consolas, monospace; color: var(--fg); }
+  .guide-cta { margin-top: 24px; padding: 26px 28px; border-radius: 16px; background: var(--card); border: 1px solid var(--border); }
+  .guide-cta h3 { margin: 0 0 6px; font-size: 18px; }
+  .guide-cta p { margin: 0; color: var(--muted); }
+  @media (max-width: 760px) { .guide .step { grid-template-columns: 1fr; gap: 18px; } .guide .step:nth-child(even) .step-text { order: 0; } }
+  [dir="rtl"] .guide .step-text, [dir="rtl"] .guide .step-img { direction: rtl; }
+</style>
+<script>
+(function(){try{
+  var cur="fr",routes={"pt": "/novidades/", "pt-br": "/pt-br/changelog/", "en": "/en/changelog/", "es": "/es/changelog/", "fr": "/fr/changelog/", "de": "/de/changelog/", "it": "/it/changelog/", "nl": "/nl/changelog/", "pl": "/pl/changelog/", "ru": "/ru/changelog/", "uk": "/uk/changelog/", "tr": "/tr/changelog/", "ro": "/ro/changelog/", "sv": "/sv/changelog/", "da": "/da/changelog/", "nb": "/nb/changelog/", "fi": "/fi/changelog/", "cs": "/cs/changelog/", "hu": "/hu/changelog/", "el": "/el/changelog/", "ja": "/ja/changelog/", "zh": "/zh/changelog/", "ko": "/ko/changelog/", "ar": "/ar/changelog/"},supported=["pt", "pt-br", "en", "es", "fr", "de", "it", "nl", "pl", "ru", "uk", "tr", "ro", "sv", "da", "nb", "fi", "cs", "hu", "el", "ja", "zh", "ko", "ar"];
+  var saved=null;try{saved=localStorage.getItem('sidsmail-lang');}catch(e){}
+  var internal=document.referrer&&document.referrer.indexOf(location.origin)===0;
+  if(internal)return;
+  var want=saved&&supported.indexOf(saved)>=0?saved:null;
+  if(!want){var ls=(navigator.languages||[navigator.language||'']).map(function(x){return String(x).toLowerCase();});
+    for(var i=0;i<ls.length&&!want;i++){var full=ls[i].replace('_','-'),two=full.slice(0,2);
+      if(supported.indexOf(full)>=0)want=full;else if(supported.indexOf(two)>=0)want=two;
+      else if(two==='nn'||two==='no')want='nb';}
+    if(!want)want='en';}
+  if(want!==cur&&routes[want])location.replace(routes[want]);
+}catch(e){}})();
+</script>
+<script data-goatcounter="https://sidsmail.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body><nav>
+  <div class="wrap">
+    <a class="brand" href="/fr/"><img src="/icon.png" alt=""> Sidsmail</a>
+    <div class="links">
+      <a href="/fr/#features">Fonctionnalités</a>
+      <a href="/fr/#privacy">Confidentialité</a>
+      <a href="/fr/guide/">Guide</a>
+      <a href="/fr/changelog/">Nouveautés</a>
+      <a class="heart" href="/fr/donate/"><svg class="ic-heart" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.5 2.6 4.5 6.4 4.1c2.1-.2 3.9.9 5.6 2.9 1.7-2 3.5-3.1 5.6-2.9 3.8.4 5.5 4.4 4 7.7C19.5 16.4 12 21 12 21z"/></svg> Soutenir</a>
+      <details class="lang"><summary aria-label="Language">FR <span>▾</span></summary><div class="menu"><a href="/novidades/" lang="pt-PT" hreflang="pt-PT" onclick="try{localStorage.setItem('sidsmail-lang','pt')}catch(e){}">Português (Portugal)</a><a href="/pt-br/changelog/" lang="pt-BR" hreflang="pt-BR" onclick="try{localStorage.setItem('sidsmail-lang','pt-br')}catch(e){}">Português (Brasil)</a><a href="/en/changelog/" lang="en" hreflang="en" onclick="try{localStorage.setItem('sidsmail-lang','en')}catch(e){}">English</a><a href="/es/changelog/" lang="es" hreflang="es" onclick="try{localStorage.setItem('sidsmail-lang','es')}catch(e){}">Español</a><a href="/fr/changelog/" lang="fr" hreflang="fr" class=on onclick="try{localStorage.setItem('sidsmail-lang','fr')}catch(e){}">Français</a><a href="/de/changelog/" lang="de" hreflang="de" onclick="try{localStorage.setItem('sidsmail-lang','de')}catch(e){}">Deutsch</a><a href="/it/changelog/" lang="it" hreflang="it" onclick="try{localStorage.setItem('sidsmail-lang','it')}catch(e){}">Italiano</a><a href="/nl/changelog/" lang="nl" hreflang="nl" onclick="try{localStorage.setItem('sidsmail-lang','nl')}catch(e){}">Nederlands</a><a href="/pl/changelog/" lang="pl" hreflang="pl" onclick="try{localStorage.setItem('sidsmail-lang','pl')}catch(e){}">Polski</a><a href="/ru/changelog/" lang="ru" hreflang="ru" onclick="try{localStorage.setItem('sidsmail-lang','ru')}catch(e){}">Русский</a><a href="/uk/changelog/" lang="uk" hreflang="uk" onclick="try{localStorage.setItem('sidsmail-lang','uk')}catch(e){}">Українська</a><a href="/tr/changelog/" lang="tr" hreflang="tr" onclick="try{localStorage.setItem('sidsmail-lang','tr')}catch(e){}">Türkçe</a><a href="/ro/changelog/" lang="ro" hreflang="ro" onclick="try{localStorage.setItem('sidsmail-lang','ro')}catch(e){}">Română</a><a href="/sv/changelog/" lang="sv" hreflang="sv" onclick="try{localStorage.setItem('sidsmail-lang','sv')}catch(e){}">Svenska</a><a href="/da/changelog/" lang="da" hreflang="da" onclick="try{localStorage.setItem('sidsmail-lang','da')}catch(e){}">Dansk</a><a href="/nb/changelog/" lang="nb" hreflang="nb" onclick="try{localStorage.setItem('sidsmail-lang','nb')}catch(e){}">Norsk bokmål</a><a href="/fi/changelog/" lang="fi" hreflang="fi" onclick="try{localStorage.setItem('sidsmail-lang','fi')}catch(e){}">Suomi</a><a href="/cs/changelog/" lang="cs" hreflang="cs" onclick="try{localStorage.setItem('sidsmail-lang','cs')}catch(e){}">Čeština</a><a href="/hu/changelog/" lang="hu" hreflang="hu" onclick="try{localStorage.setItem('sidsmail-lang','hu')}catch(e){}">Magyar</a><a href="/el/changelog/" lang="el" hreflang="el" onclick="try{localStorage.setItem('sidsmail-lang','el')}catch(e){}">Ελληνικά</a><a href="/ja/changelog/" lang="ja" hreflang="ja" onclick="try{localStorage.setItem('sidsmail-lang','ja')}catch(e){}">日本語</a><a href="/zh/changelog/" lang="zh-Hans" hreflang="zh-Hans" onclick="try{localStorage.setItem('sidsmail-lang','zh')}catch(e){}">中文（简体）</a><a href="/ko/changelog/" lang="ko" hreflang="ko" onclick="try{localStorage.setItem('sidsmail-lang','ko')}catch(e){}">한국어</a><a href="/ar/changelog/" lang="ar" hreflang="ar" onclick="try{localStorage.setItem('sidsmail-lang','ar')}catch(e){}">العربية</a></div></details>
+      <a class="btn btn-accent" href="/fr/#download">Télécharger</a>
+    </div>
+  </div>
+</nav>
+<section class="page">
+  <div class="wrap narrow">
+    <p class="kicker">Nouveautés</p>
+    <h1 class="h2">Ce qui a changé à chaque version.</h1>
+    <p class="lede-left">La même liste que l'application montre avant d'installer une mise à jour.</p>
+    <article class="release">
+  <div class="rel-head"><h2 class="h3">Version 1.0.0 <span class="badge">dernière</span></h2><time datetime="2026-09-03">2026-09-03</time></div>
+  <p>First public release.</p><ul><li>Every account in one inbox (real-time IMAP IDLE)</li><li>First-run assistant</li><li>Remote images blocked by default, passwords encrypted with Windows DPAPI</li><li>Notifications with quiet hours, a daily digest and priority senders</li><li>Simple rules, reply templates, snooze, mute conversations</li><li>Light/dark theme, six accent colours, Inter as the typeface</li><li>23 languages, picked automatically from Windows</li><li>Automatic updates with a changelog</li><li>Made by one person: optional support at sidsmail.com/en/donate</li></ul>
+  <a class="btn btn-ghost small" href="https://github.com/hfmls/sidsmail-site/releases/download/v1.0.0/Sidsmail-Setup-1.0.0.exe"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12M6 11l6 6 6-6M4 20h16"/></svg> Télécharger cette version</a>
+</article>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <span>© <span id="ano"></span> Sidsmail. Fait au Portugal par une seule personne. · Un autre projet de l'auteur : <a href="https://sidstuga.app">sidstuga.app</a></span>
+    <span><a href="/fr/privacy/">Politique de confidentialité</a> · <a href="/fr/guide/">Guide</a> · <a href="/fr/changelog/">Nouveautés</a> · <a href="/fr/donate/">Soutenir</a> · <a href="/fr/#download">Télécharger</a></span>
+  </div>
+</footer>
+<script>document.getElementById('ano').textContent=new Date().getFullYear();</script>
+</body>
+</html>

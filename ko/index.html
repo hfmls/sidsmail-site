@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="ko" data-lang="ko" data-page="index">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sidsmail — 가볍고 방해 없는 나만의 메일</title>
+<meta name="description" content="Sidsmail은 Windows용 가벼운 이메일 클라이언트입니다. 모든 계정을 하나의 편지함에, 기본으로 프라이빗하게, 방해 금지 시간이 있는 알림까지. 무료입니다.">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0F1218" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<link rel="canonical" href="https://sidsmail.com/ko/">
+<link rel="alternate" hreflang="pt-PT" href="https://sidsmail.com/">
+<link rel="alternate" hreflang="pt-BR" href="https://sidsmail.com/pt-br/">
+<link rel="alternate" hreflang="en" href="https://sidsmail.com/en/">
+<link rel="alternate" hreflang="es" href="https://sidsmail.com/es/">
+<link rel="alternate" hreflang="fr" href="https://sidsmail.com/fr/">
+<link rel="alternate" hreflang="de" href="https://sidsmail.com/de/">
+<link rel="alternate" hreflang="it" href="https://sidsmail.com/it/">
+<link rel="alternate" hreflang="nl" href="https://sidsmail.com/nl/">
+<link rel="alternate" hreflang="pl" href="https://sidsmail.com/pl/">
+<link rel="alternate" hreflang="ru" href="https://sidsmail.com/ru/">
+<link rel="alternate" hreflang="uk" href="https://sidsmail.com/uk/">
+<link rel="alternate" hreflang="tr" href="https://sidsmail.com/tr/">
+<link rel="alternate" hreflang="ro" href="https://sidsmail.com/ro/">
+<link rel="alternate" hreflang="sv" href="https://sidsmail.com/sv/">
+<link rel="alternate" hreflang="da" href="https://sidsmail.com/da/">
+<link rel="alternate" hreflang="nb" href="https://sidsmail.com/nb/">
+<link rel="alternate" hreflang="fi" href="https://sidsmail.com/fi/">
+<link rel="alternate" hreflang="cs" href="https://sidsmail.com/cs/">
+<link rel="alternate" hreflang="hu" href="https://sidsmail.com/hu/">
+<link rel="alternate" hreflang="el" href="https://sidsmail.com/el/">
+<link rel="alternate" hreflang="ja" href="https://sidsmail.com/ja/">
+<link rel="alternate" hreflang="zh-Hans" href="https://sidsmail.com/zh/">
+<link rel="alternate" hreflang="ko" href="https://sidsmail.com/ko/">
+<link rel="alternate" hreflang="ar" href="https://sidsmail.com/ar/">
+<link rel="alternate" hreflang="x-default" href="https://sidsmail.com/en/">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:title" content="Sidsmail — 가볍고 방해 없는 나만의 메일">
+<meta property="og:description" content="Sidsmail은 Windows용 가벼운 이메일 클라이언트입니다. 모든 계정을 하나의 편지함에, 기본으로 프라이빗하게, 방해 금지 시간이 있는 알림까지. 무료입니다.">
+<meta property="og:image" content="https://sidsmail.com/icon.png">
+<meta property="og:url" content="https://sidsmail.com/ko/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Same palette as the app's Palette.Dark.xaml / Palette.Light.xaml, so the site and the
+     window it downloads look like the same object. Dark first — it is the theme the app was
+     tuned in — with the light palette on prefers-color-scheme. */
+  :root {
+    --bg: #0F1218; --bg-2: #151920; --card: #1A1E26; --card-2: #20242D;
+    --fg: #EDF0F5; --fg-2: #B9C1CF; --muted: #A5AEBF;
+    --border: #333A47; --accent: #5FD3BA; --accent-hover: #82E2CD; --accent-soft: #1E413A; --on-accent: #08121A;
+    --shadow: 0 30px 80px rgba(0,0,0,.45);
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #FFFFFF; --bg-2: #F5F7FA; --card: #FFFFFF; --card-2: #F5F7FA;
+      --fg: #16191F; --fg-2: #3F4754; --muted: #5D6675;
+      --border: #DFE3EA; --accent: #076354; --accent-hover: #055446; --accent-soft: #C6EAE1; --on-accent: #FFFFFF;
+      --shadow: 0 30px 80px rgba(20,30,40,.14);
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 16px/1.55 Inter, "Segoe UI", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { color: var(--accent-hover); }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+  /* nav */
+  nav { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(14px); background: color-mix(in srgb, var(--bg) 82%, transparent); border-bottom: 1px solid var(--border); }
+  nav .wrap { display: flex; align-items: center; height: 60px; gap: 28px; }
+  .brand { display: flex; align-items: center; gap: 10px; color: var(--fg); font-weight: 600; font-size: 17px; }
+  .brand img { width: 26px; height: 26px; border-radius: 7px; }
+  nav .links { margin-left: auto; display: flex; align-items: center; gap: 24px; font-size: 14px; }
+  nav .links a { color: var(--fg-2); }
+  nav .links a:hover { color: var(--fg); }
+  nav .links a.btn-accent { color: var(--on-accent); }
+  .btn { display: inline-flex; align-items: center; gap: 10px; border-radius: 10px; padding: 12px 22px; font-weight: 600; font-size: 15px; transition: background .12s ease, color .12s ease, transform .12s ease; white-space: nowrap; }
+  .btn-accent { background: var(--accent); color: var(--on-accent); }
+  .btn-accent:hover { background: var(--accent-hover); color: var(--on-accent); transform: translateY(-1px); }
+  .btn-ghost { border: 1px solid var(--border); color: var(--fg); }
+  .btn-ghost:hover { background: var(--card-2); color: var(--fg); }
+  nav .btn { padding: 8px 16px; font-size: 14px; border-radius: 8px; }
+  @media (max-width: 720px) { nav .links > a:not(.btn) { display: none; } }
+
+  /* hero */
+  .hero { padding: 96px 0 72px; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content: ""; position: absolute; inset: -40% -20% auto; height: 120%; background: radial-gradient(60% 55% at 50% 30%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 70%); pointer-events: none; }
+  .hero > * { position: relative; }
+  .hero img { width: 112px; height: 112px; border-radius: 28px; box-shadow: var(--shadow); }
+  h1 { font-size: clamp(36px, 6vw, 58px); line-height: 1.05; letter-spacing: -.02em; font-weight: 700; margin: 32px 0 18px; }
+  .lede { font-size: clamp(17px, 2.2vw, 21px); color: var(--muted); max-width: 620px; margin: 0 auto 36px; }
+  .cta { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+  .cta .btn-accent { padding: 15px 30px; font-size: 16px; }
+  .fine { margin-top: 16px; font-size: 13px; color: var(--muted); }
+  .fine a { color: var(--fg-2); text-decoration: underline; text-decoration-color: var(--border); }
+
+  /* app window mock — the same three-pane layout, drawn in CSS so no real inbox is ever
+     screenshotted for the site */
+  .mock { margin: 64px auto 0; max-width: 900px; border: 1px solid var(--border); border-radius: 14px; background: var(--card); box-shadow: var(--shadow); overflow: hidden; text-align: left; font-size: 12px; }
+  .mock .bar { height: 36px; background: var(--bg-2); border-bottom: 1px solid var(--border); display: flex; align-items: center; padding: 0 14px; gap: 8px; color: var(--muted); }
+  .mock .bar .dot { width: 18px; height: 18px; border-radius: 5px; background: var(--accent); }
+  .mock .body { display: grid; grid-template-columns: 180px 260px 1fr; min-height: 320px; }
+  .mock .side { background: var(--bg-2); border-right: 1px solid var(--border); padding: 14px 10px; }
+  .mock .side .new { background: var(--accent); color: var(--on-accent); border-radius: 8px; padding: 8px 10px; font-weight: 600; margin-bottom: 14px; text-align: center; }
+  .mock .side .row { padding: 6px 10px; border-radius: 7px; color: var(--fg-2); display: flex; gap: 8px; align-items: center; }
+  .mock .side .row.on { background: var(--accent-soft); color: var(--fg); }
+  .mock .side .row i { width: 12px; height: 9px; border: 1.5px solid currentColor; border-radius: 2px; opacity: .8; }
+  .mock .side .acct { margin: 14px 10px 6px; font-size: 10px; color: var(--muted); font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+  .mock .list { background: var(--card); border-right: 1px solid var(--border); }
+  .mock .list .msg { padding: 10px 14px; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 26px 1fr auto; gap: 10px; align-items: center; }
+  .mock .list .msg.on { background: var(--accent-soft); }
+  .mock .av { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-weight: 600; color: #fff; font-size: 10px; }
+  .mock .msg b { display: block; color: var(--fg); font-weight: 600; }
+  .mock .msg span { color: var(--muted); }
+  .mock .msg small { color: var(--muted); font-size: 10px; }
+  .mock .read { padding: 18px 22px; background: var(--card-2); }
+  .mock .read h4 { margin: 0 0 6px; font-size: 15px; }
+  .mock .read .from { color: var(--muted); margin-bottom: 16px; }
+  .mock .read p { color: var(--fg-2); margin: 0 0 10px; }
+  .mock .line { height: 8px; border-radius: 4px; background: var(--border); margin: 8px 0; }
+  @media (max-width: 720px) { .mock .body { grid-template-columns: 1fr; } .mock .side, .mock .read { display: none; } }
+
+  /* features */
+  section { padding: 84px 0; }
+  .kicker { color: var(--accent); font-weight: 600; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; margin: 0 0 10px; }
+  h2 { font-size: clamp(28px, 4vw, 38px); letter-spacing: -.02em; line-height: 1.12; margin: 0 0 14px; }
+  .sub { color: var(--muted); font-size: 17px; max-width: 620px; margin: 0 0 44px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 860px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
+  .card .ic { width: 42px; height: 42px; border-radius: 12px; background: var(--accent-soft); display: grid; place-items: center; margin-bottom: 18px; }
+  .card .ic svg { width: 21px; height: 21px; stroke: var(--accent); fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  .card h3 { margin: 0 0 6px; font-size: 16.5px; }
+  .card p { margin: 0; color: var(--muted); font-size: 14.5px; }
+
+  /* privacy */
+  .split { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
+  @media (max-width: 800px) { .split { grid-template-columns: 1fr; gap: 32px; } }
+  .checks { list-style: none; padding: 0; margin: 0; }
+  .checks li { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); color: var(--fg-2); }
+  .checks li:last-child { border-bottom: 0; }
+  .checks svg { flex: none; width: 20px; height: 20px; stroke: var(--accent); fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; margin-top: 2px; }
+  .checks b { color: var(--fg); font-weight: 600; }
+
+  /* download */
+  .dl { background: var(--bg-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); text-align: center; }
+  .dl h2 { margin-bottom: 8px; }
+  .dl .req { color: var(--muted); font-size: 14px; margin: 18px 0 0; }
+  details { max-width: 640px; margin: 28px auto 0; text-align: left; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 4px 18px; }
+  details summary { cursor: pointer; font-weight: 600; padding: 12px 0; color: var(--fg); }
+  details p { color: var(--muted); font-size: 14.5px; margin: 0 0 14px; }
+
+  /* faq */
+  .faq details { margin: 0 0 10px; max-width: 760px; }
+
+  footer { padding: 40px 0 56px; color: var(--muted); font-size: 13.5px; }
+  footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: center; }
+  footer a { color: var(--fg-2); }
+
+  /* language menu */
+  nav .links details.lang { position: relative; align-self: center; margin: 0; padding: 0; border: 0; background: none; max-width: none; text-align: initial; }
+  nav .links details.lang summary { list-style: none; cursor: pointer; font-weight: 600; letter-spacing: .04em; border: 1px solid var(--border); border-radius: 7px; padding: 5px 9px; font-size: 12px; color: var(--fg-2); user-select: none; }
+  nav .links details.lang summary::-webkit-details-marker { display: none; }
+  nav .links details.lang summary span { opacity: .6; font-size: 10px; }
+  nav .links details.lang[open] summary { background: var(--card-2); }
+  nav .links details.lang .menu { position: absolute; right: 0; top: calc(100% + 8px); background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 6px; min-width: 170px; box-shadow: var(--shadow); display: grid; grid-template-columns: repeat(2, minmax(150px, 1fr)); gap: 0 4px; z-index: 20; }
+  nav .links details.lang .menu a { display: block; white-space: nowrap; padding: 8px 12px; border-radius: 8px; color: var(--fg); font-size: 14px; }
+  nav .links details.lang .menu a:hover { background: var(--card-2); }
+  nav .links details.lang .menu a.on { color: var(--accent); font-weight: 600; }
+
+  /* stats */
+  .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 28px; }
+  @media (max-width: 640px) { .tiles { grid-template-columns: 1fr; } }
+  .tile { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 26px 24px; text-align: center; }
+  .tile b { display: block; font-size: clamp(34px, 5vw, 48px); letter-spacing: -.03em; line-height: 1; color: var(--fg); font-variant-numeric: tabular-nums; }
+  .tile span { display: block; margin-top: 10px; color: var(--muted); font-size: 14px; }
+  .top { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
+  .top h3 { margin: 0 0 14px; font-size: 16px; }
+  .countries { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .countries li { display: grid; grid-template-columns: 22px 28px minmax(90px, 160px) 1fr auto; align-items: center; gap: 10px; font-size: 14px; }
+  .countries .rank { color: var(--muted); font-variant-numeric: tabular-nums; text-align: right; }
+  .countries .flag { font-size: 18px; line-height: 1; }
+  .countries .cname { color: var(--fg); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .countries .bar { height: 8px; background: var(--card-2); border-radius: 4px; overflow: hidden; }
+  .countries .bar i { display: block; height: 100%; background: var(--accent); border-radius: 4px; }
+  .countries .cnt { color: var(--muted); font-variant-numeric: tabular-nums; min-width: 3ch; text-align: right; }
+  .top .empty, .top .updated { color: var(--muted); font-size: 13px; margin: 12px 0 0; }
+  .top .updated:empty { display: none; }
+
+  /* inner pages */
+  .page { padding: 72px 0 84px; }
+  .wrap.narrow { max-width: 760px; }
+  .hero-icon { border-radius: 22px; box-shadow: var(--shadow); margin-bottom: 26px; }
+  .h2 { font-size: clamp(30px, 4.5vw, 42px); letter-spacing: -.02em; line-height: 1.1; margin: 0 0 18px; }
+  .h3 { font-size: 20px; margin: 0; display: flex; align-items: center; gap: 10px; }
+  .lede-left { font-size: 17px; color: var(--fg-2); margin: 0 0 16px; }
+  .suggest { background: var(--accent-soft); border-radius: 14px; padding: 18px 20px; margin: 24px 0; font-size: 16px; color: var(--fg); }
+  .donate-buttons { display: flex; gap: 12px; flex-wrap: wrap; margin: 8px 0 28px; }
+  .donate-buttons .btn { padding: 14px 24px; }
+  .soon { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; color: var(--fg-2); font-size: 15px; }
+  .thanks { font-size: 22px; font-weight: 600; margin: 0 0 8px; }
+  .other { color: var(--muted); }
+  .release { border-top: 1px solid var(--border); padding: 28px 0; }
+  .release:last-child { border-bottom: 1px solid var(--border); }
+  .rel-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 10px; }
+  .rel-head time { color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
+  .badge { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; background: var(--accent-soft); color: var(--accent); border-radius: 999px; padding: 3px 9px; }
+  .release p { color: var(--fg-2); margin: 0 0 10px; }
+  .release ul { margin: 0 0 16px; padding-left: 20px; color: var(--fg-2); }
+  .release li { margin: 4px 0; }
+  .btn.small { padding: 9px 14px; font-size: 14px; }
+  .policy p, .policy li { color: var(--fg-2); }
+  .policy h2 { font-size: 20px; margin: 30px 0 8px; }
+  .policy .date { color: var(--muted); margin: -8px 0 24px; }
+  .policy hr { border: 0; border-top: 1px solid var(--border); margin: 36px 0; }
+
+  /* Right-to-left languages (Arabic): flip the few physical-direction rules above. */
+  [dir="rtl"] nav .links { margin-left: 0; margin-right: auto; }
+  [dir="rtl"] nav .links details.lang .menu { right: auto; left: 0; }
+  [dir="rtl"] .mock { text-align: right; }
+  [dir="rtl"] .mock .side, [dir="rtl"] .mock .list { border-right: 0; border-left: 1px solid var(--border); }
+  [dir="rtl"] details { text-align: right; }
+  [dir="rtl"] .release ul { padding-left: 0; padding-right: 20px; }
+  [dir="rtl"] .countries .rank, [dir="rtl"] .countries .cnt { text-align: left; }
+
+  /* heart / support */
+  nav .links a.heart { display: inline-flex; align-items: center; gap: 5px; color: var(--fg); }
+  nav .links a.heart .ic-heart { color: #E0245E; }
+  .support { padding: 0 0 72px; }
+  .support-card { display: flex; align-items: center; gap: 22px; background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 26px 28px; box-shadow: var(--shadow); }
+  .support-card h3 { margin: 0 0 6px; font-size: 18px; }
+  .support-card p { margin: 0; color: var(--muted); font-size: 15px; max-width: 62ch; }
+  .support-card > div:not(.support-heart) { flex: 1; }
+  .support-heart { width: 48px; height: 48px; border-radius: 14px; background: rgba(224,36,94,.10); color: #E0245E; display: grid; place-items: center; flex: none; }
+  .support-heart .ic-heart { width: 22px; height: 22px; }
+  .amount-note { color: var(--muted); font-size: 14px; margin: 12px 0 0; flex-basis: 100%; }
+  @media (max-width: 720px) { .support-card { flex-direction: column; align-items: flex-start; } }
+
+  /* guide */
+  .guide .step { display: grid; grid-template-columns: 1fr 1.25fr; gap: 36px; align-items: center; padding: 40px 0; border-top: 1px solid var(--border); }
+  .guide .step:nth-child(even) .step-text { order: 2; }
+  .guide .step-no { display: inline-grid; place-items: center; width: 32px; height: 32px; border-radius: 10px; background: var(--accent); color: var(--on-accent); font-weight: 700; font-size: 15px; margin-bottom: 12px; }
+  .guide .step h2 { font-size: 24px; margin: 0 0 10px; letter-spacing: -.01em; }
+  .guide .step p { color: var(--fg-2); font-size: 15.5px; line-height: 1.6; margin: 0; }
+  .guide .step-img { margin: 0; border-radius: 14px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); background: var(--card); }
+  .guide .step-img img { display: block; width: 100%; height: auto; }
+  .guide kbd { display: inline-block; min-width: 1.6em; text-align: center; padding: 1px 6px; border-radius: 6px; border: 1px solid var(--border); border-bottom-width: 2px; background: var(--card-2); font: 600 12.5px/1.5 ui-monospace, "SF Mono", Consolas, monospace; color: var(--fg); }
+  .guide-cta { margin-top: 24px; padding: 26px 28px; border-radius: 16px; background: var(--card); border: 1px solid var(--border); }
+  .guide-cta h3 { margin: 0 0 6px; font-size: 18px; }
+  .guide-cta p { margin: 0; color: var(--muted); }
+  @media (max-width: 760px) { .guide .step { grid-template-columns: 1fr; gap: 18px; } .guide .step:nth-child(even) .step-text { order: 0; } }
+  [dir="rtl"] .guide .step-text, [dir="rtl"] .guide .step-img { direction: rtl; }
+</style>
+<script>
+(function(){try{
+  var cur="ko",routes={"pt": "/", "pt-br": "/pt-br/", "en": "/en/", "es": "/es/", "fr": "/fr/", "de": "/de/", "it": "/it/", "nl": "/nl/", "pl": "/pl/", "ru": "/ru/", "uk": "/uk/", "tr": "/tr/", "ro": "/ro/", "sv": "/sv/", "da": "/da/", "nb": "/nb/", "fi": "/fi/", "cs": "/cs/", "hu": "/hu/", "el": "/el/", "ja": "/ja/", "zh": "/zh/", "ko": "/ko/", "ar": "/ar/"},supported=["pt", "pt-br", "en", "es", "fr", "de", "it", "nl", "pl", "ru", "uk", "tr", "ro", "sv", "da", "nb", "fi", "cs", "hu", "el", "ja", "zh", "ko", "ar"];
+  var saved=null;try{saved=localStorage.getItem('sidsmail-lang');}catch(e){}
+  var internal=document.referrer&&document.referrer.indexOf(location.origin)===0;
+  if(internal)return;
+  var want=saved&&supported.indexOf(saved)>=0?saved:null;
+  if(!want){var ls=(navigator.languages||[navigator.language||'']).map(function(x){return String(x).toLowerCase();});
+    for(var i=0;i<ls.length&&!want;i++){var full=ls[i].replace('_','-'),two=full.slice(0,2);
+      if(supported.indexOf(full)>=0)want=full;else if(supported.indexOf(two)>=0)want=two;
+      else if(two==='nn'||two==='no')want='nb';}
+    if(!want)want='en';}
+  if(want!==cur&&routes[want])location.replace(routes[want]);
+}catch(e){}})();
+</script>
+<script data-goatcounter="https://sidsmail.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body><nav>
+  <div class="wrap">
+    <a class="brand" href="/ko/"><img src="/icon.png" alt=""> Sidsmail</a>
+    <div class="links">
+      <a href="/ko/#features">기능</a>
+      <a href="/ko/#privacy">개인정보 보호</a>
+      <a href="/ko/guide/">가이드</a>
+      <a href="/ko/changelog/">새로운 기능</a>
+      <a class="heart" href="/ko/donate/"><svg class="ic-heart" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.5 2.6 4.5 6.4 4.1c2.1-.2 3.9.9 5.6 2.9 1.7-2 3.5-3.1 5.6-2.9 3.8.4 5.5 4.4 4 7.7C19.5 16.4 12 21 12 21z"/></svg> 후원</a>
+      <details class="lang"><summary aria-label="Language">KO <span>▾</span></summary><div class="menu"><a href="/" lang="pt-PT" hreflang="pt-PT" onclick="try{localStorage.setItem('sidsmail-lang','pt')}catch(e){}">Português (Portugal)</a><a href="/pt-br/" lang="pt-BR" hreflang="pt-BR" onclick="try{localStorage.setItem('sidsmail-lang','pt-br')}catch(e){}">Português (Brasil)</a><a href="/en/" lang="en" hreflang="en" onclick="try{localStorage.setItem('sidsmail-lang','en')}catch(e){}">English</a><a href="/es/" lang="es" hreflang="es" onclick="try{localStorage.setItem('sidsmail-lang','es')}catch(e){}">Español</a><a href="/fr/" lang="fr" hreflang="fr" onclick="try{localStorage.setItem('sidsmail-lang','fr')}catch(e){}">Français</a><a href="/de/" lang="de" hreflang="de" onclick="try{localStorage.setItem('sidsmail-lang','de')}catch(e){}">Deutsch</a><a href="/it/" lang="it" hreflang="it" onclick="try{localStorage.setItem('sidsmail-lang','it')}catch(e){}">Italiano</a><a href="/nl/" lang="nl" hreflang="nl" onclick="try{localStorage.setItem('sidsmail-lang','nl')}catch(e){}">Nederlands</a><a href="/pl/" lang="pl" hreflang="pl" onclick="try{localStorage.setItem('sidsmail-lang','pl')}catch(e){}">Polski</a><a href="/ru/" lang="ru" hreflang="ru" onclick="try{localStorage.setItem('sidsmail-lang','ru')}catch(e){}">Русский</a><a href="/uk/" lang="uk" hreflang="uk" onclick="try{localStorage.setItem('sidsmail-lang','uk')}catch(e){}">Українська</a><a href="/tr/" lang="tr" hreflang="tr" onclick="try{localStorage.setItem('sidsmail-lang','tr')}catch(e){}">Türkçe</a><a href="/ro/" lang="ro" hreflang="ro" onclick="try{localStorage.setItem('sidsmail-lang','ro')}catch(e){}">Română</a><a href="/sv/" lang="sv" hreflang="sv" onclick="try{localStorage.setItem('sidsmail-lang','sv')}catch(e){}">Svenska</a><a href="/da/" lang="da" hreflang="da" onclick="try{localStorage.setItem('sidsmail-lang','da')}catch(e){}">Dansk</a><a href="/nb/" lang="nb" hreflang="nb" onclick="try{localStorage.setItem('sidsmail-lang','nb')}catch(e){}">Norsk bokmål</a><a href="/fi/" lang="fi" hreflang="fi" onclick="try{localStorage.setItem('sidsmail-lang','fi')}catch(e){}">Suomi</a><a href="/cs/" lang="cs" hreflang="cs" onclick="try{localStorage.setItem('sidsmail-lang','cs')}catch(e){}">Čeština</a><a href="/hu/" lang="hu" hreflang="hu" onclick="try{localStorage.setItem('sidsmail-lang','hu')}catch(e){}">Magyar</a><a href="/el/" lang="el" hreflang="el" onclick="try{localStorage.setItem('sidsmail-lang','el')}catch(e){}">Ελληνικά</a><a href="/ja/" lang="ja" hreflang="ja" onclick="try{localStorage.setItem('sidsmail-lang','ja')}catch(e){}">日本語</a><a href="/zh/" lang="zh-Hans" hreflang="zh-Hans" onclick="try{localStorage.setItem('sidsmail-lang','zh')}catch(e){}">中文（简体）</a><a href="/ko/" lang="ko" hreflang="ko" class=on onclick="try{localStorage.setItem('sidsmail-lang','ko')}catch(e){}">한국어</a><a href="/ar/" lang="ar" hreflang="ar" onclick="try{localStorage.setItem('sidsmail-lang','ar')}catch(e){}">العربية</a></div></details>
+      <a class="btn btn-accent" href="/ko/#download">다운로드</a>
+    </div>
+  </div>
+</nav>
+<header class="hero">
+  <div class="wrap">
+    <img src="/icon.png" alt="Sidsmail" width="112" height="112">
+    <h1>가볍고 방해 없는,<br>나만의 메일.</h1>
+    <p class="lede">Sidsmail은 모든 계정을 하나의 편지함에 모으고, 모든 것을 내 컴퓨터에 보관하며, 부탁하기 전에는 절대 방해하지 않는 Windows용 이메일 클라이언트입니다.</p>
+    <div class="cta">
+      <a class="btn btn-accent" href="https://github.com/hfmls/sidsmail-site/releases/latest"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12M6 11l6 6 6-6M4 20h16"/></svg> Windows용 다운로드</a>
+      <a class="btn btn-ghost" href="#features">무엇을 하는지 보기</a>
+    </div>
+    <p class="fine">무료 · Windows 10 및 11 · 계정 없음, 클라우드 없음, 광고 없음 · v1.0.0</p>
+
+    <div class="mock" aria-hidden="true">
+      <div class="bar"><span class="dot"></span> Sidsmail <span style="margin-left:auto">방금 업데이트됨</span></div>
+      <div class="body">
+        <div class="side">
+          <div class="new">✎ 새 메시지</div>
+          <div class="row on"><i></i> 모든 편지함</div>
+          <div class="row"><i></i> 안 읽음</div>
+          <div class="row"><i></i> 별표됨</div>
+          <div class="acct">개인</div>
+          <div class="row"><i></i> 받은 편지함</div>
+          <div class="row"><i></i> 보낸 편지함</div>
+          <div class="acct">업무</div>
+          <div class="row"><i></i> 받은 편지함</div>
+          <div class="row"><i></i> 보관함</div>
+        </div>
+        <div class="list"><div class="msg on"><span class="av" style="background:#3B82F6">김</span><div><b>김민지</b><span>주말 사진</span></div><small>10:42</small></div><div class="msg"><span class="av" style="background:#8B5CF6">중</span><div><b>중앙은행</b><span>8월 거래 내역서</span></div><small>09:15</small></div><div class="msg"><span class="av" style="background:#F59E0B">이</span><div><b>이준호</b><span>Re: 목요일 회의</span></div><small>어제</small></div><div class="msg"><span class="av" style="background:#EC4899">공</span><div><b>공원마켓</b><span>주문하신 상품이 발송되었습니다</span></div><small>어제</small></div><div class="msg"><span class="av" style="background:#0B8A72">박</span><div><b>박서연</b><span>지원서 관련 서류</span></div><small>월</small></div><div class="msg"><span class="av" style="background:#64748B">뉴</span><div><b>뉴스레터</b><span>9월을 위한 아이디어 5가지</span></div><small>월</small></div></div>
+        <div class="read">
+          <h4>주말 사진</h4>
+          <div class="from">김민지 · 나에게</div>
+          <p>안녕! 약속한 대로 토요일에 찍은 사진 보내.</p>
+          <div class="line" style="width:92%"></div><div class="line" style="width:78%"></div><div class="line" style="width:85%"></div><div class="line" style="width:40%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="features">
+  <div class="wrap">
+    <p class="kicker">기능</p>
+    <h2>이메일 클라이언트가 해야 할 모든 것.<br>하지 말아야 할 것은 하나도 없이.</h2>
+    <p class="sub">메일을 많이 읽고 빨리 처리하고 싶은 사람을 위해 만들었습니다 — 키보드로, 기다림 없이, 소음 없이.</p>
+    <div class="grid"><div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 13h5l1.5 2.5h5L16 13h5M3 13l2.5-8h13l2.5 8v5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg></div><h3>모든 계정을 하나의 편지함에</h3><p>Gmail, Outlook, iCloud, Yahoo 또는 어떤 IMAP 서버든 나란히. "모든 편지함" 보기가 전부를 한데 모으고, 계정마다 고유한 색상을 유지합니다.</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3.5a4.5 4.5 0 0 0-4.5 4.5c0 5-2 6.5-2 8.5h13c0-2-2-3.5-2-8.5a4.5 4.5 0 0 0-4.5-4.5zM9.8 19a2.3 2.3 0 0 0 4.4 0"/></svg></div><h3>실시간 메일</h3><p>IMAP IDLE: 메시지가 보내진 그 순간에 도착합니다. 반복 확인 없이. 시스템 트레이에 머물며 배지와 소리로 알립니다 — 원할 때만.</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 20.5a8.5 8.5 0 1 1 .01 0zM12 7.5V12l3 2"/></svg></div><h3>방해 금지 시간과 다시 알림</h3><p>방해받고 싶지 않은 시간을 정하고, 중요한 발신자는 예외로 두세요. 메시지를 잠시 후, 내일 또는 다음 주로 미뤄 둘 수 있습니다.</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h7"/></svg></div><h3>키보드로 분류</h3><p>보관, 삭제, 별표, 이동, 다음 안 읽은 메시지 — 모두 키 하나로. 연산자로 검색하세요: <em>from:</em>, <em>subject:</em>, <em>has:</em>, <em>before:</em>.</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 4a8 8 0 1 1-.01 0zM4 12h16M12 4c3.5 3.5 3.5 12.5 0 16M12 4c-3.5 3.5-3.5 12.5 0 16"/></svg></div><h3>Google 또는 Microsoft로 로그인</h3><p>브라우저에서 로그인하세요. 원래 그래야 하니까요 — 원한다면 앱 비밀번호도 됩니다. 서버는 Sidsmail이 알아서 찾습니다.</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 4a8 8 0 1 1-.01 0zM4 12h16M12 4c3.5 3.5 3.5 12.5 0 16M12 4c-3.5 3.5-3.5 12.5 0 16M8 8.5c2.5 1 5.5 1 8 0M8 15.5c2.5-1 5.5-1 8 0"/></svg></div><h3>당신의 언어로 말합니다</h3><p>20개 이상의 언어를 Windows 설정에 따라 자동으로 선택합니다. 라이트·다크 테마, 여섯 가지 강조 색상, 답장 템플릿, 단어 수 세기, 스스로 비워지는 휴지통.</p></div></div>
+  </div>
+</section>
+
+<section id="privacy">
+  <div class="wrap split">
+    <div>
+      <p class="kicker">개인정보 보호</p>
+      <h2>메일은 내 컴퓨터에 머뭅니다.</h2>
+      <p class="sub" style="margin-bottom:0">Sidsmail은 계정의 서버와 직접 대화합니다. 중간에 우리 서버도, Sidsmail 계정도, 원격 측정도 없습니다. 보관하는 것은 오롯이 당신의 것입니다.</p>
+    </div>
+    <ul class="checks"><li><svg viewBox="0 0 24 24"><path d="M5 12.5l5 5 9-10.5"/></svg><div><b>외부 이미지 차단</b>이 기본 — 뉴스레터의 추적 픽셀은 허락하기 전에는 절대 로드되지 않습니다.</div></li><li><svg viewBox="0 0 24 24"><path d="M5 12.5l5 5 9-10.5"/></svg><div><b>비밀번호 암호화</b>는 Windows 자체 데이터 보호 기능으로, 사용자 프로필에 연결됩니다.</div></li><li><svg viewBox="0 0 24 24"><path d="M5 12.5l5 5 9-10.5"/></svg><div><b>선택적 PIN 잠금</b>으로 시작할 때와 트레이에서 돌아올 때 보호합니다.</div></li><li><svg viewBox="0 0 24 24"><path d="M5 12.5l5 5 9-10.5"/></svg><div><b>모두 내보내거나 삭제</b>를 클릭 한 번으로 — 데이터는 당신의 것이며, 가져갈 권리도 당신의 것입니다.</div></li></ul>
+  </div>
+</section>
+
+<section id="download" class="dl">
+  <div class="wrap">
+    <p class="kicker">다운로드</p>
+    <h2>무료. 계정 없음. 깨알 같은 약관 없음.</h2>
+    <p class="sub" style="margin:0 auto 28px">몇 MB짜리 설치 프로그램, 관리자 권한 불필요. 스스로 업데이트하며, 무엇이 바뀌었는지 먼저 보여 줍니다.</p>
+    <a class="btn btn-accent" style="padding:15px 30px;font-size:16px" href="https://github.com/hfmls/sidsmail-site/releases/latest"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12M6 11l6 6 6-6M4 20h16"/></svg> Windows용 Sidsmail 다운로드</a>
+    <p class="req">Windows 10 (1809) 또는 Windows 11 · 64비트 · <a href="https://dotnet.microsoft.com/download/dotnet/8.0/runtime">.NET 8 Desktop Runtime</a> 필요 (없으면 설치 프로그램이 알려 줍니다)</p>
+    <details><summary>실행할 때 Windows가 파란색 "SmartScreen" 경고를 표시했나요?</summary><p>유료 코드 서명 인증서가 아직 없는 새 프로그램에서는 정상적인 일입니다. <b>추가 정보</b>를 누른 다음 <b>실행</b>을 누르세요. 설치 프로그램은 이 페이지에 게시된 파일과 동일하며, 다운로드 페이지에서 크기와 버전을 확인할 수 있습니다.</p></details>
+  </div>
+</section>
+
+<section id="support" class="support">
+  <div class="wrap">
+    <div class="support-card">
+      <div class="support-heart"><svg class="ic-heart" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.5 2.6 4.5 6.4 4.1c2.1-.2 3.9.9 5.6 2.9 1.7-2 3.5-3.1 5.6-2.9 3.8.4 5.5 4.4 4 7.7C19.5 16.4 12 21 12 21z"/></svg></div>
+      <div>
+        <h3>한 사람이 여가 시간에 만듭니다.</h3>
+        <p>Sidsmail은 무료이며 앞으로도 그럴 것입니다. 유용하다면, 5 € — 또는 원하는 만큼 — 후원이 도메인과 설치 프로그램의 서명 인증서 비용이 됩니다.</p>
+      </div>
+      <a class="btn btn-accent" href="/ko/donate/">Sidsmail 후원하기</a>
+    </div>
+  </div>
+</section>
+
+<section id="stats">
+  <div class="wrap">
+    <p class="kicker">숫자로 보기</p>
+    <h2>이미 Sidsmail을 쓰는 사람들.</h2>
+    <p class="sub">매시간 갱신되는 공개 카운터. 쿠키 없음: 국가만 집계하고, 사람은 절대 집계하지 않습니다.</p>
+    <div class="tiles">
+      <div class="tile"><b id="st-downloads">…</b><span>다운로드</span></div>
+      <div class="tile"><b id="st-visits">…</b><span>사이트 방문</span></div>
+      <div class="tile"><b id="st-countries">…</b><span>국가</span></div>
+    </div>
+    <div class="top">
+      <h3>가장 많이 방문한 10개국</h3>
+      <ol id="st-top" class="countries"></ol>
+      <p id="st-empty" class="empty" hidden>아직 데이터가 충분하지 않습니다 — 잠시 후 다시 확인해 주세요.</p>
+      <p id="st-updated" class="updated"></p>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <p class="kicker">자주 묻는 질문</p>
+    <h2>물어보기 전에.</h2>
+    <div class="faq"><details><summary>Gmail에서도 되나요?</summary><p>네. Google로 로그인하거나(브라우저에서 클릭 한 번) <a href="https://myaccount.google.com/apppasswords">앱 비밀번호</a>를 쓰면 됩니다 — Gmail은 어떤 이메일 클라이언트에서든 일반 비밀번호를 거부합니다. Sidsmail만의 문제가 아닙니다.</p></details><details><summary>Outlook과 Hotmail은요?</summary><p>네, Microsoft로 로그인하면 됩니다. Microsoft는 개인 계정에서 앱 비밀번호를 더 이상 받지 않기 때문에 브라우저 로그인이 유일한 길입니다 — 나머지는 Sidsmail이 처리합니다.</p></details><details><summary>내 데이터는 어디에 저장되나요?</summary><p>내 컴퓨터의 <code>%APPDATA%\Sidsmail</code>에 저장됩니다. 계정, 설정, 그리고 오프라인에서 읽기 위한 메시지 로컬 사본이 들어 있습니다. 프로그램을 제거해도 이 폴더는 그대로 남고, 설정의 "로컬 데이터 삭제"가 폴더를 완전히 지웁니다.</p></details><details><summary>얼마인가요?</summary><p>무료입니다. Sidsmail은 무료이며 "Pro" 버전이 없습니다. 한 사람이 여가 시간에 만듭니다 — 유용하다면 <a href="/ko/donate/">후원할 수 있지만</a>, 결코 의무가 아니며 잠긴 기능도 없습니다.</p></details><details><summary>HTML 메시지가 텍스트로만 보이나요?</summary><p>Sidsmail은 Windows의 WebView2로 HTML을 표시합니다. Windows 11과 최신 상태의 Windows 10 대부분에는 이미 들어 있습니다. 없다면 <a href="https://developer.microsoft.com/microsoft-edge/webview2/">여기서 설치하세요</a> — 그동안 앱은 모든 것을 일반 텍스트로 보여 주므로 잃는 것은 없습니다.</p></details></div>
+  </div>
+</section>
+<script>
+(function(){
+  var el=function(id){return document.getElementById(id);};
+  var fmt=function(n){try{return new Intl.NumberFormat("ko").format(n);}catch(e){return String(n);}};
+  var flag=function(cc){cc=String(cc||'').toUpperCase();if(cc.length!==2)return '🌍';return String.fromCodePoint(0x1F1E6+cc.charCodeAt(0)-65,0x1F1E6+cc.charCodeAt(1)-65);};
+  var name=function(cc){try{return new Intl.DisplayNames(["ko"],{type:'region'}).of(cc);}catch(e){return cc;}};
+  var snapshot=null;
+  // 1. stats.json — written hourly by the site's own GitHub Action (visits + countries from
+  //    GoatCounter, downloads from the Releases API). Zero cookies, zero third-party calls
+  //    from the visitor's browser for the country list.
+  var fromSnapshot=fetch('/stats.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(s){
+    snapshot=s||{};
+    if(s.visits){el('st-visits').textContent=fmt(s.visits);}
+    if(s.downloads){el('st-downloads').textContent=fmt(s.downloads);}
+    var list=(s.countries||[]);
+    if(list.length){el('st-countries').textContent=fmt(s.country_count||list.length);}
+    var top=list.slice(0,10),max=top.length?top[0].count:1,h='';
+    top.forEach(function(c,i){h+='<li><span class="rank">'+(i+1)+'</span><span class="flag">'+flag(c.code)+'</span><span class="cname">'+name(c.code)+'</span><span class="bar"><i style="width:'+Math.max(4,Math.round(100*c.count/max))+'%"></i></span><span class="cnt">'+fmt(c.count)+'</span></li>';});
+    el('st-top').innerHTML=h;
+    if(s.updated){el('st-updated').textContent="\uc5c5\ub370\uc774\ud2b8"+' '+new Date(s.updated).toLocaleString("ko");}
+    el('st-empty').hidden=top.length>0;
+  }).catch(function(){el('st-empty').hidden=false;});
+  // 2. Live downloads straight from GitHub (fresher than the hourly snapshot; falls back to it).
+  fetch('https://api.github.com/repos/hfmls/sidsmail-site/releases').then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(rels){
+    var n=0;(rels||[]).forEach(function(r){(r.assets||[]).forEach(function(a){n+=a.download_count||0;});});
+    el('st-downloads').textContent=fmt(n);
+  }).catch(function(){fromSnapshot.then(function(){if(!(snapshot&&snapshot.downloads))el('st-downloads').textContent='—';});});
+  // 3. Live visit total from GoatCounter's public counter (needs "visitor counter" enabled in
+  //    its settings); the hourly snapshot is the fallback.
+  fetch('https://sidsmail.goatcounter.com/counter/TOTAL.json').then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(c){var n=parseInt(String(c.count||'').replace(/\D/g,''),10);if(n>0)el('st-visits').textContent=fmt(n);}).catch(function(){fromSnapshot.then(function(){if(!(snapshot&&snapshot.visits))el('st-visits').textContent='—';});});
+  fromSnapshot.then(function(){if(!(snapshot&&(snapshot.countries||[]).length))el('st-countries').textContent='—';});
+})();
+</script>
+<footer>
+  <div class="wrap">
+    <span>© <span id="ano"></span> Sidsmail. 포르투갈에서 한 사람이 만들었습니다. · 제작자의 다른 프로젝트: <a href="https://sidstuga.app">sidstuga.app</a></span>
+    <span><a href="/ko/privacy/">개인정보 처리방침</a> · <a href="/ko/guide/">가이드</a> · <a href="/ko/changelog/">새로운 기능</a> · <a href="/ko/donate/">후원</a> · <a href="/ko/#download">다운로드</a></span>
+  </div>
+</footer>
+<script>document.getElementById('ano').textContent=new Date().getFullYear();</script>
+</body>
+</html>

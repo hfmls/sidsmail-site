@@ -1,0 +1,118 @@
+# Sidsmail — public counters for sidsmail.com
+#
+# Every hour this writes stats.json at the site root:
+#   { "visits": N, "downloads": N, "country_count": N,
+#     "countries": [ { "code": "PT", "count": N }, … ],   (all countries, sorted; the page shows 10)
+#     "updated": "2026-09-03T12:00:00Z" }
+#
+# Visits and countries come from GoatCounter (privacy-friendly analytics, no cookies) through
+# its API; downloads from this repository's Releases. The only secret is GOATCOUNTER_TOKEN —
+# an API token with "Read statistics" permission, created at
+# https://sidsmail.goatcounter.com/user/api and stored with:
+#     gh secret set GOATCOUNTER_TOKEN --repo hfmls/sidsmail-site
+# Without it the workflow still runs and keeps the download counter fresh.
+
+name: stats
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stats
+  cancel-in-progress: false
+
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build stats.json
+        env:
+          GOATCOUNTER_TOKEN: ${{ secrets.GOATCOUNTER_TOKEN }}
+          GOATCOUNTER_CODE: "sidsmail"
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          python3 - <<'PY'
+          import json, os, sys, urllib.request, urllib.parse, datetime
+
+          def get(url, headers=None):
+              req = urllib.request.Request(url, headers={"User-Agent": "sidsmail-stats", **(headers or {})})
+              with urllib.request.urlopen(req, timeout=30) as r:
+                  return json.load(r)
+
+          out = {"visits": 0, "downloads": 0, "country_count": 0, "countries": [], "updated": None}
+          try:
+              old = json.load(open("stats.json", encoding="utf-8"))
+              out.update({k: old.get(k, out[k]) for k in out})
+          except Exception:
+              pass
+
+          # --- downloads: every asset of every release of this repository
+          try:
+              n, page = 0, 1
+              while True:
+                  rels = get(f"https://api.github.com/repos/{os.environ['REPO']}/releases?per_page=100&page={page}",
+                             {"Authorization": "Bearer " + os.environ["GH_TOKEN"], "Accept": "application/vnd.github+json"})
+                  if not rels:
+                      break
+                  for r in rels:
+                      for a in r.get("assets", []):
+                          n += int(a.get("download_count", 0))
+                  page += 1
+              out["downloads"] = n
+          except Exception as e:
+              print("downloads: kept previous value:", e)
+
+          # --- visits + countries from GoatCounter (all time)
+          token, code = os.environ.get("GOATCOUNTER_TOKEN", ""), os.environ.get("GOATCOUNTER_CODE", "")
+          if token and code:
+              base = f"https://{code}.goatcounter.com/api/v0"
+              h = {"Authorization": "Bearer " + token, "Content-Type": "application/json"}
+              rng = urllib.parse.urlencode({"start": "2026-01-01", "end": datetime.date.today().isoformat()})
+              try:
+                  total = get(f"{base}/stats/total?{rng}", h)
+                  out["visits"] = int(total.get("total_events") or total.get("total") or 0)
+              except Exception as e:
+                  print("visits: kept previous value:", e)
+              try:
+                  countries, offset = [], 0
+                  while True:
+                      loc = get(f"{base}/stats/locations?{rng}&limit=100&offset={offset}", h)
+                      rows = loc.get("stats") or []
+                      for r in rows:
+                          cc = str(r.get("id") or "").upper()
+                          if len(cc) == 2:
+                              countries.append({"code": cc, "count": int(r.get("count") or 0)})
+                      if not loc.get("more") or not rows:
+                          break
+                      offset += len(rows)
+                  countries.sort(key=lambda c: -c["count"])
+                  if countries:
+                      out["countries"] = countries
+                      out["country_count"] = len(countries)
+              except Exception as e:
+                  print("countries: kept previous value:", e)
+          else:
+              print("GOATCOUNTER_TOKEN not set — visits/countries unchanged")
+
+          out["updated"] = datetime.datetime.now(datetime.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+          json.dump(out, open("stats.json", "w", encoding="utf-8"), ensure_ascii=False)
+          open("stats.json", "a").write("\n")
+          print(json.dumps({k: out[k] for k in ("visits", "downloads", "country_count", "updated")}))
+          PY
+
+      - name: Commit
+        run: |
+          git config user.name "sidsmail-stats"
+          git config user.email "stats@users.noreply.github.com"
+          if git diff --quiet -- stats.json; then echo "no change"; exit 0; fi
+          git add stats.json
+          git commit -m "stats: $(date -u +%Y-%m-%dT%H:%MZ) [skip ci]"
+          git push
