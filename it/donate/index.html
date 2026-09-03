@@ -259,6 +259,9 @@
   .guide-cta p { margin: 0; color: var(--muted); }
   @media (max-width: 760px) { .guide .step { grid-template-columns: 1fr; gap: 18px; } .guide .step:nth-child(even) .step-text { order: 0; } }
   [dir="rtl"] .guide .step-text, [dir="rtl"] .guide .step-img { direction: rtl; }
+
+  .stripe-embed { margin: 6px 0 18px; min-height: 48px; }
+  .donate-links { display: flex; flex-wrap: wrap; gap: 10px; }
 </style>
 <script>
 (function(){try{
@@ -299,7 +302,7 @@
     <p class="lede-left">Sidsmail è sviluppato da un solo programmatore, nel tempo libero, senza un'azienda alle spalle. È gratuito e lo resterà — niente versione "Pro", niente pubblicità, niente funzioni bloccate.</p>
     <p class="lede-left">Se ti è utile, una donazione aiuta a pagare il dominio, il certificato di firma dell'installer e il caffè delle notti di sviluppo.</p>
     <div class="suggest">Suggerimento: <b>5 €</b>. Ma l'importo è libero — qualsiasi cifra è benvenuta, e anche un grazie via e-mail.</div>
-    <div class="donate-buttons"><a class="btn btn-accent" href="https://www.paypal.com/donate/?business=cvngina%40hotmail.com&currency_code=EUR&amount=5&item_name=Apoio+ao+Sidsmail" rel="noopener">Dona con PayPal</a><a class="btn btn-accent" hidden href="STRIPE-PAYMENT-LINK" rel="noopener">Dona con carta (Stripe)</a><p class="amount-note">L'importo suggerito è 5 €; nella pagina successiva puoi cambiarlo come preferisci.</p></div>
+    <div class="donate-buttons"><div class="stripe-embed"><script async src="https://js.stripe.com/v3/buy-button.js"></script><stripe-buy-button buy-button-id="buy_btn_1UBh68In8tFJdtFKfdQYN6uE" publishable-key="pk_live_51TwApRIn8tFJdtFK1VkuDL8j2wPPqeYKjJYnffZ3a9dbbapnpqaco3ItE3Pw0xhs0VEyu2X2HhIqaBOQaouqFOjk00OGdEyctC"></stripe-buy-button></div><script>try{customElements.whenDefined('stripe-buy-button').then(function(){var l=document.querySelector('.donate-links');if(l)l.hidden=true;});}catch(e){}</script><div class="donate-links"><a class="btn btn-accent" href="https://buy.stripe.com/7sY00j12Zer4fSP6t61B600" rel="noopener">Dona con carta (Stripe)</a></div><p class="amount-note">L'importo suggerito è 5 €; nella pagina successiva puoi cambiarlo come preferisci. Il pagamento è gestito da Stripe, con carta, Apple Pay o Google Pay; Sidsmail non vede mai i dati della tua carta.</p></div>
     <p class="thanks">Grazie. Davvero.</p>
     <p class="other">E se ti piace vedere cosa può fare una persona da sola, dai un'occhiata al mio altro progetto: <a href="https://sidstuga.app">sidstuga.app</a>.</p>
   </div>

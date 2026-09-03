@@ -259,6 +259,9 @@
   .guide-cta p { margin: 0; color: var(--muted); }
   @media (max-width: 760px) { .guide .step { grid-template-columns: 1fr; gap: 18px; } .guide .step:nth-child(even) .step-text { order: 0; } }
   [dir="rtl"] .guide .step-text, [dir="rtl"] .guide .step-img { direction: rtl; }
+
+  .stripe-embed { margin: 6px 0 18px; min-height: 48px; }
+  .donate-links { display: flex; flex-wrap: wrap; gap: 10px; }
 </style>
 <script>
 (function(){try{
@@ -318,7 +321,9 @@
   </ul>
 
   <h2>Este site</h2>
-  <p>O site <code>sidsmail.com</code> é estático, alojado no GitHub Pages, sem cookies e sem ferramentas de análise. O GitHub pode registar dados técnicos de acesso (como o endereço IP) nos termos da <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">política de privacidade do GitHub</a>.</p>
+  <p>O site <code>sidsmail.com</code> é estático, alojado no GitHub Pages, sem cookies. O GitHub pode registar dados técnicos de acesso (como o endereço IP) nos termos da <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">política de privacidade do GitHub</a>.</p>
+  <p>Para os contadores públicos ("Em números") usamos o <a href="https://www.goatcounter.com/privacy">GoatCounter</a>, uma ferramenta de estatísticas sem cookies e sem identificação de pessoas: regista a página visitada, o país e o tipo de browser, nada mais. O número de downloads vem da API pública do GitHub.</p>
+  <p>Na página "Apoiar", as doações são processadas pela <a href="https://stripe.com/privacy">Stripe</a>: os dados de pagamento são introduzidos e tratados pela Stripe, e o Sidsmail nunca os vê nem guarda. Só o script da Stripe é carregado nessa página, e apenas nessa.</p>
 
   <h2>Os teus direitos</h2>
   <p>Como não guardamos dados teus, não há nada que possamos entregar-te ou apagar do nosso lado. No teu computador, "Exportar dados locais" e "Apagar dados locais", em Definições → Segurança e dados, fazem exatamente o que dizem.</p>
