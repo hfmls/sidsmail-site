@@ -1,10 +1,10 @@
 {
-  "version": "1.0.4",
+  "version": "1.0.5",
   "url": "https://sidsmail.com/novidades/",
-  "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.4/Sidsmail-Setup-1.0.4.exe",
-  "date": "2026-09-03",
+  "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.5/Sidsmail-Setup-1.0.5.exe",
+  "date": "2026-09-04",
   "notes": {
-    "pt": "• \"Ver novidades\" agora abre o histórico de versões dentro da app, não no browser\n• Downloads e visitas em Definições › Acerca redesenhados: um selo pequeno e arrumado, como no site",
-    "en": "• \"See what's new\" now opens the version history inside the app, not the browser\n• Downloads and visits in Settings › About redesigned: a small tidy badge, matching the site"
+    "pt": "• \"Adicionar conta\" → Google já funciona para qualquer pessoa com um clique — sem palavra-passe de aplicação, sem consola\n• Microsoft continua a chegar em breve",
+    "en": "• \"Add account\" → Google now works for anyone with one click — no app password, no console\n• Microsoft is still coming"
   }
 }

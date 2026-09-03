@@ -1,6 +1,15 @@
 {
   "releases": [
     {
+      "version": "1.0.5",
+      "date": "2026-09-04",
+      "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.5/Sidsmail-Setup-1.0.5.exe",
+      "notes": {
+        "pt": "• \"Adicionar conta\" → Google já funciona para qualquer pessoa com um clique — sem palavra-passe de aplicação, sem consola\n• Microsoft continua a chegar em breve",
+        "en": "• \"Add account\" → Google now works for anyone with one click — no app password, no console\n• Microsoft is still coming"
+      }
+    },
+    {
       "version": "1.0.4",
       "date": "2026-09-03",
       "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.4/Sidsmail-Setup-1.0.4.exe",
