@@ -445,10 +445,9 @@ dialog.gal-box .x{position:absolute;right:-6px;top:-44px;background:rgba(255,255
       <a class="btn btn-accent" href="https://github.com/hfmls/sidsmail-site/releases/latest"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12M6 11l6 6 6-6M4 20h16"/></svg> Windows용 다운로드</a>
       <a class="btn btn-ghost" href="#features">무엇을 하는지 보기</a>
     </div>
-    <p class="fine">무료 · Windows 10 및 11 · 계정 없음, 클라우드 없음, 광고 없음 · v1.0.6</p>
+    <p class="fine">무료 · Windows 10 및 11 · 계정 없음, 클라우드 없음, 광고 없음 · v1.0.5</p>
     <div class="hero-stats" id="hero-stats" hidden>
       <span class="chip"><b id="hs-downloads">…</b> 다운로드</span>
-      <span class="chip"><b id="hs-visits">…</b> 방문</span>
       <span class="chip"><b id="hs-countries">…</b> 국가</span>
     </div>
 
@@ -630,16 +629,12 @@ dialog.gal-box .x{position:absolute;right:-6px;top:-44px;background:rgba(255,255
   //    from the visitor's browser for the country list.
   // Tiny, subtle line in the hero itself (same numbers as the full counters section
   // further down) — stays hidden until there is a real downloads AND countries figure to
-  // show, so it never flashes a "…" or a "0" at anyone. Visits is a third chip inside the
-  // same pill, but does NOT gate the reveal: GoatCounter's visit figure is the one most
-  // likely to be briefly unavailable, and the pill would never appear at all if it waited
-  // on that too — so that one chip alone falls back to "—" independently, same as the
-  // full counters section already does for every metric.
+  // show, so it never flashes a "…" or a "0" at anyone.
   var showHero=function(){var d=el('hs-downloads'),c=el('hs-countries');
     if(d&&c&&d.textContent!=='…'&&c.textContent!=='…'){el('hero-stats').hidden=false;}};
   var fromSnapshot=fetch('/stats.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(s){
     snapshot=s||{};
-    if(s.visits){el('st-visits').textContent=fmt(s.visits);el('hs-visits').textContent=fmt(s.visits);}
+    if(s.visits){el('st-visits').textContent=fmt(s.visits);}
     if(s.downloads){el('st-downloads').textContent=fmt(s.downloads);el('hs-downloads').textContent=fmt(s.downloads);}
     var list=(s.countries||[]);
     if(list.length){el('st-countries').textContent=fmt(s.country_count||list.length);el('hs-countries').textContent=fmt(s.country_count||list.length);}
@@ -657,14 +652,14 @@ dialog.gal-box .x{position:absolute;right:-6px;top:-44px;background:rgba(255,255
   }).catch(function(){fromSnapshot.then(function(){if(!(snapshot&&snapshot.downloads))el('st-downloads').textContent='—';});});
   // 3. Live visit total from GoatCounter's public counter (needs "visitor counter" enabled in
   //    its settings); the hourly snapshot is the fallback.
-  fetch('https://sidsmail.goatcounter.com/counter/TOTAL.json').then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(c){var n=parseInt(String(c.count||'').replace(/\D/g,''),10);if(n>0){el('st-visits').textContent=fmt(n);el('hs-visits').textContent=fmt(n);}}).catch(function(){fromSnapshot.then(function(){if(!(snapshot&&snapshot.visits)){el('st-visits').textContent='—';el('hs-visits').textContent='—';}});});
+  fetch('https://sidsmail.goatcounter.com/counter/TOTAL.json').then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(c){var n=parseInt(String(c.count||'').replace(/\D/g,''),10);if(n>0)el('st-visits').textContent=fmt(n);}).catch(function(){fromSnapshot.then(function(){if(!(snapshot&&snapshot.visits))el('st-visits').textContent='—';});});
   fromSnapshot.then(function(){if(!(snapshot&&(snapshot.countries||[]).length))el('st-countries').textContent='—';});
 })();
 </script>
 <footer>
   <div class="wrap">
     <span>© <span id="ano"></span> Sidsmail. 포르투갈에서 한 사람이 만들었습니다. · 제작자의 다른 프로젝트: <a href="https://sidstuga.app">sidstuga.app</a></span>
-    <span><a href="#" id="ct-link" rel="nofollow">문의하기</a> · <a href="/ko/privacy/">개인정보 처리방침</a> · <a href="/ko/guide/">가이드</a> · <a href="/ko/changelog/">새로운 기능</a> · <a href="/ko/donate/">후원</a> · <a href="/ko/#download">다운로드</a></span>
+    <span><a href="#" id="ct-link" rel="nofollow">문의하기</a> · <a href="/ko/privacy/">개인정보 처리방침</a> · <a href="/ko/terms/">이용약관</a> · <a href="/ko/guide/">가이드</a> · <a href="/ko/changelog/">새로운 기능</a> · <a href="/ko/donate/">후원</a> · <a href="/ko/#download">다운로드</a></span>
   </div>
 </footer>
 <script>document.getElementById('ano').textContent=new Date().getFullYear();
