@@ -1,6 +1,15 @@
 {
   "releases": [
     {
+      "version": "1.0.6",
+      "date": "2026-09-04",
+      "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.6/Sidsmail-Setup-1.0.6.exe",
+      "notes": {
+        "pt": "• \"Adicionar conta\" → Microsoft já funciona para qualquer pessoa com um clique — Outlook e Hotmail pessoais incluídos, sem palavra-passe de aplicação",
+        "en": "• \"Add account\" → Microsoft now works for anyone with one click — personal Outlook and Hotmail included, no app password"
+      }
+    },
+    {
       "version": "1.0.5",
       "date": "2026-09-04",
       "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.5/Sidsmail-Setup-1.0.5.exe",
