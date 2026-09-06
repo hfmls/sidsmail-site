@@ -6,8 +6,8 @@
       "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.9/Sidsmail-Setup-1.0.9.exe",
       "sha256": "64d9a663ea72d793c661e48ae1e36ee92d41e430e8a5bacbaaaa00e9dcf15ef0",
       "notes": {
-        "pt": "â€¢ Corrigido: o histÃ³rico de mensagens trocadas com um contacto podia nÃ£o mostrar mensagens recebidas com maiÃºsculas diferentes no remetente\nâ€¢ Corrigido: importar um contacto vCard com uma nota de vÃ¡rias linhas podia corromper o texto\nâ€¢ Corrigido: Ctrl+Z depois de \"marcar tudo como lido\" podia voltar a marcar mensagens erradas como nÃ£o lidas, nalguns casos\nâ€¢ Corrigido: \"Bloquear conteÃºdo remoto\" nem sempre limpava por completo o endereÃ§o de uma imagem bloqueada\nâ€¢ Corrigido: comprimir uma foto tirada em retrato podia sair de lado ou invertida\nâ€¢ VÃ¡rios acertos de estabilidade internos na sincronizaÃ§Ã£o e no inÃ­cio de sessÃ£o automÃ¡tico\nâ€¢ Retoques visuais no CalendÃ¡rio e nas DefiniÃ§Ãµes da conta",
-        "en": "â€¢ Fixed: the message history for a contact could miss messages received with different capitalisation in the sender's address\nâ€¢ Fixed: importing a vCard contact with a multi-line note could corrupt the text\nâ€¢ Fixed: Ctrl+Z after \"mark all as read\" could re-mark the wrong messages as unread in some cases\nâ€¢ Fixed: \"Block remote content\" didn't always fully clear a blocked image's address\nâ€¢ Fixed: compressing a photo taken in portrait could come out sideways or upside down\nâ€¢ Several internal stability fixes to syncing and automatic sign-in\nâ€¢ Visual touch-ups to the Calendar and Account settings"
+        "pt": "• Corrigido: o histórico de mensagens trocadas com um contacto podia não mostrar mensagens recebidas com maiúsculas diferentes no remetente\n• Corrigido: importar um contacto vCard com uma nota de várias linhas podia corromper o texto\n• Corrigido: Ctrl+Z depois de \"marcar tudo como lido\" podia voltar a marcar mensagens erradas como não lidas, nalguns casos\n• Corrigido: \"Bloquear conteúdo remoto\" nem sempre limpava por completo o endereço de uma imagem bloqueada\n• Corrigido: comprimir uma foto tirada em retrato podia sair de lado ou invertida\n• Vários acertos de estabilidade internos na sincronização e no início de sessão automático\n• Retoques visuais no Calendário e nas Definições da conta",
+        "en": "• Fixed: the message history for a contact could miss messages received with different capitalisation in the sender's address\n• Fixed: importing a vCard contact with a multi-line note could corrupt the text\n• Fixed: Ctrl+Z after \"mark all as read\" could re-mark the wrong messages as unread in some cases\n• Fixed: \"Block remote content\" didn't always fully clear a blocked image's address\n• Fixed: compressing a photo taken in portrait could come out sideways or upside down\n• Several internal stability fixes to syncing and automatic sign-in\n• Visual touch-ups to the Calendar and Account settings"
       }
     },
     {
@@ -15,8 +15,8 @@
       "date": "2026-09-05",
       "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.8/Sidsmail-Setup-1.0.8.exe",
       "notes": {
-        "pt": "â€¢ Corrigido: a barra de Ã­cones no fundo da barra lateral (CalendÃ¡rio incluÃ­do) jÃ¡ nÃ£o fica cortada â€” a largura por defeito passa a caber os sete Ã­cones",
-        "en": "â€¢ Fixed: the icon row at the bottom of the sidebar (Calendar included) no longer gets clipped â€” the default width now fits all seven icons"
+        "pt": "• Corrigido: a barra de ícones no fundo da barra lateral (Calendário incluído) já não fica cortada — a largura por defeito passa a caber os sete ícones",
+        "en": "• Fixed: the icon row at the bottom of the sidebar (Calendar included) no longer gets clipped — the default width now fits all seven icons"
       }
     },
     {
@@ -24,8 +24,8 @@
       "date": "2026-09-05",
       "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.7/Sidsmail-Setup-1.0.7.exe",
       "notes": {
-        "pt": "â€¢ Novo: CalendÃ¡rio local â€” eventos, repetiÃ§Ã£o, aniversÃ¡rios dos contactos, lembretes e deteÃ§Ã£o automÃ¡tica de convites .ics nos emails\nâ€¢ Corrigido: a pasta \"NÃ£o Lidas\" jÃ¡ nÃ£o fecha nem esconde o email que estÃ¡s a ler assim que ele Ã© marcado como lido\nâ€¢ Corrigido: as definiÃ§Ãµes da conta jÃ¡ nÃ£o se perdem se o ficheiro de definiÃ§Ãµes estiver momentaneamente bloqueado ao guardar\nâ€¢ Reduzidos os falsos positivos de alguns antivÃ­rus no instalador",
-        "en": "â€¢ New: local Calendar â€” events, recurrence, contact birthdays, reminders, and automatic .ics invite detection in emails\nâ€¢ Fixed: the \"Unread\" folder no longer closes or hides the email you're reading the moment it's marked read\nâ€¢ Fixed: account settings no longer get lost if the settings file was briefly locked while saving\nâ€¢ Reduced antivirus false positives in the installer"
+        "pt": "• Novo: Calendário local — eventos, repetição, aniversários dos contactos, lembretes e deteção automática de convites .ics nos emails\n• Corrigido: a pasta \"Não Lidas\" já não fecha nem esconde o email que estás a ler assim que ele é marcado como lido\n• Corrigido: as definições da conta já não se perdem se o ficheiro de definições estiver momentaneamente bloqueado ao guardar\n• Reduzidos os falsos positivos de alguns antivírus no instalador",
+        "en": "• New: local Calendar — events, recurrence, contact birthdays, reminders, and automatic .ics invite detection in emails\n• Fixed: the \"Unread\" folder no longer closes or hides the email you're reading the moment it's marked read\n• Fixed: account settings no longer get lost if the settings file was briefly locked while saving\n• Reduced antivirus false positives in the installer"
       }
     },
     {
@@ -33,8 +33,8 @@
       "date": "2026-09-04",
       "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.5/Sidsmail-Setup-1.0.5.exe",
       "notes": {
-        "pt": "â€¢ \"Adicionar conta\" â†’ Google jÃ¡ funciona para qualquer pessoa com um clique â€” sem palavra-passe de aplicaÃ§Ã£o, sem consola\nâ€¢ Microsoft continua a chegar em breve",
-        "en": "â€¢ \"Add account\" â†’ Google now works for anyone with one click â€” no app password, no console\nâ€¢ Microsoft is still coming"
+        "pt": "• \"Adicionar conta\" → Google já funciona para qualquer pessoa com um clique — sem palavra-passe de aplicação, sem consola\n• Microsoft continua a chegar em breve",
+        "en": "• \"Add account\" → Google now works for anyone with one click — no app password, no console\n• Microsoft is still coming"
       }
     },
     {
@@ -42,8 +42,8 @@
       "date": "2026-09-03",
       "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.4/Sidsmail-Setup-1.0.4.exe",
       "notes": {
-        "pt": "â€¢ \"Ver novidades\" agora abre o histÃ³rico de versÃµes dentro da app, nÃ£o no browser\nâ€¢ Downloads e visitas em DefiniÃ§Ãµes â€º Acerca redesenhados: um selo pequeno e arrumado, como no site",
-        "en": "â€¢ \"See what's new\" now opens the version history inside the app, not the browser\nâ€¢ Downloads and visits in Settings â€º About redesigned: a small tidy badge, matching the site"
+        "pt": "• \"Ver novidades\" agora abre o histórico de versões dentro da app, não no browser\n• Downloads e visitas em Definições › Acerca redesenhados: um selo pequeno e arrumado, como no site",
+        "en": "• \"See what's new\" now opens the version history inside the app, not the browser\n• Downloads and visits in Settings › About redesigned: a small tidy badge, matching the site"
       }
     },
     {
@@ -51,8 +51,8 @@
       "date": "2026-09-03",
       "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.3/Sidsmail-Setup-1.0.3.exe",
       "notes": {
-        "pt": "â€¢ O Ã­cone no ambiente de trabalho passa a ser sempre criado ao instalar (antes dependia de uma opÃ§Ã£o escondida no assistente)\nâ€¢ A app abre maximizada na primeira vez que Ã© aberta",
-        "en": "â€¢ The desktop icon is now always created on install (it used to depend on a hidden option in the wizard)\nâ€¢ The app now opens maximised the first time it's launched"
+        "pt": "• O ícone no ambiente de trabalho passa a ser sempre criado ao instalar (antes dependia de uma opção escondida no assistente)\n• A app abre maximizada na primeira vez que é aberta",
+        "en": "• The desktop icon is now always created on install (it used to depend on a hidden option in the wizard)\n• The app now opens maximised the first time it's launched"
       }
     },
     {
@@ -60,8 +60,8 @@
       "date": "2026-09-03",
       "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.2/Sidsmail-Setup-1.0.2.exe",
       "notes": {
-        "pt": "â€¢ BotÃ£o \"Ver novidades\" em DefiniÃ§Ãµes â€º Acerca, para veres o histÃ³rico de versÃµes a qualquer momento\nâ€¢ Instalador com visual prÃ³prio (Ã­cone com brilho, sem a caixa 3D genÃ©rica)\nâ€¢ URLs de atualizaÃ§Ã£o e de apoio deixaram de ser configurÃ¡veis â€” estavam a mais",
-        "en": "â€¢ \"See what's new\" button in Settings â€º About, to check the version history any time\nâ€¢ Custom installer artwork (icon with a glow, no more generic 3-D box)\nâ€¢ The update and support URLs are no longer user-configurable â€” they were leftover clutter"
+        "pt": "• Botão \"Ver novidades\" em Definições › Acerca, para veres o histórico de versões a qualquer momento\n• Instalador com visual próprio (ícone com brilho, sem a caixa 3D genérica)\n• URLs de atualização e de apoio deixaram de ser configuráveis — estavam a mais",
+        "en": "• \"See what's new\" button in Settings › About, to check the version history any time\n• Custom installer artwork (icon with a glow, no more generic 3-D box)\n• The update and support URLs are no longer user-configurable — they were leftover clutter"
       }
     },
     {
@@ -69,8 +69,8 @@
       "date": "2026-09-03",
       "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.1/Sidsmail-Setup-1.0.1.exe",
       "notes": {
-        "pt": "â€¢ Contador de downloads em DefiniÃ§Ãµes â€º Acerca\nâ€¢ Contacto e outro projeto do autor (sidstuga.app) em Acerca e no site\nâ€¢ CorreÃ§Ãµes de instalaÃ§Ã£o (ficheiro em uso ao atualizar, compilaÃ§Ã£o do instalador)",
-        "en": "â€¢ Download counter in Settings â€º About\nâ€¢ Contact and another project by the author (sidstuga.app) in About and on the site\nâ€¢ Install fixes (file-in-use when updating, installer build)"
+        "pt": "• Contador de downloads em Definições › Acerca\n• Contacto e outro projeto do autor (sidstuga.app) em Acerca e no site\n• Correções de instalação (ficheiro em uso ao atualizar, compilação do instalador)",
+        "en": "• Download counter in Settings › About\n• Contact and another project by the author (sidstuga.app) in About and on the site\n• Install fixes (file-in-use when updating, installer build)"
       }
     },
     {
@@ -78,8 +78,8 @@
       "date": "2026-09-03",
       "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.0/Sidsmail-Setup-1.0.0.exe",
       "notes": {
-        "pt": "Primeira versÃ£o pÃºblica.\nâ€¢ Todas as contas numa sÃ³ caixa (IMAP IDLE em tempo real)\nâ€¢ Assistente de primeiro arranque\nâ€¢ Imagens remotas bloqueadas por defeito, palavras-passe cifradas com a DPAPI do Windows\nâ€¢ NotificaÃ§Ãµes com horas de silÃªncio, resumo diÃ¡rio e remetentes prioritÃ¡rios\nâ€¢ Regras simples, modelos de resposta, adiar mensagens, silenciar conversas\nâ€¢ Tema claro/escuro, seis cores de destaque, Inter como tipo de letra\nâ€¢ 23 idiomas, escolhidos automaticamente a partir do Windows\nâ€¢ AtualizaÃ§Ãµes automÃ¡ticas com lista de novidades\nâ€¢ Feito por uma pessoa: apoio opcional em sidsmail.com/apoiar",
-        "en": "First public release.\nâ€¢ Every account in one inbox (real-time IMAP IDLE)\nâ€¢ First-run assistant\nâ€¢ Remote images blocked by default, passwords encrypted with Windows DPAPI\nâ€¢ Notifications with quiet hours, a daily digest and priority senders\nâ€¢ Simple rules, reply templates, snooze, mute conversations\nâ€¢ Light/dark theme, six accent colours, Inter as the typeface\nâ€¢ 23 languages, picked automatically from Windows\nâ€¢ Automatic updates with a changelog\nâ€¢ Made by one person: optional support at sidsmail.com/en/donate"
+        "pt": "Primeira versão pública.\n• Todas as contas numa só caixa (IMAP IDLE em tempo real)\n• Assistente de primeiro arranque\n• Imagens remotas bloqueadas por defeito, palavras-passe cifradas com a DPAPI do Windows\n• Notificações com horas de silêncio, resumo diário e remetentes prioritários\n• Regras simples, modelos de resposta, adiar mensagens, silenciar conversas\n• Tema claro/escuro, seis cores de destaque, Inter como tipo de letra\n• 23 idiomas, escolhidos automaticamente a partir do Windows\n• Atualizações automáticas com lista de novidades\n• Feito por uma pessoa: apoio opcional em sidsmail.com/apoiar",
+        "en": "First public release.\n• Every account in one inbox (real-time IMAP IDLE)\n• First-run assistant\n• Remote images blocked by default, passwords encrypted with Windows DPAPI\n• Notifications with quiet hours, a daily digest and priority senders\n• Simple rules, reply templates, snooze, mute conversations\n• Light/dark theme, six accent colours, Inter as the typeface\n• 23 languages, picked automatically from Windows\n• Automatic updates with a changelog\n• Made by one person: optional support at sidsmail.com/en/donate"
       }
     }
   ]
