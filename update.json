@@ -1,10 +1,11 @@
 {
-  "version": "1.0.5",
+  "version": "1.0.9",
   "url": "https://sidsmail.com/novidades/",
-  "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.5/Sidsmail-Setup-1.0.5.exe",
-  "date": "2026-09-04",
+  "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.9/Sidsmail-Setup-1.0.9.exe",
+  "sha256": "64d9a663ea72d793c661e48ae1e36ee92d41e430e8a5bacbaaaa00e9dcf15ef0",
+  "date": "2026-09-06",
   "notes": {
-    "pt": "• \"Adicionar conta\" → Google já funciona para qualquer pessoa com um clique — sem palavra-passe de aplicação, sem consola\n• Microsoft continua a chegar em breve",
-    "en": "• \"Add account\" → Google now works for anyone with one click — no app password, no console\n• Microsoft is still coming"
+    "pt": "â€¢ Corrigido: o histÃ³rico de mensagens trocadas com um contacto podia nÃ£o mostrar mensagens recebidas com maiÃºsculas diferentes no remetente\nâ€¢ Corrigido: importar um contacto vCard com uma nota de vÃ¡rias linhas podia corromper o texto\nâ€¢ Corrigido: Ctrl+Z depois de \"marcar tudo como lido\" podia voltar a marcar mensagens erradas como nÃ£o lidas, nalguns casos\nâ€¢ Corrigido: \"Bloquear conteÃºdo remoto\" nem sempre limpava por completo o endereÃ§o de uma imagem bloqueada\nâ€¢ Corrigido: comprimir uma foto tirada em retrato podia sair de lado ou invertida\nâ€¢ VÃ¡rios acertos de estabilidade internos na sincronizaÃ§Ã£o e no inÃ­cio de sessÃ£o automÃ¡tico\nâ€¢ Retoques visuais no CalendÃ¡rio e nas DefiniÃ§Ãµes da conta",
+    "en": "â€¢ Fixed: the message history for a contact could miss messages received with different capitalisation in the sender's address\nâ€¢ Fixed: importing a vCard contact with a multi-line note could corrupt the text\nâ€¢ Fixed: Ctrl+Z after \"mark all as read\" could re-mark the wrong messages as unread in some cases\nâ€¢ Fixed: \"Block remote content\" didn't always fully clear a blocked image's address\nâ€¢ Fixed: compressing a photo taken in portrait could come out sideways or upside down\nâ€¢ Several internal stability fixes to syncing and automatic sign-in\nâ€¢ Visual touch-ups to the Calendar and Account settings"
   }
 }
