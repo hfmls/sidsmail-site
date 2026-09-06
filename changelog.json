@@ -1,6 +1,16 @@
 {
   "releases": [
     {
+      "version": "1.0.10",
+      "date": "2026-09-06",
+      "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.10/Sidsmail-Setup-1.0.10.exe",
+      "sha256": "ce93b2cf774df2988691f160da4be585749dbe74c5e2b6f0b87bd4992b308053",
+      "notes": {
+        "pt": "• Corrigido: uma conta acabada de adicionar podia desaparecer ao reiniciar a app — as definições não eram gravadas enquanto a janela estivesse maximizada, o caso normal numa instalação nova\n• Corrigido: a pasta \"Não Lidas\" podia voltar a fechar o email que estavas a ler, desta vez ao pesquisar dentro dela\n• Corrigido: um lembrete de calendário podia continuar a disparar para uma ocorrência que já tinhas excluído de uma série\n• Corrigido: \"Repetir até\" já não aceita uma data anterior ao início do evento\n• Corrigido: o corretor ortográfico ao escrever segue agora o idioma da app (estava fixo em português)\n• A app passa a procurar atualizações a cada 6 horas enquanto está aberta, além de ao arrancar\n• Instalador: verifica o runtime .NET 10 (verificava a versão 8, já desatualizada)",
+        "en": "• Fixed: an account you just added could disappear after restarting the app — settings weren't saved while the window was maximised, the normal case on a fresh install\n• Fixed: the \"Unread\" folder could close the email you were reading again, this time while searching inside it\n• Fixed: a calendar reminder could keep firing for an occurrence you had already excluded from a series\n• Fixed: \"Repeat until\" no longer accepts a date before the event's start\n• Fixed: the spell checker while typing now follows the app's language (it was fixed to Portuguese)\n• The app now checks for updates every 6 hours while open, in addition to on launch\n• Installer: now checks for the .NET 10 runtime (was checking for the outdated .NET 8)"
+      }
+    },
+    {
       "version": "1.0.9",
       "date": "2026-09-06",
       "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.9/Sidsmail-Setup-1.0.9.exe",
