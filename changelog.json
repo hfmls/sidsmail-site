@@ -1,6 +1,16 @@
 {
   "releases": [
     {
+      "version": "1.0.13",
+      "date": "2026-09-06",
+      "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.13/Sidsmail-Setup-1.0.13.exe",
+      "sha256": "8c25e8b2382dc54d5046cdd3ddc5365e68a794ed0f084f02ba6f48d91d41fbff",
+      "notes": {
+        "pt": "• Instalador e desinstalador novos, redesenhados de raiz (por agora em português e inglês, mais línguas a caminho)\n• Corrigido e melhorado: menus de contexto (Mover para, Cor da mensagem, Adiar…) tinham submenus a abrir claros, cantos a direito e o realce ao passar o rato ia na direção errada; agora escuros de forma consistente, com sombra suave e separadores mais discretos\n• Corrigido: o menu de contexto dentro de um email (Guardar como, Imprimir…) também abria sempre claro, independentemente do tema\n• Ícone da comunidade no instalador mais reconhecível",
+        "en": "• New installer and uninstaller, redesigned from scratch (Portuguese and English for now, more languages coming)\n• Fixed and polished: context menus (Move to, Message color, Snooze…) had submenus opening light, square corners, and hover highlighting that went the wrong way; now consistently dark, with a soft shadow and quieter separators\n• Fixed: the context menu inside an email (Save as, Print…) also always opened light, regardless of theme\n• More recognizable community icon in the installer"
+      }
+    },
+    {
       "version": "1.0.12",
       "date": "2026-09-06",
       "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.12/Sidsmail-Setup-1.0.12.exe",
