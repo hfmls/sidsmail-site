@@ -1,11 +1,11 @@
 {
-  "version": "1.0.10",
+  "version": "1.0.11",
   "url": "https://sidsmail.com/novidades/",
-  "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.10/Sidsmail-Setup-1.0.10.exe",
-  "sha256": "ce93b2cf774df2988691f160da4be585749dbe74c5e2b6f0b87bd4992b308053",
+  "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.11/Sidsmail-Setup-1.0.11.exe",
+  "sha256": "09ce48dbd0df498d5618d69f0399f3fff67b20dad5db9f9264153cd5a4904605",
   "date": "2026-09-06",
   "notes": {
-    "pt": "• Corrigido: uma conta acabada de adicionar podia desaparecer ao reiniciar a app — as definições não eram gravadas enquanto a janela estivesse maximizada, o caso normal numa instalação nova\n• Corrigido: a pasta \"Não Lidas\" podia voltar a fechar o email que estavas a ler, desta vez ao pesquisar dentro dela\n• Corrigido: um lembrete de calendário podia continuar a disparar para uma ocorrência que já tinhas excluído de uma série\n• Corrigido: \"Repetir até\" já não aceita uma data anterior ao início do evento\n• Corrigido: o corretor ortográfico ao escrever segue agora o idioma da app (estava fixo em português)\n• A app passa a procurar atualizações a cada 6 horas enquanto está aberta, além de ao arrancar\n• Instalador: verifica o runtime .NET 10 (verificava a versão 8, já desatualizada)",
-    "en": "• Fixed: an account you just added could disappear after restarting the app — settings weren't saved while the window was maximised, the normal case on a fresh install\n• Fixed: the \"Unread\" folder could close the email you were reading again, this time while searching inside it\n• Fixed: a calendar reminder could keep firing for an occurrence you had already excluded from a series\n• Fixed: \"Repeat until\" no longer accepts a date before the event's start\n• Fixed: the spell checker while typing now follows the app's language (it was fixed to Portuguese)\n• The app now checks for updates every 6 hours while open, in addition to on launch\n• Installer: now checks for the .NET 10 runtime (was checking for the outdated .NET 8)"
+    "pt": "• Corrigido: a app podia ficar presa em segundo plano, invisível e sem responder, depois de instalares uma atualização a partir de dentro dela\n• Novo: assistente de primeira conta com \"Importar do Thunderbird\" — traz o servidor, a porta e o email de contas já configuradas no Thunderbird (nunca a password, que continuas a escrever tu)\n• Instalador com novo visual, mais suave e alinhado com a marca\n• Instalador: ao atualizar, fecha só o Sidsmail — nunca outras aplicações abertas",
+    "en": "• Fixed: the app could get stuck running invisibly in the background, unresponsive, after installing an update from inside it\n• New: \"Import from Thunderbird\" in the first-account wizard — brings over the server, port and email of accounts already set up in Thunderbird (never the password, which you still type in yourself)\n• Redesigned installer with a softer, more on-brand look\n• Installer: when updating, closes only Sidsmail — never other open applications"
   }
 }
