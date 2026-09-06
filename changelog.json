@@ -1,13 +1,23 @@
 {
   "releases": [
     {
+      "version": "1.0.12",
+      "date": "2026-09-06",
+      "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.12/Sidsmail-Setup-1.0.12.exe",
+      "sha256": "4b3785840aa556546048cb2106b9c5981c0b8385ed4d2e8760ad24d9d4791479",
+      "notes": {
+        "pt": "• Corrigido: a app podia ficar presa e ser fechada pelo Windows ao abrir um email com problemas a carregar a pré-visualização, agora volta sozinha para o texto simples em vez de esperar para sempre\n• Novo: \"Importar do Thunderbird\" também em Definições › Contas, a qualquer momento, não só no assistente de primeira conta\n• Instalador: a página \"Selecionar localização de destino\" desapareceu, já não havia nenhuma escolha real para fazer nela\n• Instalador: os links de ajuda e de apoio na página final passam a ser clicáveis\n• Instalador com assistente nas mesmas 23 línguas da app, escolhendo automaticamente a do teu Windows\n• Vários acertos de redação em toda a app, no site e no instalador",
+        "en": "• Fixed: the app could get stuck and be closed by Windows when opening an email whose preview failed to load, now it falls back to plain text on its own instead of waiting forever\n• New: \"Import from Thunderbird\" also in Settings › Accounts, any time, not only in the first-account wizard\n• Installer: the \"Select destination location\" page is gone, there was no real choice left to make there\n• Installer: the help and support links on the final page are now clickable\n• Installer wizard now in the same 23 languages as the app, picking your Windows language automatically\n• Various wording touch-ups across the app, the site and the installer"
+      }
+    },
+    {
       "version": "1.0.11",
       "date": "2026-09-06",
       "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.11/Sidsmail-Setup-1.0.11.exe",
       "sha256": "09ce48dbd0df498d5618d69f0399f3fff67b20dad5db9f9264153cd5a4904605",
       "notes": {
-        "pt": "• Corrigido: a app podia ficar presa em segundo plano, invisível e sem responder, depois de instalares uma atualização a partir de dentro dela\n• Novo: assistente de primeira conta com \"Importar do Thunderbird\" — traz o servidor, a porta e o email de contas já configuradas no Thunderbird (nunca a password, que continuas a escrever tu)\n• Instalador com novo visual, mais suave e alinhado com a marca\n• Instalador: ao atualizar, fecha só o Sidsmail — nunca outras aplicações abertas",
-        "en": "• Fixed: the app could get stuck running invisibly in the background, unresponsive, after installing an update from inside it\n• New: \"Import from Thunderbird\" in the first-account wizard — brings over the server, port and email of accounts already set up in Thunderbird (never the password, which you still type in yourself)\n• Redesigned installer with a softer, more on-brand look\n• Installer: when updating, closes only Sidsmail — never other open applications"
+        "pt": "• Corrigido: a app podia ficar presa em segundo plano, invisível e sem responder, depois de instalares uma atualização a partir de dentro dela\n• Novo: assistente de primeira conta com \"Importar do Thunderbird\", que traz o servidor, a porta e o email de contas já configuradas no Thunderbird (nunca a password, que continuas a escrever tu)\n• Instalador com novo visual, mais suave e alinhado com a marca\n• Instalador: ao atualizar, fecha só o Sidsmail, nunca outras aplicações abertas",
+        "en": "• Fixed: the app could get stuck running invisibly in the background, unresponsive, after installing an update from inside it\n• New: \"Import from Thunderbird\" in the first-account wizard, bringing over the server, port and email of accounts already set up in Thunderbird (never the password, which you still type in yourself)\n• Redesigned installer with a softer, more on-brand look\n• Installer: when updating, closes only Sidsmail, never other open applications"
       }
     },
     {
@@ -16,8 +26,8 @@
       "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.10/Sidsmail-Setup-1.0.10.exe",
       "sha256": "ce93b2cf774df2988691f160da4be585749dbe74c5e2b6f0b87bd4992b308053",
       "notes": {
-        "pt": "• Corrigido: uma conta acabada de adicionar podia desaparecer ao reiniciar a app — as definições não eram gravadas enquanto a janela estivesse maximizada, o caso normal numa instalação nova\n• Corrigido: a pasta \"Não Lidas\" podia voltar a fechar o email que estavas a ler, desta vez ao pesquisar dentro dela\n• Corrigido: um lembrete de calendário podia continuar a disparar para uma ocorrência que já tinhas excluído de uma série\n• Corrigido: \"Repetir até\" já não aceita uma data anterior ao início do evento\n• Corrigido: o corretor ortográfico ao escrever segue agora o idioma da app (estava fixo em português)\n• A app passa a procurar atualizações a cada 6 horas enquanto está aberta, além de ao arrancar\n• Instalador: verifica o runtime .NET 10 (verificava a versão 8, já desatualizada)",
-        "en": "• Fixed: an account you just added could disappear after restarting the app — settings weren't saved while the window was maximised, the normal case on a fresh install\n• Fixed: the \"Unread\" folder could close the email you were reading again, this time while searching inside it\n• Fixed: a calendar reminder could keep firing for an occurrence you had already excluded from a series\n• Fixed: \"Repeat until\" no longer accepts a date before the event's start\n• Fixed: the spell checker while typing now follows the app's language (it was fixed to Portuguese)\n• The app now checks for updates every 6 hours while open, in addition to on launch\n• Installer: now checks for the .NET 10 runtime (was checking for the outdated .NET 8)"
+        "pt": "• Corrigido: uma conta acabada de adicionar podia desaparecer ao reiniciar a app, porque as definições não eram gravadas enquanto a janela estivesse maximizada, o caso normal numa instalação nova\n• Corrigido: a pasta \"Não Lidas\" podia voltar a fechar o email que estavas a ler, desta vez ao pesquisar dentro dela\n• Corrigido: um lembrete de calendário podia continuar a disparar para uma ocorrência que já tinhas excluído de uma série\n• Corrigido: \"Repetir até\" já não aceita uma data anterior ao início do evento\n• Corrigido: o corretor ortográfico ao escrever segue agora o idioma da app (estava fixo em português)\n• A app passa a procurar atualizações a cada 6 horas enquanto está aberta, além de ao arrancar\n• Instalador: verifica o runtime .NET 10 (verificava a versão 8, já desatualizada)",
+        "en": "• Fixed: an account you just added could disappear after restarting the app, because settings weren't saved while the window was maximised, the normal case on a fresh install\n• Fixed: the \"Unread\" folder could close the email you were reading again, this time while searching inside it\n• Fixed: a calendar reminder could keep firing for an occurrence you had already excluded from a series\n• Fixed: \"Repeat until\" no longer accepts a date before the event's start\n• Fixed: the spell checker while typing now follows the app's language (it was fixed to Portuguese)\n• The app now checks for updates every 6 hours while open, in addition to on launch\n• Installer: now checks for the .NET 10 runtime (was checking for the outdated .NET 8)"
       }
     },
     {
@@ -35,8 +45,8 @@
       "date": "2026-09-05",
       "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.8/Sidsmail-Setup-1.0.8.exe",
       "notes": {
-        "pt": "• Corrigido: a barra de ícones no fundo da barra lateral (Calendário incluído) já não fica cortada — a largura por defeito passa a caber os sete ícones",
-        "en": "• Fixed: the icon row at the bottom of the sidebar (Calendar included) no longer gets clipped — the default width now fits all seven icons"
+        "pt": "• Corrigido: a barra de ícones no fundo da barra lateral (Calendário incluído) já não fica cortada, a largura por defeito passa a caber os sete ícones",
+        "en": "• Fixed: the icon row at the bottom of the sidebar (Calendar included) no longer gets clipped, the default width now fits all seven icons"
       }
     },
     {
@@ -44,8 +54,8 @@
       "date": "2026-09-05",
       "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.7/Sidsmail-Setup-1.0.7.exe",
       "notes": {
-        "pt": "• Novo: Calendário local — eventos, repetição, aniversários dos contactos, lembretes e deteção automática de convites .ics nos emails\n• Corrigido: a pasta \"Não Lidas\" já não fecha nem esconde o email que estás a ler assim que ele é marcado como lido\n• Corrigido: as definições da conta já não se perdem se o ficheiro de definições estiver momentaneamente bloqueado ao guardar\n• Reduzidos os falsos positivos de alguns antivírus no instalador",
-        "en": "• New: local Calendar — events, recurrence, contact birthdays, reminders, and automatic .ics invite detection in emails\n• Fixed: the \"Unread\" folder no longer closes or hides the email you're reading the moment it's marked read\n• Fixed: account settings no longer get lost if the settings file was briefly locked while saving\n• Reduced antivirus false positives in the installer"
+        "pt": "• Novo: Calendário local, com eventos, repetição, aniversários dos contactos, lembretes e deteção automática de convites .ics nos emails\n• Corrigido: a pasta \"Não Lidas\" já não fecha nem esconde o email que estás a ler assim que ele é marcado como lido\n• Corrigido: as definições da conta já não se perdem se o ficheiro de definições estiver momentaneamente bloqueado ao guardar\n• Reduzidos os falsos positivos de alguns antivírus no instalador",
+        "en": "• New: local Calendar, with events, recurrence, contact birthdays, reminders, and automatic .ics invite detection in emails\n• Fixed: the \"Unread\" folder no longer closes or hides the email you're reading the moment it's marked read\n• Fixed: account settings no longer get lost if the settings file was briefly locked while saving\n• Reduced antivirus false positives in the installer"
       }
     },
     {
@@ -53,8 +63,8 @@
       "date": "2026-09-04",
       "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.5/Sidsmail-Setup-1.0.5.exe",
       "notes": {
-        "pt": "• \"Adicionar conta\" → Google já funciona para qualquer pessoa com um clique — sem palavra-passe de aplicação, sem consola\n• Microsoft continua a chegar em breve",
-        "en": "• \"Add account\" → Google now works for anyone with one click — no app password, no console\n• Microsoft is still coming"
+        "pt": "• \"Adicionar conta\" → Google já funciona para qualquer pessoa com um clique, sem palavra-passe de aplicação, sem consola\n• Microsoft continua a chegar em breve",
+        "en": "• \"Add account\" → Google now works for anyone with one click, no app password, no console\n• Microsoft is still coming"
       }
     },
     {
@@ -80,8 +90,8 @@
       "date": "2026-09-03",
       "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.2/Sidsmail-Setup-1.0.2.exe",
       "notes": {
-        "pt": "• Botão \"Ver novidades\" em Definições › Acerca, para veres o histórico de versões a qualquer momento\n• Instalador com visual próprio (ícone com brilho, sem a caixa 3D genérica)\n• URLs de atualização e de apoio deixaram de ser configuráveis — estavam a mais",
-        "en": "• \"See what's new\" button in Settings › About, to check the version history any time\n• Custom installer artwork (icon with a glow, no more generic 3-D box)\n• The update and support URLs are no longer user-configurable — they were leftover clutter"
+        "pt": "• Botão \"Ver novidades\" em Definições › Acerca, para veres o histórico de versões a qualquer momento\n• Instalador com visual próprio (ícone com brilho, sem a caixa 3D genérica)\n• URLs de atualização e de apoio deixaram de ser configuráveis, estavam a mais",
+        "en": "• \"See what's new\" button in Settings › About, to check the version history any time\n• Custom installer artwork (icon with a glow, no more generic 3-D box)\n• The update and support URLs are no longer user-configurable, they were leftover clutter"
       }
     },
     {

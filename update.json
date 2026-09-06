@@ -1,11 +1,11 @@
 {
-  "version": "1.0.11",
+  "version": "1.0.12",
   "url": "https://sidsmail.com/novidades/",
-  "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.11/Sidsmail-Setup-1.0.11.exe",
-  "sha256": "09ce48dbd0df498d5618d69f0399f3fff67b20dad5db9f9264153cd5a4904605",
+  "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.12/Sidsmail-Setup-1.0.12.exe",
+  "sha256": "4b3785840aa556546048cb2106b9c5981c0b8385ed4d2e8760ad24d9d4791479",
   "date": "2026-09-06",
   "notes": {
-    "pt": "• Corrigido: a app podia ficar presa em segundo plano, invisível e sem responder, depois de instalares uma atualização a partir de dentro dela\n• Novo: assistente de primeira conta com \"Importar do Thunderbird\" — traz o servidor, a porta e o email de contas já configuradas no Thunderbird (nunca a password, que continuas a escrever tu)\n• Instalador com novo visual, mais suave e alinhado com a marca\n• Instalador: ao atualizar, fecha só o Sidsmail — nunca outras aplicações abertas",
-    "en": "• Fixed: the app could get stuck running invisibly in the background, unresponsive, after installing an update from inside it\n• New: \"Import from Thunderbird\" in the first-account wizard — brings over the server, port and email of accounts already set up in Thunderbird (never the password, which you still type in yourself)\n• Redesigned installer with a softer, more on-brand look\n• Installer: when updating, closes only Sidsmail — never other open applications"
+    "pt": "• Corrigido: a app podia ficar presa e ser fechada pelo Windows ao abrir um email com problemas a carregar a pré-visualização, agora volta sozinha para o texto simples em vez de esperar para sempre\n• Novo: \"Importar do Thunderbird\" também em Definições › Contas, a qualquer momento, não só no assistente de primeira conta\n• Instalador: a página \"Selecionar localização de destino\" desapareceu, já não havia nenhuma escolha real para fazer nela\n• Instalador: os links de ajuda e de apoio na página final passam a ser clicáveis\n• Instalador com assistente nas mesmas 23 línguas da app, escolhendo automaticamente a do teu Windows\n• Vários acertos de redação em toda a app, no site e no instalador",
+    "en": "• Fixed: the app could get stuck and be closed by Windows when opening an email whose preview failed to load, now it falls back to plain text on its own instead of waiting forever\n• New: \"Import from Thunderbird\" also in Settings › Accounts, any time, not only in the first-account wizard\n• Installer: the \"Select destination location\" page is gone, there was no real choice left to make there\n• Installer: the help and support links on the final page are now clickable\n• Installer wizard now in the same 23 languages as the app, picking your Windows language automatically\n• Various wording touch-ups across the app, the site and the installer"
   }
 }
