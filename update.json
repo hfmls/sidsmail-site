@@ -1,11 +1,11 @@
 {
-  "version": "1.0.14",
+  "version": "1.0.15",
   "url": "https://sidsmail.com/novidades/",
-  "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.14/Sidsmail-Setup-1.0.14.exe",
-  "sha256": "47c39fdf951642963ea166a48ca019ee6ce21443807f8ed4003a4155fdfa1058",
+  "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.15/Sidsmail-Setup-1.0.15.exe",
+  "sha256": "05f2b78c5b5699bac5ba3ba539b3a2c935623ef06d8d32174df2dfbd1f09eaf4",
   "date": "2026-09-07",
   "notes": {
-    "pt": "• Corrigido: quando uma linha da lista de mensagens estava selecionada, a barra de cor da conta e a marca de seleção ficavam as duas espremidas no mesmo canto; a barra de conta volta a aparecer assim que mudares de mensagem\n• Corrigido: o texto \"desativado\" (por exemplo, opções que não se aplicam agora) era praticamente igual ao texto secundário normal; agora nota-se mais a diferença",
-    "en": "• Fixed: when a message row was selected, the account color bar and the selection marker were both squeezed into the same corner; the account bar reappears as soon as you move to another message\n• Fixed: \"disabled\" text (for example, options that do not apply right now) looked almost identical to normal secondary text; now the difference is clearer"
+    "pt": "• Novo: em instalações novas, os emails HTML já aparecem no tema escuro por predefinição, em vez de sempre com fundo branco. Se já usas o Sidsmail, esta opção continua desligada para não mudar nada sem avisar; liga-a em Definições › Leitura › \"Forçar o tema escuro em todas as mensagens\"",
+    "en": "• New: on fresh installs, HTML emails now show in the dark theme by default instead of always on a white background. If you already use Sidsmail, this stays off so nothing changes without warning; turn it on in Settings, Reading, \"Force dark theme on all messages\""
   }
 }
