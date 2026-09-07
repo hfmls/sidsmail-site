@@ -1,11 +1,11 @@
 {
-  "version": "1.0.15",
+  "version": "1.0.16",
   "url": "https://sidsmail.com/novidades/",
-  "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.15/Sidsmail-Setup-1.0.15.exe",
-  "sha256": "05f2b78c5b5699bac5ba3ba539b3a2c935623ef06d8d32174df2dfbd1f09eaf4",
+  "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.16/Sidsmail-Setup-1.0.16.exe",
+  "sha256": "be19a1add0b761d670643a8ac47f977fdf94afb4e9c0625e6951037c7796d32e",
   "date": "2026-09-07",
   "notes": {
-    "pt": "• Novo: em instalações novas, os emails HTML já aparecem no tema escuro por predefinição, em vez de sempre com fundo branco. Se já usas o Sidsmail, esta opção continua desligada para não mudar nada sem avisar; liga-a em Definições › Leitura › \"Forçar o tema escuro em todas as mensagens\"",
-    "en": "• New: on fresh installs, HTML emails now show in the dark theme by default instead of always on a white background. If you already use Sidsmail, this stays off so nothing changes without warning; turn it on in Settings, Reading, \"Force dark theme on all messages\""
+    "pt": "• Corrigido: ao abrir uma mensagem, por vezes via-se por instantes o corpo da mensagem anterior antes do novo aparecer\n• Corrigido: ao arquivar, apagar ou mover várias mensagens selecionadas fora de ordem, a mensagem seguinte selecionada por vezes ficava longe do sítio certo na lista\n• Corrigido: arquivar e marcar como spam a mesma mensagem em sequência muito rápida podia entrar em conflito\n• Melhorado: várias animações da interface (botões, menus, avisos, sobreposição \"A carregar…\") passam a usar a mesma suavidade em toda a app, em vez de mudarem de estado de repente\n• Melhorado: abrir uma mensagem ou trocar de tema já não bloqueia a janela por um instante quando a app está ocupada a sincronizar",
+    "en": "• Fixed: opening a message could briefly show the previous message's body before the new one appeared\n• Fixed: archiving, deleting or moving several selected messages clicked out of order could leave the next selection far from the right spot in the list\n• Fixed: archiving then marking the same message as spam in very quick succession could race each other\n• Improved: several interface animations (buttons, menus, notices, the \"Loading…\" overlay) now use the same smoothness throughout the app instead of switching state abruptly\n• Improved: opening a message or switching themes no longer briefly blocks the window while the app is busy syncing"
   }
 }

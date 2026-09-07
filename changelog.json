@@ -1,6 +1,16 @@
 {
   "releases": [
     {
+      "version": "1.0.16",
+      "date": "2026-09-07",
+      "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.16/Sidsmail-Setup-1.0.16.exe",
+      "sha256": "be19a1add0b761d670643a8ac47f977fdf94afb4e9c0625e6951037c7796d32e",
+      "notes": {
+        "pt": "• Corrigido: ao abrir uma mensagem, por vezes via-se por instantes o corpo da mensagem anterior antes do novo aparecer\n• Corrigido: ao arquivar, apagar ou mover várias mensagens selecionadas fora de ordem, a mensagem seguinte selecionada por vezes ficava longe do sítio certo na lista\n• Corrigido: arquivar e marcar como spam a mesma mensagem em sequência muito rápida podia entrar em conflito\n• Melhorado: várias animações da interface (botões, menus, avisos, sobreposição \"A carregar…\") passam a usar a mesma suavidade em toda a app, em vez de mudarem de estado de repente\n• Melhorado: abrir uma mensagem ou trocar de tema já não bloqueia a janela por um instante quando a app está ocupada a sincronizar",
+        "en": "• Fixed: opening a message could briefly show the previous message's body before the new one appeared\n• Fixed: archiving, deleting or moving several selected messages clicked out of order could leave the next selection far from the right spot in the list\n• Fixed: archiving then marking the same message as spam in very quick succession could race each other\n• Improved: several interface animations (buttons, menus, notices, the \"Loading…\" overlay) now use the same smoothness throughout the app instead of switching state abruptly\n• Improved: opening a message or switching themes no longer briefly blocks the window while the app is busy syncing"
+      }
+    },
+    {
       "version": "1.0.15",
       "date": "2026-09-07",
       "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.15/Sidsmail-Setup-1.0.15.exe",
