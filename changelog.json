@@ -1,6 +1,16 @@
 {
   "releases": [
     {
+      "version": "1.0.18",
+      "date": "2026-09-15",
+      "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.18/Sidsmail-Setup-1.0.18.exe",
+      "sha256": "d34ad78d7cafe45062a19c8c043c6f9aef15c7f82d68a57af7ec832ee977b238",
+      "notes": {
+        "pt": "• Corrigido: reencaminhar uma mensagem já reencaminhada pelo Gmail ou pelo Thunderbird («Fwd:») duplicava o prefixo para «Fw: Fwd: …»\n• Corrigido: responder a todos numa mensagem enviada para duas das suas próprias contas configuradas voltava a colocar a outra conta em Cc\n• Corrigido: uma mensagem enviada com sucesso podia ficar sem qualquer registo (nem em Enviados, nem como rascunho) se a pasta Enviados ainda não tivesse sido detetada na conta\n• Corrigido: escolher um idioma diferente do idioma do Windows não mudava as datas e os tamanhos de anexos para esse idioma\n• Corrigido: \"Bloquear conteúdo remoto\" não detetava imagens/CSS com endereço sem \"http(s):\" (ex.: «//exemplo.com/imagem.gif»)\n• Melhorado: abrir uma mensagem por clique direto é agora instantâneo (sem a pequena pausa antes usada para navegação por teclado), e voltar da bandeja do sistema já prepara o motor de renderização antes do primeiro clique\n• Metadados de versão adicionados ao instalador, e o processo de publicação passa agora a exigir sempre a soma de verificação do instalador antes de publicar uma versão",
+        "en": "• Fixed: forwarding a message already forwarded by Gmail or Thunderbird (\"Fwd:\") doubled the prefix into \"Fw: Fwd: ...\"\n• Fixed: replying to all on a message sent to two of your own configured accounts put the other account back in Cc\n• Fixed: a successfully sent message could end up with no record at all (not in Sent, not as a draft) if the account's Sent folder had not been detected yet\n• Fixed: choosing an app language different from Windows' own language did not switch dates and attachment sizes to that language\n• Fixed: \"Block remote content\" missed images/CSS with a schemeless address (e.g. \"//example.com/image.gif\")\n• Improved: opening a message with a direct click is now instant (no more of the short pause meant for keyboard navigation), and coming back from the system tray now warms up the renderer before your first click\n• Version metadata added to the installer, and the release process now always requires the installer's checksum before a version can be published"
+      }
+    },
+    {
       "version": "1.0.17",
       "date": "2026-09-07",
       "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.17/Sidsmail-Setup-1.0.17.exe",
