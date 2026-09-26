@@ -1,6 +1,16 @@
 {
   "releases": [
     {
+      "version": "1.0.19",
+      "date": "2026-09-26",
+      "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.19/Sidsmail-Setup-1.0.19.exe",
+      "sha256": "8ba4bcbd2fb893008143212f9473714140dad78fadac107ed9575605dfa7b998",
+      "notes": {
+        "pt": "• Mais rápido: abrir uma mensagem com as setas do teclado é imediato, e passar de uma para a seguinte já não pisca em branco\n• Mais rápido: as mensagens novas são descarregadas em segundo plano, por isso já estão prontas quando as abres\n• Mais rápido: a lista de mensagens deixa de congelar a janela durante uma sincronização, e as pastas grandes carregam mais depressa\n• Corrigido: \"A carregar…\" podia ficar preso para sempre numa mensagem\n• Corrigido: mensagens com uma imagem grande embutida perdiam a formatação e apareciam só em texto\n• Mais estável: menos pedidos de fotos de contactos em simultâneo (e nenhum enquanto estás sem rede) e uma única janela de erro por minuto em vez de uma por cada falha repetida",
+        "en": "• Faster: opening a message with the arrow keys is instant, and stepping from one to the next no longer flashes blank\n• Faster: new messages are downloaded in the background, so they are already there when you open them\n• Faster: the message list no longer freezes the window during a sync, and large folders load faster\n• Fixed: \"Loading…\" could stay up forever on a message\n• Fixed: messages with a large embedded image lost their formatting and showed as plain text\n• More stable: fewer simultaneous contact-photo lookups (and none while you are offline) and one error dialog per 30 seconds instead of one per repeated failure"
+      }
+    },
+    {
       "version": "1.0.18",
       "date": "2026-09-15",
       "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.18/Sidsmail-Setup-1.0.18.exe",
