@@ -1,11 +1,11 @@
 {
-  "version": "1.0.19",
+  "version": "1.0.20",
   "url": "https://sidsmail.com/novidades/",
-  "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.19/Sidsmail-Setup-1.0.19.exe",
-  "sha256": "8ba4bcbd2fb893008143212f9473714140dad78fadac107ed9575605dfa7b998",
+  "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.20/Sidsmail-Setup-1.0.20.exe",
+  "sha256": "939e160ded6bbe38f634bbd32f3eac1cb0d1b10af9e0384a4fb342652ce48e7a",
   "date": "2026-09-26",
   "notes": {
-    "pt": "• Mais rápido: abrir uma mensagem com as setas do teclado é imediato, e passar de uma para a seguinte já não pisca em branco\n• Mais rápido: as mensagens novas são descarregadas em segundo plano, por isso já estão prontas quando as abres\n• Mais rápido: a lista de mensagens deixa de congelar a janela durante uma sincronização, e as pastas grandes carregam mais depressa\n• Corrigido: \"A carregar…\" podia ficar preso para sempre numa mensagem\n• Corrigido: mensagens com uma imagem grande embutida perdiam a formatação e apareciam só em texto\n• Mais estável: menos pedidos de fotos de contactos em simultâneo (e nenhum enquanto estás sem rede) e uma única janela de erro por minuto em vez de uma por cada falha repetida",
-    "en": "• Faster: opening a message with the arrow keys is instant, and stepping from one to the next no longer flashes blank\n• Faster: new messages are downloaded in the background, so they are already there when you open them\n• Faster: the message list no longer freezes the window during a sync, and large folders load faster\n• Fixed: \"Loading…\" could stay up forever on a message\n• Fixed: messages with a large embedded image lost their formatting and showed as plain text\n• More stable: fewer simultaneous contact-photo lookups (and none while you are offline) and one error dialog per 30 seconds instead of one per repeated failure"
+    "pt": "• Corrigido: atualizar a partir da própria aplicação podia falhar com \"o processo não pode aceder ao ficheiro\" e deixar a pasta de instalação vazia. O instalador agora conclui a atualização mesmo assim, e a aplicação já o lança de uma pasta neutra",
+    "en": "• Fixed: updating from inside the app could fail with \"the process cannot access the file\" and leave the install folder empty. The installer now completes the update either way, and the app now launches it from a neutral folder"
   }
 }

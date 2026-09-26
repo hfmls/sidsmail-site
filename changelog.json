@@ -1,6 +1,16 @@
 {
   "releases": [
     {
+      "version": "1.0.20",
+      "date": "2026-09-26",
+      "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.20/Sidsmail-Setup-1.0.20.exe",
+      "sha256": "939e160ded6bbe38f634bbd32f3eac1cb0d1b10af9e0384a4fb342652ce48e7a",
+      "notes": {
+        "pt": "• Corrigido: atualizar a partir da própria aplicação podia falhar com \"o processo não pode aceder ao ficheiro\" e deixar a pasta de instalação vazia. O instalador agora conclui a atualização mesmo assim, e a aplicação já o lança de uma pasta neutra",
+        "en": "• Fixed: updating from inside the app could fail with \"the process cannot access the file\" and leave the install folder empty. The installer now completes the update either way, and the app now launches it from a neutral folder"
+      }
+    },
+    {
       "version": "1.0.19",
       "date": "2026-09-26",
       "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.19/Sidsmail-Setup-1.0.19.exe",
