@@ -442,9 +442,13 @@ dialog.gal-box .x{position:absolute;right:-6px;top:-44px;background:rgba(255,255
     <h1 class="h2">每个版本改了什么。</h1>
     <p class="lede-left">与应用在安装更新前显示的列表相同。</p>
     <article class="release">
-  <div class="rel-head"><h2 class="h3">版本 1.0.23 <span class="badge">最新</span></h2><time datetime="2026-09-30">2026-09-30</time></div>
+  <div class="rel-head"><h2 class="h3">版本 1.0.24 <span class="badge">最新</span></h2><time datetime="2026-10-07">2026-10-07</time></div>
+  <ul><li>已修复:邮件重新按发件人设计的样子显示。以前内置浏览器启动较慢时,阅读器会一直停留在纯文本,直到关闭应用;现在会自动重试并显示原始邮件</li><li>新安装中,应用的深色主题不再反转邮件的颜色,而是保留发件人的颜色(设置中仍有“强制深色主题”选项)</li></ul>
+  <a class="btn btn-ghost small" href="https://github.com/hfmls/sidsmail-site/releases/download/v1.0.24/Sidsmail-Setup-1.0.24.exe"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12M6 11l6 6 6-6M4 20h16"/></svg> 下载此版本</a>
+</article><article class="release">
+  <div class="rel-head"><h2 class="h3">版本 1.0.23 </h2><time datetime="2026-09-30">2026-09-30</time></div>
   <ul><li>阅读界面重新设计：邮件按发件人的设计显示，表格对齐、占满整个窗格宽度，文字更紧凑</li><li>修复：深色邮件中看不见的文字，以及阿拉伯语或希伯来语邮件的对齐方向错误</li><li>纯文本邮件中的引用会像其他邮件程序一样以缩进块显示</li></ul>
-  <a class="btn btn-ghost small" href="https://github.com/hfmls/sidsmail-site/releases/download/v1.0.23/Sidsmail-Setup-1.0.23.exe"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12M6 11l6 6 6-6M4 20h16"/></svg> 下载此版本</a>
+  
 </article><article class="release">
   <div class="rel-head"><h2 class="h3">版本 1.0.22 </h2><time datetime="2026-09-27">2026-09-27</time></div>
   <ul><li>Fixed: a sent message could sit in «Sending…» for up to 5 minutes before going out. It now leaves right after the 8-second «Undo send» window</li></ul>
