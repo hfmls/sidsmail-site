@@ -1,6 +1,26 @@
 {
   "releases": [
     {
+      "version": "1.0.27",
+      "date": "2026-10-12",
+      "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.27/Sidsmail-Setup-1.0.27.exe",
+      "sha256": "8e75d6cbbfd0505ad74e28e71961083803749f8d3f78ef2475a37fedcf531e12",
+      "notes": {
+        "pt": "• Correção de paginação e filtros (SQL Push-down): os filtros rápidos de 'Por ler', 'Com estrela' e 'Com anexos' são agora aplicados diretamente na consulta SQLite, eliminando páginas truncadas ou incompletas na lista de mensagens\n• Internacionalização e Localização integral (pt-PT / en): tradução rigorosa de todos os ecrãs e diálogos, incluindo Central de Anexos, Leitura Rápida RSVP, atalhos de formatação e cabeçalhos de lista de distribuição, eliminando qualquer texto em inglês não intencional\n• Editor de Mensagens avançado: barra de ferramentas rápida com atalhos de formatação Markdown (Ctrl+B para negrito, Ctrl+I para itálico, Ctrl+K para ligações, listas com marcas e citações) e suporte nativo para arrastar e largar ficheiros diretamente sobre a área de texto\n• Polimento do Modo Foco e Leitura sem distrações: transição visual suave, realce do estado ativo do botão de leitura e ícones de controlos multimédia vetoriais unificados nos temas da aplicação",
+        "en": "• SQL Push-down filter & pagination fix: Quick filters for 'Unread', 'Starred', and 'Attachments' are now executed directly within SQLite queries, resolving incomplete or truncated message pages\n• Complete Internationalization (i18n): Comprehensive localization for Attachments Hub, RSVP Speed Reader, composer formatting shortcuts, and mailing list headers, eliminating remaining untranslated strings\n• Enhanced Message Composer: Quick formatting toolbar with Markdown keyboard shortcuts (Ctrl+B for bold, Ctrl+I for italic, Ctrl+K for links, bulleted lists, and quotes) and seamless drag-and-drop of files directly onto the message body\n• Focus Mode visual polish: Smoother transitions, active state highlighting for focus button, and unified vector media control icons in application themes"
+      }
+    },
+    {
+      "version": "1.0.26",
+      "date": "2026-10-12",
+      "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.26/Sidsmail-Setup-1.0.26.exe",
+      "sha256": "16764ae9622a41f309fc4fac2b590a7ced40225fe85607c0136091ecd642cca5",
+      "notes": {
+        "pt": "• Modo de Foco e Leitura redesenhado: duplo clique na lista de mensagens abre leitura focada sem distração, coluna tipográfica elegante centrada a 960px e botão '← Voltar à lista' (Esc ou L)\n• Leitura Rápida RSVP (300-600 ppm): leitura palavra a palavra com ponto de fixação ideal (ORP) alinhado para leitura ultra-rápida (Ctrl+Shift+R)\n• Modelos e Snippets inline: expansão rápida de texto ao escrever '/' com preenchimento instantâneo (Tab/Enter) e gestão visual\n• Cancelamento de subscrição num clique (1-Click Unsubscribe): suporte a RFC 8058 e mailto para cancelamento limpo e imediato de newsletters\n• Central de Anexos: explorador global de ficheiros com filtros instantâneos (todos, imagens, documentos, folhas de cálculo, arquivos) e pesquisa rápida\n• Resposta rápida em linha: caixa de resposta imediata no rodapé da mensagem com envio por Ctrl+Enter e botão para expandir para editor completo\n• Cores por conta: distinção visual de cada conta através de barra cromática na lista unificada e identificador de conta no leitor\n• Histórico do contacto: painel lateral com conversas recentes e anexos partilhados com o remetente atual (Ctrl+I)\n• Arrastar e largar mensagens: organização direta arrastando mensagens da lista para as pastas da barra lateral",
+        "en": "• Redesigned Focus Reading Mode: double-click in message list opens focused distraction-free reading, elegant centered 960px column, and visible 'Return to list' button (Esc or L)\n• Speed Reader RSVP (300-600 WPM): word-by-word reading with optimal recognition point (ORP) alignment for rapid reading (Ctrl+Shift+R)\n• Inline Snippets & Templates: fast text expansion by typing '/' with instant Tab/Enter completion and visual manager\n• 1-Click Unsubscribe: full RFC 8058 and mailto support to unsubscribe from mailing lists with one click\n• Central Attachments Hub: global attachment browser with quick search and filters for images, documents, spreadsheets, and archives\n• In-line Quick Reply: footer quick reply box with Ctrl+Enter to send and expand button for full composer\n• Color by Account: visual account distinction with color accents in unified inbox and reader pane\n• Contact Drawer: sidebar showing recent conversations and shared attachments with the current contact (Ctrl+I)\n• Drag & Drop Messages: organize emails by dragging them directly to sidebar folders"
+      }
+    },
+    {
       "version": "1.0.25",
       "date": "2026-10-12",
       "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.25/Sidsmail-Setup-1.0.25.exe",
