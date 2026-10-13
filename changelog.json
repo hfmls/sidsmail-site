@@ -1,6 +1,17 @@
 {
   "releases": [
     {
+      "version": "1.0.35",
+      "date": "2026-10-13",
+      "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.35/Sidsmail-Setup-1.0.35.exe",
+      "sha256": "377118713b0adba30c881eef79386a7b27c9735e51dfdc6dbdb41075c20369b8",
+      "notes": {
+        "pt": "• Refinamento Ergonómico de Notificações (Geometria 420x154): eliminação definitiva de truncamento de texto no botão 'Eliminar' com expansão da largura útil das ações para 328px, integração compacta do botão de fecho e atalhos com zero roubo de foco\n• Desduplicação Inteligente de Anexos: eliminação de redundância visual entre a galeria multimédia e os chips de anexos — quando a galeria está expandida, imagens e vídeos surgem exclusivamente no formato visual rico, reservando os chips para documentos (PDFs, ZIPs, etc.) e poupando mais de 50px de espaço vertical\n• Galeria Multimédia com Proporção Widescreen 16:9 (200x112): cartões redimensionados para a proporção áurea com remoção de letterboxing escuro, realce interativo da borda em foco (hover accent), tipografia apurada e botão direto 'Guardar todos' no cabeçalho da galeria\n• Suíte de Testes Massiva: 540 testes unitários aprovados com 100% de sucesso e zero falhas",
+        "en": "• Ergonomic Notification Polish (420x154 Geometry): eliminated text clipping on the Delete action button by widening usable action space to 328px, seamless close button positioning, and zero focus-stealing keyboard shortcuts\n• Smart Attachment Deduplication: removed visual redundancy between the media gallery and attachment chips — when media previews are active, images/videos render exclusively in the visual gallery while chips display only documents (PDFs, ZIPs), reclaiming 50px of vertical space\n• Widescreen 16:9 Media Cards (200x112): golden-ratio cards eliminating letterboxing, interactive accent hover glow, streamlined footer typography, and instant 'Save all' button in the gallery header\n• Massive Test Suite: 540 passing unit tests with 100% pass rate and zero failures",
+        "pt-br": "• Refinamento Ergonômico de Notificações (Geometria 420x154): eliminação definitiva de truncamento de texto no botão 'Excluir' com expansão da largura útil para 328px, integração compacta do botão de fechar e atalhos com zero roubo de foco\n• Desduplicação Inteligente de Anexos: eliminação de redundância visual entre a galeria multimídia e os chips de anexos — quando a galeria está expandida, imagens e vídeos surgem exclusivamente na galeria visual, reservando os chips para documentos (PDFs, ZIPs, etc.) e poupando mais de 50px de altura\n• Galeria Multimídia com Proporção Widescreen 16:9 (200x112): cartões redimensionados para a proporção ideal com remoção de barras pretas, realce interativo de borda no foco (hover accent), tipografia apurada e botão direto 'Guardar todos' no cabeçalho da galeria\n• Suíte de Testes Massiva: 540 testes unitários aprovados com 100% de sucesso e zero falhas"
+      }
+    },
+    {
       "version": "1.0.34",
       "date": "2026-10-13",
       "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.34/Sidsmail-Setup-1.0.34.exe",
