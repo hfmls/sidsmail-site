@@ -1,6 +1,17 @@
 {
   "releases": [
     {
+      "version": "1.0.38",
+      "date": "2026-10-14",
+      "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.38/Sidsmail-Setup-1.0.38.exe",
+      "sha256": "cfb712fd812c460e0ea901258678659b078d8f6daddc72bb63ba73e0e000ac4e",
+      "notes": {
+        "pt": "• Eliminação Definitiva de Flyouts Intrusivos no Botão de Maximizar: remoção total do Snap Assist do Windows 11 (grelha com miniaturas de outras aplicações abertas estilo Alt+Tab) ao pairar sobre o botão de maximizar, restaurando a agilidade e fluidez padrão dos clientes de topo (Mailbird, Thunderbird e Outlook)\n• Hover Suave e Instantâneo nos Botões da Barra de Título: feedback visual puro em WPF com transição suave de 120ms em todos os controlos de janela (minimizar, maximizar e fechar) e cantos arredondados sem cortes na borda\n• Equalização Geométrica Milimétrica: espaçamento rigorosamente idêntico de 3.0px acima, abaixo e à direita do botão de fechar em todas as janelas do sistema\n• Suíte de Testes Massiva: 561 testes unitários aprovados com 100% de sucesso",
+        "en": "• Elimination of Intrusive Task-Switching Flyouts on Maximize Button: completely removed Windows 11 Snap Assist grid popup showing other apps (Alt+Tab style) on hover, restoring standard top-tier client fluidity (Mailbird, Thunderbird, Outlook)\n• Smooth & Instant Hover on Window Controls: pure WPF visual feedback with seamless 120ms fade on all title bar buttons (minimize, maximize, close)\n• Pixel-Perfect Equalized Spacing: uniform 3.0px margins above, below, and to the right of the close button across all windows\n• Massive Test Suite: 561 passing unit tests with 100% pass rate",
+        "pt-br": "• Eliminação Definitiva de Menus Intrusivos no Botão de Maximizar: remoção total do Snap Assist do Windows 11 (grade com miniaturas de outras aplicações abertas estilo Alt+Tab) ao pairar sobre o botão de maximizar, restaurando a fluidez padrão dos melhores clientes (Mailbird, Thunderbird e Outlook)\n• Hover Suave e Instantâneo nos Botões da Barra de Título: feedback visual puro em WPF com transição suave de 120ms em todos os controles de janela (minimizar, maximizar e fechar)\n• Equalização Geométrica Milimétrica: espaçamento rigorosamente idêntico de 3.0px acima, abaixo e à direita do botão de fechar em todas as janelas\n• Suíte de Testes Massiva: 561 testes unitários aprovados com 100% de sucesso"
+      }
+    },
+    {
       "version": "1.0.37",
       "date": "2026-10-14",
       "installer": "https://github.com/hfmls/sidsmail-site/releases/download/v1.0.37/Sidsmail-Setup-1.0.37.exe",
